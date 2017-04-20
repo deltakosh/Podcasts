@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Om Podcasts v</value>
+  </data>
+  <data name="AddToLibraryCategoryLabel.Text" xml:space="preserve">
+    <value>Kategori:</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="CastFiles" xml:space="preserve">
+    <value>Podcasts-filer</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Bekreft</value>
+  </data>
+  <data name="Confirm_PodcastDelete" xml:space="preserve">
+    <value>Er du sikker du vil fjerne podcasten fra biblioteket?</value>
+  </data>
+  <data name="Country.Text" xml:space="preserve">
+    <value>Foretrukket språk i podcaster:</value>
+  </data>
+  <data name="DownloadButton.Content" xml:space="preserve">
+    <value>Last ned</value>
+  </data>
+  <data name="Empty.Text" xml:space="preserve">
+    <value>Det er litt tomt her nå ...
+Bruk søkefunksjonaliteten for å finne podcaster</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Feil</value>
+  </data>
+  <data name="Error_LoadFromFile" xml:space="preserve">
+    <value>Feil ved åpning av fil</value>
+  </data>
+  <data name="Error_SaveToFile" xml:space="preserve">
+    <value>Feil ved lagring av fil</value>
+  </data>
+  <data name="Error_UnableToParseRSS" xml:space="preserve">
+    <value>Feil ved analysering av RSS</value>
+  </data>
+  <data name="GotIt.Content" xml:space="preserve">
+    <value>Start Podcasts</value>
+  </data>
+  <data name="LibraryLabel.Header" xml:space="preserve">
+    <value>Bibliotek</value>
+  </data>
+  <data name="LibraryTitle.Text" xml:space="preserve">
+    <value>Bibliotek</value>
+  </data>
+  <data name="Load.Content" xml:space="preserve">
+    <value>Åpne</value>
+  </data>
+  <data name="MarkAsPlayedButton.Content" xml:space="preserve">
+    <value>Merk som avspilt</value>
+  </data>
+  <data name="MarkAsUnplayedButton.Content" xml:space="preserve">
+    <value>Merk som uavspilt</value>
+  </data>
+  <data name="MarketBox.PlaceholderText" xml:space="preserve">
+    <value>Marked (US, FR, ...)</value>
+  </data>
+  <data name="MyPodcastsMenu.Label" xml:space="preserve">
+    <value>Bibliotek</value>
+  </data>
+  <data name="NoEpisode.Text" xml:space="preserve">
+    <value>Podcasts føler seg ensom.
+Spill av en podcast ...</value>
+  </data>
+  <data name="NowPlayingMenu.Label" xml:space="preserve">
+    <value>Spilles nå</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OptionsMenu.Label" xml:space="preserve">
+    <value>Innstillinger</value>
+  </data>
+  <data name="OptionsTitle.Text" xml:space="preserve">
+    <value>Innstillinger</value>
+  </data>
+  <data name="PlayButton.Content" xml:space="preserve">
+    <value>Spill av</value>
+  </data>
+  <data name="Played.Text" xml:space="preserve">
+    <value>avspilt</value>
+  </data>
+  <data name="PublishedOn" xml:space="preserve">
+    <value>Publisert</value>
+  </data>
+  <data name="Save.Content" xml:space="preserve">
+    <value>Lagre</value>
+  </data>
+  <data name="SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Søk etter nøkkelord ...</value>
+  </data>
+  <data name="SearchMenu.Label" xml:space="preserve">
+    <value>Søk</value>
+  </data>
+  <data name="SearchTitle.Text" xml:space="preserve">
+    <value>Søk</value>
+  </data>
+  <data name="SeeAll" xml:space="preserve">
+    <value>Alle podcaster</value>
+  </data>
+  <data name="SeeOnlyUnPlayed" xml:space="preserve">
+    <value>Uavspilte</value>
+  </data>
+  <data name="Success_AddPodcastToLibrary" xml:space="preserve">
+    <value>Podcasten ble lagt til i biblioteket</value>
+  </data>
+  <data name="Success_LoadFromFile" xml:space="preserve">
+    <value>Filen ble lastet inn</value>
+  </data>
+  <data name="Success_SaveToFile" xml:space="preserve">
+    <value>Filen ble lagret</value>
+  </data>
+  <data name="Validate.Content" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="MarkAsPlayedMenu.Text" xml:space="preserve">
+    <value>Merk som avspilt</value>
+  </data>
+  <data name="DeletePodcastMenu.Text" xml:space="preserve">
+    <value>Slett</value>
+  </data>
+  <data name="PodcastCategoryMenu.Text" xml:space="preserve">
+    <value>Kategori</value>
+  </data>
+  <data name="AddToLibraryMenu.Text" xml:space="preserve">
+    <value>Legg til i biblioteket</value>
+  </data>
+  <data name="Error_UnableToSyncPodcast" xml:space="preserve">
+    <value>Feil ved synkronisering av podcast</value>
+  </data>
+  <data name="AddToMyPodcasts.Content" xml:space="preserve">
+    <value>Legg til i biblioteket</value>
+  </data>
+  <data name="DeleteButton.Content" xml:space="preserve">
+    <value>Slett</value>
+  </data>
+  <data name="RefreshButton.Content" xml:space="preserve">
+    <value>Oppdater</value>
+  </data>
+  <data name="MarkAsUnplayedMenu.Text" xml:space="preserve">
+    <value>Merk som uavspilt</value>
+  </data>
+  <data name="DownloadMenu.Text" xml:space="preserve">
+    <value>Last ned</value>
+  </data>
+  <data name="Downloaded.Text" xml:space="preserve">
+    <value>nedlastet</value>
+  </data>
+  <data name="AddToPlaylistMenu.Text" xml:space="preserve">
+    <value>Legg til i spilleliste</value>
+  </data>
+  <data name="AddToPlaylistButton.Content" xml:space="preserve">
+    <value>Legg til i spilleliste</value>
+  </data>
+  <data name="ExtendReason" xml:space="preserve">
+    <value>Lagrer brukerdata i skyen</value>
+  </data>
+  <data name="DownloadLast.Text" xml:space="preserve">
+    <value>Last ned siste episoder:</value>
+  </data>
+  <data name="DeleteDownloadMenu.Text" xml:space="preserve">
+    <value>Slett nedlastning</value>
+  </data>
+  <data name="Error_UnableToDeleteDownload" xml:space="preserve">
+    <value>Feil ved sletting av nedlastning</value>
+  </data>
+  <data name="DeleteDownloadButton.Content" xml:space="preserve">
+    <value>Slett</value>
+  </data>
+  <data name="Error_NoInternet" xml:space="preserve">
+    <value>Kan ikke koble til Internett</value>
+  </data>
+  <data name="ConnectingMessage" xml:space="preserve">
+    <value>Kobler til lydsystem ...</value>
+  </data>
+  <data name="LoadingMessage" xml:space="preserve">
+    <value>Åpner biblioteket ...</value>
+  </data>
+  <data name="ParsingMessage" xml:space="preserve">
+    <value>Analyserer podcaster ...</value>
+  </data>
+  <data name="StopDownloadButton.Content" xml:space="preserve">
+    <value>Stans nedlastning</value>
+  </data>
+  <data name="StopDownloadMenu.Text" xml:space="preserve">
+    <value>Stans nedlastning</value>
+  </data>
+  <data name="AutoPlay.Text" xml:space="preserve">
+    <value>Automatisk avspilling:</value>
+  </data>
+  <data name="ForwardStep.Text" xml:space="preserve">
+    <value>Spol fremover (i sekunder):</value>
+  </data>
+  <data name="RewindStep.Text" xml:space="preserve">
+    <value>Spol bakover (i sekunder):</value>
+  </data>
+  <data name="OPMLFiles" xml:space="preserve">
+    <value>OPML-filer</value>
+  </data>
+  <data name="DownloadOnMetered.Text" xml:space="preserve">
+    <value>Tillat nedlastning på nettverk med forbruksmåling: </value>
+  </data>
+  <data name="NoCategory" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeleteWhenPlayed.Text" xml:space="preserve">
+    <value>Slett nedlastning etter avspilling:</value>
+  </data>
+  <data name="DownPodcastMenu.Text" xml:space="preserve">
+    <value>Flytt ned</value>
+  </data>
+  <data name="UpPodcastMenu.Text" xml:space="preserve">
+    <value>Flytt opp</value>
+  </data>
+  <data name="Unplayed" xml:space="preserve">
+    <value>{0} uavspilt(e) podcast(er)</value>
+  </data>
+  <data name="DownloadsMenu.Label" xml:space="preserve">
+    <value>Nedlastninger</value>
+  </data>
+  <data name="FeedbackMenu.Label" xml:space="preserve">
+    <value>Vurder</value>
+  </data>
+  <data name="DownloadsTitle.Text" xml:space="preserve">
+    <value>Nedlastninger</value>
+  </data>
+  <data name="PlayListMenu.Label" xml:space="preserve">
+    <value>Spilleliste</value>
+  </data>
+  <data name="Downloads" xml:space="preserve">
+    <value>nedlastning(er)</value>
+  </data>
+  <data name="PodcastsPlural" xml:space="preserve">
+    <value>podcast(er)</value>
+  </data>
+  <data name="PlaylistTitle.Text" xml:space="preserve">
+    <value>Spilleliste</value>
+  </data>
+  <data name="NotificationMessage" xml:space="preserve">
+    <value>Nye episoder: {0}</value>
+  </data>
+  <data name="Notifications.Text" xml:space="preserve">
+    <value>Notifikasjoner:</value>
+  </data>
+  <data name="RefreshOnLoad.Text" xml:space="preserve">
+    <value>Oppdater ved åpning:</value>
+  </data>
+  <data name="PlayMenu.Text" xml:space="preserve">
+    <value>Spill av</value>
+  </data>
+  <data name="ExternalStorage.Text" xml:space="preserve">
+    <value>Ekstern lagring:</value>
+  </data>
+  <data name="PickedFolder.Text" xml:space="preserve">
+    <value>Valgt mappe:</value>
+  </data>
+  <data name="SystemAccentColor.Text" xml:space="preserve">
+    <value>Bruk systemfarger(*):</value>
+  </data>
+  <data name="AddAllToPlaylistMenu.Text" xml:space="preserve">
+    <value>Legg til alle uavspilte i spillelisten</value>
+  </data>
+  <data name="AlreadyInLibrary.Text" xml:space="preserve">
+    <value>Finnes i biblioteket fra før</value>
+  </data>
+  <data name="AutomaticallyAddNewEpisodeToPlayList.Text" xml:space="preserve">
+    <value>Legg til nye episoder i spillelisten automatisk:</value>
+  </data>
+  <data name="DownloadsHeader.Header" xml:space="preserve">
+    <value>Nedlastninger</value>
+  </data>
+  <data name="GeneralHeader.Header" xml:space="preserve">
+    <value>Generelt</value>
+  </data>
+  <data name="MediaHeader.Header" xml:space="preserve">
+    <value>Media</value>
+  </data>
+  <data name="RefreshAll.Content" xml:space="preserve">
+    <value>Oppdater alle podcaster</value>
+  </data>
+  <data name="DeleteOderThan.Text" xml:space="preserve">
+    <value>Slett nedlastninger eldre enn (dager):</value>
+  </data>
+  <data name="TimerHeader.Header" xml:space="preserve">
+    <value>Dvaletidsur</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Stopp</value>
+  </data>
+  <data name="ClearButton.Content" xml:space="preserve">
+    <value>Fjern</value>
+  </data>
+  <data name="DownloadAllButton.Content" xml:space="preserve">
+    <value>Last ned alle</value>
+  </data>
+  <data name="ForcePushToCloud.Content" xml:space="preserve">
+    <value>Send til OneDrive</value>
+  </data>
+  <data name="DarkTheme.Text" xml:space="preserve">
+    <value>Mørkt tema(*): </value>
+  </data>
+  <data name="NeedRestart.Text" xml:space="preserve">
+    <value>(*): Krever restart</value>
+  </data>
+  <data name="SupportButton.Content" xml:space="preserve">
+    <value>Send tips</value>
+  </data>
+  <data name="SupportHeader.Header" xml:space="preserve">
+    <value>Støtte</value>
+  </data>
+  <data name="SupportText.Text" xml:space="preserve">
+    <value>Liker du Podcasts? Hvis ja, vurder å støtte utvikleren ved å sende tips.</value>
+  </data>
+  <data name="ThankYou" xml:space="preserve">
+    <value>Takk for støtten!</value>
+  </data>
+  <data name="ImportButton.Content" xml:space="preserve">
+    <value>Importer</value>
+  </data>
+  <data name="SupportMaxButton.Content" xml:space="preserve">
+    <value>Send større tips</value>
+  </data>
+  <data name="CloudSync.Text" xml:space="preserve">
+    <value>OneDrive Sync:</value>
+  </data>
+  <data name="ForceGetFromCloud.Content" xml:space="preserve">
+    <value>Få fra OneDrive</value>
+  </data>
+  <data name="CodeAndDesign.Text" xml:space="preserve">
+    <value>Kode &amp; Design:</value>
+  </data>
+  <data name="Logo.Text" xml:space="preserve">
+    <value>Logo:</value>
+  </data>
+  <data name="PlayLink.Text" xml:space="preserve">
+    <value>Spill av</value>
+  </data>
+  <data name="Filters.Text" xml:space="preserve">
+    <value>Filtrer:</value>
+  </data>
+  <data name="UnplayedEpisodesAsc" xml:space="preserve">
+    <value>Uavspilte episder (Stigende)</value>
+  </data>
+  <data name="UnplayedEpisodesDesc" xml:space="preserve">
+    <value>Uavspilte episoder (Synkende)</value>
+  </data>
+  <data name="Forever" xml:space="preserve">
+    <value>Aldri</value>
+  </data>
+  <data name="VideoPlayback.Text" xml:space="preserve">
+    <value>Videoavspilling:</value>
+  </data>
+  <data name="FullscreenButton.Content" xml:space="preserve">
+    <value>Fullskjerm</value>
+  </data>
+  <data name="RotateButton.Content" xml:space="preserve">
+    <value>Roter</value>
+  </data>
+  <data name="VisibilityButton.Content" xml:space="preserve">
+    <value>Bytt</value>
+  </data>
+  <data name="AddAllToPlaylistMenuDesc.Text" xml:space="preserve">
+    <value>Legg til alt uavspilt i spillelisten (Synkende)</value>
+  </data>
+  <data name="InvertSkipControls.Text" xml:space="preserve">
+    <value>Snu om på kontrollene for å bytte podcast (blåtann):</value>
+  </data>
+  <data name="RemovedPlayedEpisodeFromPlayList.Text" xml:space="preserve">
+    <value>Fjern avspilte episoder fra spillelisten:</value>
+  </data>
+  <data name="AscButton.Content" xml:space="preserve">
+    <value>Stigende</value>
+  </data>
+  <data name="DescButton.Content" xml:space="preserve">
+    <value>Synkende</value>
+  </data>
+  <data name="ExportID.Content" xml:space="preserve">
+    <value>Eksporter ID</value>
+  </data>
+  <data name="ImportID.Content" xml:space="preserve">
+    <value>Importer ID</value>
+  </data>
+  <data name="MandatoryLocator" xml:space="preserve">
+    <value>Podcasts krever geolokasjon for å kunne spille podcaster i bakgrunnen. Informasjon om lokasjonen blir ikke brukt.</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="ShareMenu.Text" xml:space="preserve">
+    <value>Del</value>
+  </data>
+  <data name="Translations.Text" xml:space="preserve">
+    <value>Oversettelser:</value>
+  </data>
+  <data name="FeedbackButton.Content" xml:space="preserve">
+    <value>Vurder</value>
+  </data>
+  <data name="StreamingIsDisabled" xml:space="preserve">
+    <value>Forbruksmålt tilkobling oppdaget. Streaming er avslått. Du kan slå på streaming i innstillingene ved å tillate streaming på nettverk med forbruksmåling.</value>
+  </data>
+  <data name="DeleteAllButton.Content" xml:space="preserve">
+    <value>Slett alle</value>
+  </data>
+  <data name="Login.Text" xml:space="preserve">
+    <value>Brukernavn:</value>
+  </data>
+  <data name="Password.Text" xml:space="preserve">
+    <value>Passord:</value>
+  </data>
+  <data name="UrlText.Text" xml:space="preserve">
+    <value>Lenke:</value>
+  </data>
+  <data name="StreamOnMetered.Text" xml:space="preserve">
+    <value>Tillat streaming på nettverk med forbruksmåling:</value>
+  </data>
+  <data name="PrivacyPolicy.Content" xml:space="preserve">
+    <value>Personvernregler</value>
+  </data>
+  <data name="DownloadSlidableListItem.RightLabel" xml:space="preserve">
+    <value>Slett</value>
+  </data>
+  <data name="EpisodeSlidableListItem.RightLabel" xml:space="preserve">
+    <value>Legg til i spilleliste</value>
+  </data>
+  <data name="PlaylistEntrySlidableListItem.RightLabel" xml:space="preserve">
+    <value>Slett</value>
+  </data>
+  <data name="PodcastSlidableListItem.LeftLabel" xml:space="preserve">
+    <value>Legg til i spilleliste</value>
+  </data>
+  <data name="PodcastSlidableListItem.RightLabel" xml:space="preserve">
+    <value>Slett</value>
+  </data>
+  <data name="DataFound" xml:space="preserve">
+    <value>OneDrive Sync fant oppdatert data. Ønsker du å bruke dem?</value>
+  </data>
+  <data name="BoolToPlayedUnplayed.FalseValue" xml:space="preserve">
+    <value>Merk som avspilt</value>
+  </data>
+  <data name="BoolToPlayedUnplayed.TrueValue" xml:space="preserve">
+    <value>Merk som uavspilt</value>
+  </data>
+  <data name="OneDriveCancel" xml:space="preserve">
+    <value>Nei</value>
+  </data>
+  <data name="OneDriveWarning" xml:space="preserve">
+    <value>For å kunne synkronisere mellom enhetene dine trenger Podcasts tilgang til OneDrive. Ønsker du å fortsette?</value>
+  </data>
+  <data name="OneDriveYes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="AutoSyncOnClose.Text" xml:space="preserve">
+    <value>Synkroniser på nær (*):</value>
+  </data>
+  <data name="AutoSyncHelp.Text" xml:space="preserve">
+    <value>(*): OneDrive synkronisering vil bli gjort etter stengetid app. Det dette alternativet er deaktivert, må du gjøre det manuelt ved hjelp av følgende knapper.</value>
+  </data>
+</root>

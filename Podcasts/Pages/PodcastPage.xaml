@@ -1,0 +1,119 @@
+﻿<local:RootPage
+    x:Class="Podcasts.PodcastPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Podcasts"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Loaded="PodcastPage_OnLoaded"
+    SizeChanged="RootPage_SizeChanged"
+    mc:Ignorable="d">
+    <local:RootPage.Resources>
+        <DataTemplate x:Key="ReadOnly">
+            <local:ReadOnlyEpisodeControl></local:ReadOnlyEpisodeControl>
+        </DataTemplate>
+    </local:RootPage.Resources>
+
+    <Grid x:Name="RootGrid" Background="{StaticResource Background}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Full">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1280" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Intermediate">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Title.Margin" Value="20,0,0,0" />
+                        <Setter Target="Description.Margin" Value="20,0,0,0" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Medium">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Title.Margin" Value="20,0,0,0" />
+                        <Setter Target="Description.Margin" Value="20,0,0,0" />
+                        <Setter Target="RootGrid.RowDefinitions[0].Height" Value="150" />
+                        <Setter Target="EpisodesListView.Padding" Value="0,0,10,0" />
+                        <Setter Target="Header.ColumnDefinitions[1].Width" Value="0" />
+                        <Setter Target="AddToMyPodcasts.Style" Value="{StaticResource ImageAndUnderneathTextButtonStyle}" />
+                        <Setter Target="RefreshButton.Style" Value="{StaticResource ImageAndUnderneathTextButtonStyle}" />
+                        <Setter Target="MarkAsPlayedButton.Style" Value="{StaticResource ImageAndUnderneathTextButtonStyle}" />
+                        <Setter Target="DeleteButton.Style" Value="{StaticResource ImageAndUnderneathTextButtonStyle}" />
+                        <Setter Target="FilterButton.Style" Value="{StaticResource ImageAndUnderneathTextButtonStyle}" />
+                        <Setter Target="CommandBar.HorizontalAlignment" Value="Center" />
+                        <Setter Target="CommandBar.Margin" Value="0,5,0,5" />
+                        <Setter Target="EpisodesListView.ItemContainerStyle" Value="{StaticResource NoOverChange}" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.Resources>
+            <MenuFlyout x:Key="MenuFlyout" Placement="Right" Closed="MenuFlyout_OnClosed">
+                <MenuFlyoutItem x:Uid="MarkAsPlayedMenu" x:Name="MarkAsPlayedMenu" Click="MarkAsPlayed_OnClick" />
+                <MenuFlyoutItem x:Uid="MarkAsUnplayedMenu" x:Name="MarkAsUnplayedMenu" Click="MarkAsUnplayed_OnClick" />
+                <MenuFlyoutSeparator/>
+                <MenuFlyoutItem x:Uid="DownloadMenu" x:Name="DownloadMenu" Click="DownloadMenu_OnClick" />
+                <MenuFlyoutItem x:Uid="DeleteDownloadMenu" x:Name="DeleteDownloadMenu" Click="DeleteDownloadMenu_OnClick" />
+                <MenuFlyoutItem x:Uid="StopDownloadMenu" x:Name="StopDownloadMenu" Click="StopDownloadMenu_OnClick" />
+                <MenuFlyoutSeparator/>
+                <MenuFlyoutItem x:Uid="AddToPlaylistMenu" x:Name="AddToPlaylistMenu" Click="AddToPlaylistMenu_OnClick" />
+                <MenuFlyoutSeparator/>
+                <MenuFlyoutItem x:Uid="ShareMenu" x:Name="ShareMenu" Click="ShareMenu_OnClick" />
+            </MenuFlyout>
+
+            <Flyout x:Key="AddFlyout" Opening="AddFlyout_OnOpening">
+                <local:AddToMyPodcasts x:Name="AddToMyPodcastsEditor" NavigateOnSuccess="True"/>
+            </Flyout>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" x:Name="Header" HorizontalAlignment="Stretch" Padding="0,10,0,0" Background="{StaticResource HeaderBackground}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="150" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Margin="20,0,0,0" x:Name="HeaderGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <HyperlinkButton x:Name="Title" Foreground="{StaticResource Foreground}" Content="{Binding Title}" FontSize="26" FontWeight="ExtraLight" Style="{StaticResource BasicHyperlinkButton}" VerticalAlignment="Center" Click="Title_OnClick"></HyperlinkButton>
+                    <local:ExpandableTextBlock x:Name="Description" DataContext="{Binding Description}" Grid.Row="1"></local:ExpandableTextBlock>
+                </Grid>
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,10,0,15" x:Name="CommandBar">
+                    <Button Foreground="{StaticResource Foreground}" x:Uid="AddToMyPodcasts" Visibility="{Binding IsInLibrary, Converter={StaticResource BoolToVisibility}, ConverterParameter=True}" x:Name="AddToMyPodcasts" Style="{StaticResource ImageAndTextButtonStyle}" Tag="" Margin="0,0,0,0" Flyout="{StaticResource AddFlyout}"></Button>
+                    <Button Foreground="{StaticResource Foreground}" x:Uid="RefreshButton" Visibility="{Binding IsInLibrary, Converter={StaticResource BoolToVisibility}}" x:Name="RefreshButton" Style="{StaticResource ImageAndTextButtonStyle}" Tag="" Margin="0,0,20,0" Click="ButtonBase_OnClick"></Button>
+                    <Button Foreground="{StaticResource Foreground}" x:Uid="MarkAsPlayedButton" Visibility="{Binding IsInLibrary, Converter={StaticResource BoolToVisibility}}" x:Name="MarkAsPlayedButton" Style="{StaticResource ImageAndTextButtonStyle}" Tag="" Margin="0,0,20,0" Click="MarkAsPlayedButton_OnClick"></Button>
+                    <Button Foreground="{StaticResource Foreground}" x:Uid="DeleteButton" Visibility="{Binding IsInLibrary, Converter={StaticResource BoolToVisibility}}" x:Name="DeleteButton" Style="{StaticResource ImageAndTextButtonStyle}" Tag="" Margin="0,0,20,0" Click="DeleteButton_OnClick"></Button>
+                    <Button Foreground="{StaticResource Foreground}" Visibility="{Binding IsInLibrary, Converter={StaticResource BoolToVisibility}}" x:Name="FilterButton" Tag="" Style="{StaticResource ImageAndTextButtonStyle}" Margin="0,0,0,0" Click="FilterButton_OnClick"></Button>
+                </StackPanel>
+            </Grid>
+            <Image Source="{Binding LocalImage}" Stretch="UniformToFill" Grid.Column="1" x:Name="Image" ImageFailed="Image_ImageFailed" Margin="10,0,0,0"></Image>
+        </Grid>
+        <GridView x:Name="EpisodesListView" Grid.Row="1" SelectionMode="None" ItemClick="EpisodesListView_ItemClick" IsItemClickEnabled="True" Margin="0,10,0,0">
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid Orientation="Horizontal" HorizontalAlignment="Center"></ItemsWrapGrid>
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <local:EpisodeControl RightTapped="RootGrid_RightTapped"></local:EpisodeControl>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+    </Grid>
+</local:RootPage>

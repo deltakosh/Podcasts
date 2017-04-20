@@ -1,0 +1,549 @@
+﻿<local:RootPage
+    x:Class="Podcasts.OptionsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Podcasts"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Loaded="OptionsPage_OnLoaded"
+    mc:Ignorable="d">
+
+    <Grid x:Name="RootGrid" Background="{StaticResource Background}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Full">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1280" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Intermediate">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="OptionsTitle.Margin" Value="20,0,0,0" />
+                        <Setter Target="GeneralPanel.HorizontalAlignment" Value="Left" />
+                        <Setter Target="LibraryPanel.HorizontalAlignment" Value="Left" />
+                        <Setter Target="MediaPanel.HorizontalAlignment" Value="Left" />
+                        <Setter Target="DownloadsPanel.HorizontalAlignment" Value="Left" />
+                        <Setter Target="TimerPanel.HorizontalAlignment" Value="Left" />
+                        <Setter Target="SupportPanel.HorizontalAlignment" Value="Left" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Medium">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="OptionsTitle.Margin" Value="20,0,0,0" />
+                        <Setter Target="VersionText.FontSize" Value="15" />
+                        <Setter Target="VersionText.Margin" Value="0,10" />
+                        <Setter Target="RootGrid.RowDefinitions[0].Height" Value="100" />
+                        <Setter Target="CountryLabel.FontSize" Value="15" />
+                        <Setter Target="DownloadLast.FontSize" Value="15" />
+                        <Setter Target="DownloadOnMetered.FontSize" Value="15" />
+                        <Setter Target="DeleteWhenPlayed.FontSize" Value="15" />
+                        <Setter Target="CloudSync.FontSize" Value="15" />
+                        <Setter Target="Notifications.FontSize" Value="15" />
+                        <Setter Target="ExternalStorage.FontSize" Value="15" />
+                        <Setter Target="SystemAccentColor.FontSize" Value="15" />
+                        <Setter Target="DeleteOderThan.FontSize" Value="15" />
+                        <Setter Target="NeedRestart.FontSize" Value="12" />
+                        <Setter Target="AutoAutoSyncHelp.FontSize" Value="12" />
+                        <Setter Target="DarkTheme.FontSize" Value="15" />
+                        <Setter Target="AutomaticallyAddNewEpisodeToPlayList.FontSize" Value="15" />
+                        <Setter Target="RemovedPlayedEpisodeFromPlayList.FontSize" Value="15" />
+                        <Setter Target="InvertSkipControls.FontSize" Value="15" />
+                        <Setter Target="AutoPlay.FontSize" Value="15" />
+                        <Setter Target="RewindStep.FontSize" Value="15" />
+                        <Setter Target="ForwardStep.FontSize" Value="15" />
+                        <Setter Target="SupportText.FontSize" Value="15" />
+                        <Setter Target="CodeAndDesign.FontSize" Value="15" />
+                        <Setter Target="CodeAndDesignAuthor.FontSize" Value="15" />
+                        <Setter Target="Translations.FontSize" Value="15" />
+                        <Setter Target="Translator0.FontSize" Value="15" />
+                        <Setter Target="Translator1.FontSize" Value="15" />
+                        <Setter Target="Translator2.FontSize" Value="15" />
+                        <Setter Target="Translator3.FontSize" Value="15" />
+                        <Setter Target="Translator4.FontSize" Value="15" />
+                        <Setter Target="Translator5.FontSize" Value="15" />
+                        <Setter Target="Translator6.FontSize" Value="15" />
+                        <Setter Target="Translator7.FontSize" Value="15" />
+                        <Setter Target="Translator8.FontSize" Value="15" />
+                        <Setter Target="Logo.FontSize" Value="15" />
+                        <Setter Target="LogoAuthor.FontSize" Value="15" />
+                        <Setter Target="Country.(Grid.Column)" Value="0" />
+                        <Setter Target="Country.HorizontalAlignment" Value="Center" />
+                        <Setter Target="Country.Margin" Value="0,20,0,0" />
+                        <Setter Target="Country.(Grid.Row)" Value="1" />
+                        <Setter Target="MainGrid.Padding" Value="0,0,0,0" />
+                        <Setter Target="LastEpisodes.(Grid.Column)" Value="0" />
+                        <Setter Target="LastEpisodes.HorizontalAlignment" Value="Center" />
+                        <Setter Target="LastEpisodes.Margin" Value="0,20,0,0" />
+                        <Setter Target="LastEpisodes.(Grid.Row)" Value="1" />
+                        <Setter Target="RewindSteps.(Grid.Column)" Value="0" />
+                        <Setter Target="RewindSteps.HorizontalAlignment" Value="Center" />
+                        <Setter Target="RewindSteps.Margin" Value="0,20,0,0" />
+                        <Setter Target="RewindSteps.(Grid.Row)" Value="1" />
+                        <Setter Target="ForwardSteps.(Grid.Column)" Value="0" />
+                        <Setter Target="ForwardSteps.HorizontalAlignment" Value="Center" />
+                        <Setter Target="ForwardSteps.Margin" Value="0,20,0,0" />
+                        <Setter Target="ForwardSteps.(Grid.Row)" Value="1" />
+                        <Setter Target="DeleteOderThanDay.(Grid.Column)" Value="0" />
+                        <Setter Target="DeleteOderThanDay.HorizontalAlignment" Value="Center" />
+                        <Setter Target="DeleteOderThanDay.Margin" Value="0,20,0,0" />
+                        <Setter Target="DeleteOderThanDay.(Grid.Row)" Value="1" />
+                        <Setter Target="GeneralPanel.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="LibraryPanel.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="MediaPanel.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="DownloadsPanel.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="TimerPanel.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="SupportPanel.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="GeneralPanel.MinWidth" Value="0" />
+                        <Setter Target="LibraryPanel.MinWidth" Value="0" />
+                        <Setter Target="MediaPanel.MinWidth" Value="0" />
+                        <Setter Target="DownloadsPanel.MinWidth" Value="0" />
+                        <Setter Target="TimerPanel.MinWidth" Value="0" />
+                        <Setter Target="SupportPanel.MinWidth" Value="0" />
+                        <Setter Target="GeneralScrollViewer.Padding" Value="15,20,20,0" />
+                        <Setter Target="SupportScrollViewer.Padding" Value="15,20,20,0" />
+                        <Setter Target="LibraryScrollViewer.Padding" Value="15,20,20,0" />
+                        <Setter Target="MediaScrollViewer.Padding" Value="15,20,20,0" />
+                        <Setter Target="DownloadScrollViewer.Padding" Value="15,20,20,0" />
+                        <Setter Target="TimerScrollViewer.Padding" Value="15,20,20,0" />
+                        <Setter Target="ImportButton.(Grid.Column)" Value="0" />
+                        <Setter Target="ImportButton.(Grid.Row)" Value="1" />
+                        <Setter Target="ImportButton.(Grid.ColumnSpan)" Value="3" />
+                        <Setter Target="ImportButton.Margin" Value="0,20,0,0" />
+                        <Setter Target="ImportID.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="ExportID.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="Load.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="Load.Margin" Value="0,0,10,0" />
+                        <Setter Target="Save.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="Save.Margin" Value="10,0,0,0" />
+                        <Setter Target="ImportButton.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="PushToCloud.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="ForceGetFromCloud.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="SupportButton.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="SupportMaxButton.HorizontalAlignment" Value="Stretch" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource Foreground}"></Setter>
+            </Style>
+            <Style TargetType="local:RingSlice">
+                <Setter Property="Fill" Value="{StaticResource Accent}"/>
+                <Setter Property="StrokeThickness" Value="0"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="{StaticResource HeaderBackground}" Padding="20,5,0,0" x:Name="HeaderGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="OptionsTitle" Foreground="{StaticResource Foreground}" Grid.Row="0" x:Uid="OptionsTitle" FontSize="26" FontWeight="ExtraLight" TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis"></TextBlock>
+            <TextBlock x:Name="VersionText" Foreground="{StaticResource Foreground}" Grid.Row="1" FontSize="18" FontWeight="ExtraLight" Margin="5,5,5,10"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="1" Margin="10,10,0,0" HorizontalAlignment="Left" x:Name="MainGrid">
+            <Pivot x:Name="Pivot">
+                <PivotItem x:Uid="SupportHeader" Margin="0" x:Name="SupportPivot">
+                    <ScrollViewer x:Name="SupportScrollViewer" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Padding="15,20,20,0">
+                        <StackPanel MinWidth="500" MaxWidth="500" HorizontalAlignment="Left" x:Name="SupportPanel">
+                            <TextBlock x:Uid="SupportText" x:Name="SupportText"  FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                            <Button Style="{StaticResource ActionButtonStyle}" x:Uid="SupportButton" x:Name="SupportButton" HorizontalAlignment="Stretch" Click="SupportButton_OnClick" Margin="0,20,0,0"/>
+                            <Button Style="{StaticResource ActionButtonStyle}" x:Uid="SupportMaxButton" x:Name="SupportMaxButton" HorizontalAlignment="Stretch" Click="SupportMaxButton_OnClick" Margin="0,20,0,0"/>
+                            <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1"></Rectangle>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Uid="CodeAndDesign" x:Name="CodeAndDesign" Grid.Row="0" Grid.Column="0" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <TextBlock Text="David Catuhe" x:Name="CodeAndDesignAuthor" Grid.Row="0" Grid.Column="1" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Uid="Translations" x:Name="Translations" Grid.Row="0" Grid.Column="0" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <StackPanel Grid.Row="0" Grid.Column="1">
+                                    <TextBlock Text="Alberto Cuffaro (IT)" x:Name="Translator0"  FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight" HorizontalAlignment="Right"></TextBlock>
+                                    <TextBlock Text="Edgar Ferreira (PT)" x:Name="Translator1"  FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight" HorizontalAlignment="Right"></TextBlock>
+                                    <TextBlock Text="Ezequiel Veliz (ES)" x:Name="Translator2"  FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight" HorizontalAlignment="Right"></TextBlock>
+                                    <TextBlock Text="FM Schaper (DE)" x:Name="Translator3"  FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight" HorizontalAlignment="Right"></TextBlock>
+                                    <TextBlock Text="Salih Tekin (TR)" x:Name="Translator4"  FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight" HorizontalAlignment="Right"></TextBlock>
+                                    <TextBlock Text="Volodymyr Bratko (UK)" x:Name="Translator5"  FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight" HorizontalAlignment="Right"></TextBlock>
+                                    <TextBlock Text="UWP 之家 (ZH)" x:Name="Translator6"  FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight" HorizontalAlignment="Right"></TextBlock>
+                                    <TextBlock Text="Magnus Gøranson (NO)" x:Name="Translator7"  FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight" HorizontalAlignment="Right"></TextBlock>
+                                    <TextBlock Text="Dmitry Naboychenko (RU)" x:Name="Translator8"  FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight" HorizontalAlignment="Right"></TextBlock>
+                                </StackPanel>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
+                            </Grid>
+                            <Rectangle Fill="{StaticResource Accent}" Margin="0" Height="1"></Rectangle>
+                            <Button Style="{StaticResource ActionButtonStyle}" x:Uid="FeedbackButton" x:Name="FeedbackButton" HorizontalAlignment="Stretch" Click="FeedbackButton_OnClick" Margin="0,10,0,0"/>
+                            <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1"></Rectangle>
+                            <HyperlinkButton x:Uid="PrivacyPolicy" NavigateUri="http://www.urzagatherer.com/Privacy Policy.Podcasts.htm" HorizontalAlignment="Center" Margin="0,-10,0,20"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </PivotItem>
+                <PivotItem x:Uid="GeneralHeader" Margin="0">
+                    <ScrollViewer x:Name="GeneralScrollViewer" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Padding="15,20,20,0">
+                        <StackPanel MinWidth="500" MaxWidth="500" HorizontalAlignment="Left" x:Name="GeneralPanel">
+                            <Grid x:Name="PreferredLanguageGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="CountryLabel" x:Uid="Country" Grid.Row="0" Grid.Column="0" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <ComboBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" x:Name="Country" Margin="0,0,0,0" Width="60" SelectionChanged="Country_SelectionChanged" HorizontalAlignment="Right"/>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="2"></Rectangle>
+                            </Grid>
+                            <Grid Visibility="{Binding Converter={StaticResource XboxToVisibility}}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="Notifications" x:Uid="Notifications" Grid.Row="0" Grid.Column="0" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <ToggleSwitch Grid.Row="0" Grid.Column="1" OffContent="" OnContent="" x:Name="NotificationToggle" HorizontalAlignment="Right" Margin="5,-5,0,0" Foreground="{StaticResource Accent}" Toggled="NotificationToggle_Toggled"></ToggleSwitch>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="SystemAccentColor" x:Uid="SystemAccentColor" Grid.Row="0" Grid.Column="0" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <ToggleSwitch Grid.Row="0" Grid.Column="1" OffContent="" OnContent="" x:Name="SystemAccentColorToggle" HorizontalAlignment="Right" Margin="5,-5,0,0" Foreground="{StaticResource Accent}" Toggled="SystemAccentColorToggle_Toggled"></ToggleSwitch>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="DarkTheme" x:Uid="DarkTheme" Grid.Row="0" Grid.Column="0" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <ToggleSwitch Grid.Row="0" Grid.Column="1" OffContent="" OnContent="" x:Name="DarkThemeToggle" HorizontalAlignment="Right" Margin="5,-5,0,0" Foreground="{StaticResource Accent}" Toggled="DarkThemeToggle_Toggled"></ToggleSwitch>
+                            </Grid>
+                            <Grid>
+                                <TextBlock x:Name="NeedRestart" x:Uid="NeedRestart" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight" FontStyle="Italic" Margin="0,0,0,0"></TextBlock>
+                            </Grid>
+                        </StackPanel>
+                    </ScrollViewer>
+                </PivotItem>
+                <PivotItem x:Uid="LibraryLabel" Margin="0">
+                    <ScrollViewer x:Name="LibraryScrollViewer" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Padding="15,20,20,0">
+                        <StackPanel MinWidth="500" MaxWidth="500" HorizontalAlignment="Left" x:Name="LibraryPanel">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Button Style="{StaticResource ActionButtonStyle}" Grid.Row="0" Grid.Column="0" x:Uid="Load" x:Name="Load" HorizontalAlignment="Stretch" Click="Load_OnClick" Margin="0,0,10,0"/>
+                                <Button Style="{StaticResource ActionButtonStyle}" Grid.Row="0" Grid.Column="1" x:Uid="ImportButton" x:Name="ImportButton" HorizontalAlignment="Stretch" Click="Import_Click"/>
+                                <Button Style="{StaticResource ActionButtonStyle}" Grid.Row="0" Grid.Column="2" x:Uid="Save" x:Name="Save" HorizontalAlignment="Stretch" Click="Save_OnClick" Margin="10,0,0,0"/>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="2"></Rectangle>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="CloudSync" x:Uid="CloudSync" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <ToggleSwitch Grid.Row="0" Grid.Column="1" OffContent="" OnContent="" x:Name="CloudSyncToggle" HorizontalAlignment="Right" Margin="5,-5,0,0" Foreground="{StaticResource Accent}" Toggled="CloudSyncToggle_Toggled"></ToggleSwitch>
+                                <TextBlock x:Name="AutoSyncOnClose" x:Uid="AutoSyncOnClose" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <ToggleSwitch Grid.Row="1" Grid.Column="1" OffContent="" OnContent="" x:Name="AutoSyncOnCloseToggle" HorizontalAlignment="Right" Margin="5,-5,0,0" Foreground="{StaticResource Accent}" Toggled="AutoSyncOnCloseToggle_OnToggled"></ToggleSwitch>
+                                <TextBlock FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight" FontStyle="Italic" Margin="0,0,0,0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="2" x:Uid="AutoSyncHelp" x:Name="AutoSyncHelp"></TextBlock>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="3"></Rectangle>
+                            </Grid>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Button Style="{StaticResource ActionButtonStyle}" Grid.Row="0" x:Uid="ForcePushToCloud" x:Name="PushToCloud" HorizontalAlignment="Stretch" Click="PushToCloud_Click"/>
+                            </Grid>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Button Style="{StaticResource ActionButtonStyle}" Grid.Row="0" Margin="0,20,0,0" x:Uid="ForceGetFromCloud" x:Name="ForceGetFromCloud" HorizontalAlignment="Stretch" Click="ForceGetFromCloud_Click"/>
+                            </Grid>
+                        </StackPanel>
+                    </ScrollViewer>
+                </PivotItem>
+                <PivotItem x:Uid="MediaHeader" Margin="0">
+                    <ScrollViewer x:Name="MediaScrollViewer" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Padding="15,20,20,0">
+                        <StackPanel MinWidth="500" MaxWidth="500" HorizontalAlignment="Left" x:Name="MediaPanel">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="VideoPlayback" x:Uid="VideoPlayback" Grid.Row="0" Grid.Column="0" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <ToggleSwitch Grid.Row="0" Grid.Column="1" OffContent="" OnContent="" x:Name="VideoPlaybackToggle" HorizontalAlignment="Right" Margin="5,-5,0,0" Foreground="{StaticResource Accent}" Toggled="VideoPlaybackToggle_Toggled"></ToggleSwitch>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="AutoPlay" x:Uid="AutoPlay" Grid.Row="0" Grid.Column="0" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <ToggleSwitch Grid.Row="0" Grid.Column="1" OffContent="" OnContent="" x:Name="AutoPlayToggle" HorizontalAlignment="Right" Margin="5,-5,0,0" Foreground="{StaticResource Accent}" Toggled="AutoPlayToggle_Toggled"></ToggleSwitch>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="AutomaticallyAddNewEpisodeToPlayList" x:Uid="AutomaticallyAddNewEpisodeToPlayList" Grid.Row="0" Grid.Column="0" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <ToggleSwitch Grid.Row="0" Grid.Column="1" OffContent="" OnContent="" x:Name="AutomaticallyAddNewEpisodeToPlayListToggle" HorizontalAlignment="Right" Margin="5,-5,0,0" Foreground="{StaticResource Accent}" Toggled="AutomaticallyAddNewEpisodeToPlayListToggle_Toggled"></ToggleSwitch>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="RemovedPlayedEpisodeFromPlayList" x:Uid="RemovedPlayedEpisodeFromPlayList" Grid.Row="0" Grid.Column="0" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <ToggleSwitch Grid.Row="0" Grid.Column="1" OffContent="" OnContent="" x:Name="RemovedPlayedEpisodeFromPlayListToggle" HorizontalAlignment="Right" Margin="5,-5,0,0" Foreground="{StaticResource Accent}" Toggled="RemovedPlayedEpisodeFromPlayListToggle_Toggled"></ToggleSwitch>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
+                            </Grid>                            
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="InvertSkipControls" x:Uid="InvertSkipControls" Grid.Row="0" Grid.Column="0" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <ToggleSwitch Grid.Row="0" Grid.Column="1" OffContent="" OnContent="" x:Name="InvertSkipControlsToggle" HorizontalAlignment="Right" Margin="5,-5,0,0" Foreground="{StaticResource Accent}" Toggled="InvertSkipControlsToggle_Toggled"></ToggleSwitch>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="RewindStep" x:Uid="RewindStep" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" FontWeight="ExtraLight"></TextBlock>
+                                <ComboBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" x:Name="RewindSteps" Margin="0,0,0,0" Width="60" SelectionChanged="RewindSteps_SelectionChanged" HorizontalAlignment="Right"/>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="2"></Rectangle>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="ForwardStep" x:Uid="ForwardStep" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" FontWeight="ExtraLight"></TextBlock>
+                                <ComboBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" x:Name="ForwardSteps" Margin="0,0,0,0" Width="60" SelectionChanged="ForwardStep_SelectionChanged" HorizontalAlignment="Right"/>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="2"></Rectangle>
+                            </Grid>
+                        </StackPanel>
+                    </ScrollViewer>
+                </PivotItem>
+                <PivotItem x:Uid="DownloadsHeader" Margin="0">
+                    <ScrollViewer x:Name="DownloadScrollViewer" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Padding="15,20,20,0">
+                        <StackPanel MinWidth="500" MaxWidth="500" HorizontalAlignment="Left" x:Name="DownloadsPanel">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="DownloadLast" x:Uid="DownloadLast" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <ComboBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" x:Name="LastEpisodes" Margin="0,0,0,0" Width="60" SelectionChanged="LastEpisodes_SelectionChanged" HorizontalAlignment="Right"/>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="2"></Rectangle>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="ExternalStorage" x:Uid="ExternalStorage" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <ToggleSwitch Grid.Row="0" Grid.Column="1" OffContent="" OnContent="" x:Name="ExternalStorageToggle" HorizontalAlignment="Right" Margin="5,-5,0,0" Foreground="{StaticResource Accent}"></ToggleSwitch>
+                                <Grid Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock x:Uid="PickedFolder" FontSize="18" Visibility="{Binding ElementName=PickedFolder, Path=Text, Converter={StaticResource StringNullToVisibility}}" FontWeight="ExtraLight" Margin="0,10"></TextBlock>
+                                    <TextBlock x:Name="PickedFolder" FontSize="16" Grid.Column="1" HorizontalAlignment="Right" TextWrapping="Wrap" FontWeight="ExtraLight" Margin="0,10" Visibility="{Binding ElementName=PickedFolder, Path=Text, Converter={StaticResource StringNullToVisibility}}"></TextBlock>
+                                </Grid>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="2"></Rectangle>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="StreamOnMetered" x:Uid="StreamOnMetered" Grid.Row="0" Grid.Column="0" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <ToggleSwitch Grid.Row="0" Grid.Column="1" OffContent="" OnContent="" x:Name="StreamOnMeteredToggle" HorizontalAlignment="Right" Margin="5,-5,0,0" Foreground="{StaticResource Accent}" Toggled="StreamOnMeteredToggle_OnToggled"></ToggleSwitch>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="DownloadOnMetered" x:Uid="DownloadOnMetered" Grid.Row="0" Grid.Column="0" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <ToggleSwitch Grid.Row="0" Grid.Column="1" OffContent="" OnContent="" x:Name="MeteredToggle" HorizontalAlignment="Right" Margin="5,-5,0,0" Foreground="{StaticResource Accent}" Toggled="MeteredToggle_Toggled"></ToggleSwitch>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="DeleteWhenPlayed" x:Uid="DeleteWhenPlayed" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <ToggleSwitch Grid.Row="0" Grid.Column="1" OffContent="" OnContent="" x:Name="DeleteWhenPlayedToggle" HorizontalAlignment="Right" Margin="5,-5,0,0" Foreground="{StaticResource Accent}" Toggled="DeleteWhenPlayed_Toggled"></ToggleSwitch>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="DeleteOderThan" x:Uid="DeleteOderThan" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                                <ComboBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" x:Name="DeleteOderThanDay" Margin="0,0,0,0" Width="120" SelectionChanged="DeleteOderThanDays_SelectionChanged" HorizontalAlignment="Right"/>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="2"></Rectangle>
+                            </Grid>
+                        </StackPanel>
+                    </ScrollViewer>
+                </PivotItem>
+                <PivotItem x:Uid="TimerHeader" Margin="0">
+                    <ScrollViewer x:Name="TimerScrollViewer" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Padding="15,20,20,0">
+                        <StackPanel MinWidth="500" MaxWidth="500" HorizontalAlignment="Left" x:Name="TimerPanel">
+                            <Grid Height="200">
+                                <Viewbox MaxHeight="300" Margin="10">
+                                    <Grid>
+                                        <local:RingSlice x:Name="ClockCurrent" Radius="160" InnerRadius="120"></local:RingSlice>
+                                        <local:RingSlice x:Name="ClockMissing" Opacity="0.5" Radius="160" InnerRadius="120"></local:RingSlice>
+                                        <local:RingSlice x:Name="ClockSeconds" Fill="Green" Radius="120" InnerRadius="110"></local:RingSlice>
+                                    </Grid>
+                                </Viewbox>
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35" x:Name="ClockText" Foreground="{StaticResource Accent}" FontWeight="Bold" />
+                            </Grid>
+                            <Grid Margin="0,10,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Button Style="{StaticResource ActionButtonStyle}" Grid.Row="0" Grid.Column="0" Content="-" x:Name="RemoveTime" Width="60" HorizontalAlignment="Center" Click="RemoveTime_Click" Margin="0,0,10,0"/>
+                                <Button Style="{StaticResource ActionButtonStyle}" Grid.Row="0" Grid.Column="1" x:Name="StartTimer" HorizontalAlignment="Stretch" Click="StartTimer_Click"/>
+                                <Button Style="{StaticResource ActionButtonStyle}" Grid.Row="0" Grid.Column="2" Content="+" x:Name="AddTime" Width="60" HorizontalAlignment="Center" Click="AddTime_Click" Margin="10,0,0,0"/>
+                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
+                            </Grid>
+                        </StackPanel>
+                    </ScrollViewer>
+                </PivotItem>
+            </Pivot>
+        </Grid>
+    </Grid>
+</local:RootPage>

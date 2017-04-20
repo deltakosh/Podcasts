@@ -1,0 +1,13 @@
+MainPackage=D:\DeltakoshTFS\Cast\Podcasts\bin\ARM\Release\Upload\Podcasts_7.5.10.0_ARM.appx
+SymbolPackage=D:\DeltakoshTFS\Cast\Podcasts\AppPackages\Podcasts_7.5.10.0\Podcasts_7.5.10.0_ARM.appxsym
+ResourcePack=D:\DeltakoshTFS\Cast\Podcasts\_language-de.appx
+ResourcePack=D:\DeltakoshTFS\Cast\Podcasts\_language-es.appx
+ResourcePack=D:\DeltakoshTFS\Cast\Podcasts\_language-fr.appx
+ResourcePack=D:\DeltakoshTFS\Cast\Podcasts\_language-it.appx
+ResourcePack=D:\DeltakoshTFS\Cast\Podcasts\_language-nb.appx
+ResourcePack=D:\DeltakoshTFS\Cast\Podcasts\_language-pt.appx
+ResourcePack=D:\DeltakoshTFS\Cast\Podcasts\_language-ru.appx
+ResourcePack=D:\DeltakoshTFS\Cast\Podcasts\_language-tr.appx
+ResourcePack=D:\DeltakoshTFS\Cast\Podcasts\_language-uk.appx
+ResourcePack=D:\DeltakoshTFS\Cast\Podcasts\_scale-100.appx
+ResourcePack=D:\DeltakoshTFS\Cast\Podcasts\_scale-150.appx

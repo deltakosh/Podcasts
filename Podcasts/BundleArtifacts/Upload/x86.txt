@@ -1,0 +1,2 @@
+MainPackage=D:\DeltakoshTFS\Cast\Podcasts\bin\x86\Release\Upload\Podcasts_7.5.10.0_x86.appx
+SymbolPackage=D:\DeltakoshTFS\Cast\Podcasts\AppPackages\Podcasts_7.5.10.0\Podcasts_7.5.10.0_x86.appxsym

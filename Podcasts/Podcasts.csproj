@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{9C20543B-63B5-4D4F-9291-FA6ED532AF29}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Podcasts</RootNamespace>
+    <AssemblyName>Podcasts</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <ApplicationInsightsResourceId>/subscriptions/d3da435d-95bd-4d9f-954a-8c12a687e102/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/Cast</ApplicationInsightsResourceId>
+    <AppxBundle>Always</AppxBundle>
+    <PackageCertificateThumbprint>8B148F4C309CAA521D20BD0AEFE421B8A7A08E0C</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>Podcasts_StoreKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="analytics.xml" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\IconFull.png" />
+    <Content Include="Assets\Icon.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square310x310Logo.scale-100.png" />
+    <Content Include="Assets\Square310x310Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\Square71x71Logo.scale-100.png" />
+    <Content Include="Assets\Square71x71Logo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Data\whatsnew-ru.txt" />
+    <Content Include="Data\whatsnew-no.txt" />
+    <Content Include="Data\whatsnew-zh.txt" />
+    <Content Include="Data\whatsnew-tr.txt" />
+    <Content Include="Data\whatsnew-uk.txt" />
+    <Content Include="Data\whatsnew-es.txt" />
+    <Content Include="Data\whatsnew-pt.txt" />
+    <Content Include="Data\whatsnew-it.txt" />
+    <Content Include="Data\whatsnew-de.txt" />
+    <Content Include="Data\whatsnew-fr.txt" />
+    <Content Include="Data\whatsnew-en.txt" />
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="Podcasts_StoreKey.pfx" />
+    <None Include="Service References\Application Insights\ConnectedService.json" />
+    <None Include="Store\1000x800.png" />
+    <None Include="Store\2400x1200.png" />
+    <None Include="Store\358x173.png" />
+    <None Include="Store\358x358.png" />
+    <None Include="Store\414x180.png" />
+    <None Include="Store\414x468.png" />
+    <None Include="Store\558x558.png" />
+    <None Include="Store\558x756.png" />
+    <None Include="Store\846x468.png" />
+    <None Include="Store\m01.png" />
+    <None Include="Store\m02.png" />
+    <None Include="Store\m03.png" />
+    <None Include="Store\s01.png" />
+    <None Include="Store\s02.png" />
+    <None Include="Store\s03.png" />
+    <None Include="project.json" />
+    <PRIResource Include="Strings\zh\Resources.resw" />
+    <PRIResource Include="Strings\ru-ru\Resources.resw" />
+    <PRIResource Include="Strings\nb-no\Resources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
+    <PRIResource Include="Strings\tr\Resources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
+    <PRIResource Include="Strings\uk-ua\Resources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
+    <PRIResource Include="Strings\es-es\Resources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
+    <PRIResource Include="Strings\pt-br\Resources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
+    <PRIResource Include="Strings\it-it\Resources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
+    <PRIResource Include="Strings\de-de\Resources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
+    <PRIResource Include="Strings\fr-fr\Resources.resw" />
+    <PRIResource Include="Strings\en-us\Resources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.Background.cs" />
+    <Compile Include="Controls\BrowseControl.xaml.cs">
+      <DependentUpon>BrowseControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AddToMyPodcasts.xaml.cs">
+      <DependentUpon>AddToMyPodcasts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ReadOnlyEpisodeControl.xaml.cs">
+      <DependentUpon>ReadOnlyEpisodeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EpisodeControl.xaml.cs">
+      <DependentUpon>EpisodeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IconButton.xaml.cs">
+      <DependentUpon>IconButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PodcastControl.xaml.cs">
+      <DependentUpon>PodcastControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlaylistControl.xaml.cs">
+      <DependentUpon>PlaylistControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RingSlice.cs" />
+    <Compile Include="Controls\ExpandableTextBlock.xaml.cs">
+      <DependentUpon>ExpandableTextBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MediaEngine\LastMediaOrder.cs" />
+    <Compile Include="Pages\PlayListPage.xaml.cs">
+      <DependentUpon>PlayListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DownloadsPage.xaml.cs">
+      <DependentUpon>DownloadsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextTag.xaml.cs">
+      <DependentUpon>TextTag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Converters\XboxToVisibilityConverter.cs" />
+    <Compile Include="Tools\Converters\InvertVisibilityConverter.cs" />
+    <Compile Include="Tools\Converters\ProgressToIndeterminateConverter.cs" />
+    <Compile Include="Tools\Converters\SummaryToWebConverter.cs" />
+    <Compile Include="Tools\LocalLog.cs" />
+    <Compile Include="Tools\GlobalStateManager.cs" />
+    <Compile Include="Tools\SleepTimer.cs" />
+    <Compile Include="Tools\Converters\BoolToFontWeightConverter.cs" />
+    <Compile Include="Tools\Converters\IsInLibraryConverter.cs" />
+    <Compile Include="Tools\GenericComparer.cs" />
+    <Compile Include="Tools\WaitRingManager.cs" />
+    <Compile Include="Tools\WebviewNavigator.cs" />
+    <Compile Include="Pages\OptionsPage.xaml.cs">
+      <DependentUpon>OptionsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LibraryPage.xaml.cs">
+      <DependentUpon>LibraryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PodcastPage.xaml.cs">
+      <DependentUpon>PodcastPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchResponseControl.xaml.cs">
+      <DependentUpon>SearchResponseControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Converters\BoolToOpacityConverter.cs" />
+    <Compile Include="Tools\Converters\NumberToVisibilityConverter.cs" />
+    <Compile Include="Tools\Converters\UpperStringConverter.cs" />
+    <Compile Include="Tools\FixedRescaler.cs" />
+    <Compile Include="MediaEngine\MediaPlayerHost.cs" />
+    <Compile Include="Pages\RootPage.cs" />
+    <Compile Include="Pages\EpisodePage.xaml.cs">
+      <DependentUpon>EpisodePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Splash.xaml.cs">
+      <DependentUpon>Splash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pages\SearchPage.xaml.cs">
+      <DependentUpon>SearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\AnimationTools.cs" />
+    <Compile Include="Tools\Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Tools\Converters\SecondsToTimeSpanConverter.cs" />
+    <Compile Include="Tools\Converters\CountToBoolConverter.cs" />
+    <Compile Include="Tools\Converters\EmptyToVisibilityConverter.cs" />
+    <Compile Include="Tools\Converters\NullToVisibilityConverter.cs" />
+    <Compile Include="Tools\Converters\StringFormatConverter.cs" />
+    <Compile Include="Tools\Converters\StringNullToVisibilityConverter.cs" />
+    <Compile Include="Tools\ImageTools.cs" />
+    <Compile Include="Tools\NavigationStack.cs" />
+    <Compile Include="Tools\SearchEngine.cs" />
+    <Compile Include="Tools\StackData.cs" />
+    <Compile Include="Tools\StatusBarHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Controls\BrowseControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\AddToMyPodcasts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ReadOnlyEpisodeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\EpisodeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\IconButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PodcastControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ExpandableTextBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PlayListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\OptionsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LibraryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EpisodePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DownloadsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Shell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Splash.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PodcastPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SearchResponseControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PlaylistControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\DarkTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\LightTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Accent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\DefaultAccent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\DefaultStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TextTag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BackgroundTask\BackgroundTask.csproj">
+      <Project>{ec592e11-d024-4f09-9b5b-4cb0aac9ece5}</Project>
+      <Name>BackgroundTask</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Podcasts.Common\Podcasts.Common.csproj">
+      <Project>{3dfb9cdd-e4e2-4f84-8398-f8445555d841}</Project>
+      <Name>Podcasts.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs, Version=14.0">
+      <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
+    </SDKReference>
+    <SDKReference Include="WindowsDesktop, Version=10.0.10586.0">
+      <Name>Windows Desktop Extensions for the UWP</Name>
+    </SDKReference>
+    <SDKReference Include="WindowsMobile, Version=10.0.10586.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

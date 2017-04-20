@@ -1,0 +1,43 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Xml" #>
+<#@ output extension=".cs" #>
+<#
+    string resourceFile = File.ReadAllText(this.Host.ResolvePath("../Podcasts/Strings/en-us/Resources.resw"));
+    XmlDocument doc = new XmlDocument();
+    doc.LoadXml(resourceFile);
+    var nodes = doc.SelectNodes("/root/data");
+#>
+using Windows.ApplicationModel.Resources;
+
+namespace Podcasts
+{
+    public static class StringsHelper
+    {
+        static readonly ResourceLoader Loader = new ResourceLoader();
+
+        public static string GetValue(string key)
+        {
+            return Loader.GetString(key);
+        }
+
+<#
+    foreach (XmlNode node in nodes)
+    {
+        var name = node.Attributes["name"].Value;
+        if (name.Contains("."))
+        {
+            continue;
+        }
+#>
+        public static string <#=name#> => GetValue("<#=name#>");
+<#
+	}	
+#>
+    }
+}

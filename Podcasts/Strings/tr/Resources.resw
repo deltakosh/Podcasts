@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Hakkında Podcasts v</value>
+  </data>
+  <data name="AddToLibraryCategoryLabel.Text" xml:space="preserve">
+    <value>Kategori:</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="CastFiles" xml:space="preserve">
+    <value>Podcasts dosyaları</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Onay</value>
+  </data>
+  <data name="Confirm_PodcastDelete" xml:space="preserve">
+    <value>Bu podcasti kütüphanenizden silmek istediğinizden emin misiniz?</value>
+  </data>
+  <data name="Country.Text" xml:space="preserve">
+    <value>Podcastler için tercih edilen dil:</value>
+  </data>
+  <data name="DownloadButton.Content" xml:space="preserve">
+    <value>İndir</value>
+  </data>
+  <data name="Empty.Text" xml:space="preserve">
+    <value>Burası biraz boş...
+Lütfen podcast bulmak için bir arama yap</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="Error_LoadFromFile" xml:space="preserve">
+    <value>Belirtilen dosya yüklenemedi</value>
+  </data>
+  <data name="Error_SaveToFile" xml:space="preserve">
+    <value>Belirtilen dosyaya kaydedilemiyor</value>
+  </data>
+  <data name="Error_UnableToParseRSS" xml:space="preserve">
+    <value>RSS ayrıştırılamıyor</value>
+  </data>
+  <data name="GotIt.Content" xml:space="preserve">
+    <value>Podcasts'i başlat</value>
+  </data>
+  <data name="LibraryLabel.Header" xml:space="preserve">
+    <value>Kütüphane</value>
+  </data>
+  <data name="LibraryTitle.Text" xml:space="preserve">
+    <value>Kütüphane</value>
+  </data>
+  <data name="Load.Content" xml:space="preserve">
+    <value>Yükle</value>
+  </data>
+  <data name="MarkAsPlayedButton.Content" xml:space="preserve">
+    <value>Oynatılmış olarak işaretle</value>
+  </data>
+  <data name="MarkAsUnplayedButton.Content" xml:space="preserve">
+    <value>Oynatılmamış olarak işaretle</value>
+  </data>
+  <data name="MarketBox.PlaceholderText" xml:space="preserve">
+    <value>Market (ABD, FR, ...)</value>
+  </data>
+  <data name="MyPodcastsMenu.Label" xml:space="preserve">
+    <value>Kütüphane</value>
+  </data>
+  <data name="NoEpisode.Text" xml:space="preserve">
+    <value>Podcasts yalnız hissediyor.
+Bir podcast oynatmalısın...</value>
+  </data>
+  <data name="NowPlayingMenu.Label" xml:space="preserve">
+    <value>Şimdi yürütülüyor</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Tamam</value>
+  </data>
+  <data name="OptionsMenu.Label" xml:space="preserve">
+    <value>Seçenekler</value>
+  </data>
+  <data name="OptionsTitle.Text" xml:space="preserve">
+    <value>Seçenekler</value>
+  </data>
+  <data name="PlayButton.Content" xml:space="preserve">
+    <value>Yürüt</value>
+  </data>
+  <data name="Played.Text" xml:space="preserve">
+    <value>oynatıldı</value>
+  </data>
+  <data name="PublishedOn" xml:space="preserve">
+    <value>Yayınlandı</value>
+  </data>
+  <data name="Save.Content" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Anahtar kelimeleri ara...</value>
+  </data>
+  <data name="SearchMenu.Label" xml:space="preserve">
+    <value>Ara</value>
+  </data>
+  <data name="SearchTitle.Text" xml:space="preserve">
+    <value>Ara</value>
+  </data>
+  <data name="SeeAll" xml:space="preserve">
+    <value>Tüm podcastler</value>
+  </data>
+  <data name="SeeOnlyUnPlayed" xml:space="preserve">
+    <value>Yalnızca oynatılmamış</value>
+  </data>
+  <data name="Success_AddPodcastToLibrary" xml:space="preserve">
+    <value>Podcast başarıyla kütüphaneye eklendi</value>
+  </data>
+  <data name="Success_LoadFromFile" xml:space="preserve">
+    <value>Dosya başarıyla yüklendi</value>
+  </data>
+  <data name="Success_SaveToFile" xml:space="preserve">
+    <value>Dosya başarıyla kaydedildi</value>
+  </data>
+  <data name="Validate.Content" xml:space="preserve">
+    <value>Doğrula</value>
+  </data>
+  <data name="MarkAsPlayedMenu.Text" xml:space="preserve">
+    <value>Oynatılmış olarak işaretle</value>
+  </data>
+  <data name="DeletePodcastMenu.Text" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="PodcastCategoryMenu.Text" xml:space="preserve">
+    <value>Kategori</value>
+  </data>
+  <data name="AddToLibraryMenu.Text" xml:space="preserve">
+    <value>Kütüphaneye ekle</value>
+  </data>
+  <data name="Error_UnableToSyncPodcast" xml:space="preserve">
+    <value>Bir podcast eşitlerken hata</value>
+  </data>
+  <data name="AddToMyPodcasts.Content" xml:space="preserve">
+    <value>Kütüphaneye ekle</value>
+  </data>
+  <data name="DeleteButton.Content" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="RefreshButton.Content" xml:space="preserve">
+    <value>Yenile</value>
+  </data>
+  <data name="MarkAsUnplayedMenu.Text" xml:space="preserve">
+    <value>Oynatılmamış olarak işaretle</value>
+  </data>
+  <data name="DownloadMenu.Text" xml:space="preserve">
+    <value>İndir</value>
+  </data>
+  <data name="Downloaded.Text" xml:space="preserve">
+    <value>indirildi</value>
+  </data>
+  <data name="AddToPlaylistMenu.Text" xml:space="preserve">
+    <value>Çalma listesine ekle</value>
+  </data>
+  <data name="AddToPlaylistButton.Content" xml:space="preserve">
+    <value>Çalma listesine ekle</value>
+  </data>
+  <data name="ExtendReason" xml:space="preserve">
+    <value>Kullanıcı verisi buluta kaydediliyor</value>
+  </data>
+  <data name="DownloadLast.Text" xml:space="preserve">
+    <value>En son bölümleri indir</value>
+  </data>
+  <data name="DeleteDownloadMenu.Text" xml:space="preserve">
+    <value>İndirmeyi sil</value>
+  </data>
+  <data name="Error_UnableToDeleteDownload" xml:space="preserve">
+    <value>İndirme silinemiyor</value>
+  </data>
+  <data name="DeleteDownloadButton.Content" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="Error_NoInternet" xml:space="preserve">
+    <value>İnternet bağlantısı algılanmadı</value>
+  </data>
+  <data name="ConnectingMessage" xml:space="preserve">
+    <value>Ses altsistemine bağlanıyor...</value>
+  </data>
+  <data name="LoadingMessage" xml:space="preserve">
+    <value>Kütüphane yükleniyor...</value>
+  </data>
+  <data name="ParsingMessage" xml:space="preserve">
+    <value>Podcastler ayrıştırılıyor...</value>
+  </data>
+  <data name="StopDownloadButton.Content" xml:space="preserve">
+    <value>İndirmeyi durdur</value>
+  </data>
+  <data name="StopDownloadMenu.Text" xml:space="preserve">
+    <value>İndirmeyi durdur</value>
+  </data>
+  <data name="AutoPlay.Text" xml:space="preserve">
+    <value>Otomatik yürüt</value>
+  </data>
+  <data name="ForwardStep.Text" xml:space="preserve">
+    <value>İleri sar: (saniye)</value>
+  </data>
+  <data name="RewindStep.Text" xml:space="preserve">
+    <value>Geri sar: (saniye)</value>
+  </data>
+  <data name="OPMLFiles" xml:space="preserve">
+    <value>OPML dosyaları</value>
+  </data>
+  <data name="DownloadOnMetered.Text" xml:space="preserve">
+    <value>Tarifeli bağlantılar üzerinden indirmelere izin ver:</value>
+  </data>
+  <data name="NoCategory" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeleteWhenPlayed.Text" xml:space="preserve">
+    <value>İndirmeyi oynatıldıktan sonra sil</value>
+  </data>
+  <data name="DownPodcastMenu.Text" xml:space="preserve">
+    <value>Aşağı taşı</value>
+  </data>
+  <data name="UpPodcastMenu.Text" xml:space="preserve">
+    <value>Yukarı taşı</value>
+  </data>
+  <data name="Unplayed" xml:space="preserve">
+    <value>{0} oynatılmamış podcast(ler)</value>
+  </data>
+  <data name="DownloadsMenu.Label" xml:space="preserve">
+    <value>İndirmeler</value>
+  </data>
+  <data name="FeedbackMenu.Label" xml:space="preserve">
+    <value>İnceleme</value>
+  </data>
+  <data name="DownloadsTitle.Text" xml:space="preserve">
+    <value>İndirmeler</value>
+  </data>
+  <data name="PlayListMenu.Label" xml:space="preserve">
+    <value>Çalma listesi</value>
+  </data>
+  <data name="Downloads" xml:space="preserve">
+    <value>indirme(ler)</value>
+  </data>
+  <data name="PodcastsPlural" xml:space="preserve">
+    <value>podcast(ler)</value>
+  </data>
+  <data name="PlaylistTitle.Text" xml:space="preserve">
+    <value>Çalma listesi</value>
+  </data>
+  <data name="NotificationMessage" xml:space="preserve">
+    <value>Yeni bölüm: {0}</value>
+  </data>
+  <data name="Notifications.Text" xml:space="preserve">
+    <value>Bildirimler:</value>
+  </data>
+  <data name="RefreshOnLoad.Text" xml:space="preserve">
+    <value>Yüklerken yenile:</value>
+  </data>
+  <data name="PlayMenu.Text" xml:space="preserve">
+    <value>Yürüt</value>
+  </data>
+  <data name="ExternalStorage.Text" xml:space="preserve">
+    <value>Harici depolama:</value>
+  </data>
+  <data name="PickedFolder.Text" xml:space="preserve">
+    <value>Geçerli klasör:</value>
+  </data>
+  <data name="SystemAccentColor.Text" xml:space="preserve">
+    <value>Sistem renk düzenini kullan(*):</value>
+  </data>
+  <data name="AddAllToPlaylistMenu.Text" xml:space="preserve">
+    <value>Tüm oynatılmayanları çalma listesine ekle</value>
+  </data>
+  <data name="AlreadyInLibrary.Text" xml:space="preserve">
+    <value>Zaten kütüphanede</value>
+  </data>
+  <data name="AutomaticallyAddNewEpisodeToPlayList.Text" xml:space="preserve">
+    <value>Yeni bölümleri çalma listesine otomatik olarak ekle:</value>
+  </data>
+  <data name="DownloadsHeader.Header" xml:space="preserve">
+    <value>İndirmeler</value>
+  </data>
+  <data name="GeneralHeader.Header" xml:space="preserve">
+    <value>Genel</value>
+  </data>
+  <data name="MediaHeader.Header" xml:space="preserve">
+    <value>Medya</value>
+  </data>
+  <data name="RefreshAll.Content" xml:space="preserve">
+    <value>Tüm podcastleri yenile</value>
+  </data>
+  <data name="DeleteOderThan.Text" xml:space="preserve">
+    <value>Şu kadar günden daha eski olan indirmeleri sil:</value>
+  </data>
+  <data name="TimerHeader.Header" xml:space="preserve">
+    <value>Uyku zamanlayıcı</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Başla</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Dur</value>
+  </data>
+  <data name="ClearButton.Content" xml:space="preserve">
+    <value>Temizle</value>
+  </data>
+  <data name="DownloadAllButton.Content" xml:space="preserve">
+    <value>Tümünü indir</value>
+  </data>
+  <data name="ForcePushToCloud.Content" xml:space="preserve">
+    <value>OneDrive'a gönder</value>
+  </data>
+  <data name="DarkTheme.Text" xml:space="preserve">
+    <value>Koyu tema(*):</value>
+  </data>
+  <data name="NeedRestart.Text" xml:space="preserve">
+    <value>(*): Yeniden başlatma gerekli</value>
+  </data>
+  <data name="SupportButton.Content" xml:space="preserve">
+    <value>Bağışta bulun</value>
+  </data>
+  <data name="SupportHeader.Header" xml:space="preserve">
+    <value>Destek</value>
+  </data>
+  <data name="SupportText.Text" xml:space="preserve">
+    <value>Podcasts'i beğendiniz mi? Eğer cevabınız evet ise, geliştiriciye bağışta bulunarak destek olabilirsiniz.</value>
+  </data>
+  <data name="ThankYou" xml:space="preserve">
+    <value>Desteğiniz için teşekkürler!</value>
+  </data>
+  <data name="ImportButton.Content" xml:space="preserve">
+    <value>İçe aktar</value>
+  </data>
+  <data name="SupportMaxButton.Content" xml:space="preserve">
+    <value>Daha yüksek bir bağışta bulun</value>
+  </data>
+  <data name="CloudSync.Text" xml:space="preserve">
+    <value>OneDrive Sync:</value>
+  </data>
+  <data name="ForceGetFromCloud.Content" xml:space="preserve">
+    <value>OneDrive'dan çık</value>
+  </data>
+  <data name="CodeAndDesign.Text" xml:space="preserve">
+    <value>Kod &amp; Tasarım:</value>
+  </data>
+  <data name="Logo.Text" xml:space="preserve">
+    <value>Logo:</value>
+  </data>
+  <data name="PlayLink.Text" xml:space="preserve">
+    <value>Yürüt</value>
+  </data>
+  <data name="Filters.Text" xml:space="preserve">
+    <value>Filtre:</value>
+  </data>
+  <data name="UnplayedEpisodesAsc" xml:space="preserve">
+    <value>Oynatılmamış bölümler (Artan)</value>
+  </data>
+  <data name="UnplayedEpisodesDesc" xml:space="preserve">
+    <value>Oynatılmamış bölümler (Azalan)</value>
+  </data>
+  <data name="Forever" xml:space="preserve">
+    <value>Asla</value>
+  </data>
+  <data name="VideoPlayback.Text" xml:space="preserve">
+    <value>Video oynatma:</value>
+  </data>
+  <data name="FullscreenButton.Content" xml:space="preserve">
+    <value>Tam ekran</value>
+  </data>
+  <data name="RotateButton.Content" xml:space="preserve">
+    <value>Çevir</value>
+  </data>
+  <data name="VisibilityButton.Content" xml:space="preserve">
+    <value>Değiştir</value>
+  </data>
+  <data name="AddAllToPlaylistMenuDesc.Text" xml:space="preserve">
+    <value>Tüm oynatılmayanları çalma listesine ekle (Azalan)</value>
+  </data>
+  <data name="InvertSkipControls.Text" xml:space="preserve">
+    <value>Atlama kontrolü davranışlarını ters çevir (Bluetooth):</value>
+  </data>
+  <data name="RemovedPlayedEpisodeFromPlayList.Text" xml:space="preserve">
+    <value>Oynatılmış bölümleri çalma listesinden kaldır:</value>
+  </data>
+  <data name="AscButton.Content" xml:space="preserve">
+    <value>Artan</value>
+  </data>
+  <data name="DescButton.Content" xml:space="preserve">
+    <value>Azalan</value>
+  </data>
+  <data name="ExportID.Content" xml:space="preserve">
+    <value>ID dışa aktar</value>
+  </data>
+  <data name="ImportID.Content" xml:space="preserve">
+    <value>ID içe aktar</value>
+  </data>
+  <data name="MandatoryLocator" xml:space="preserve">
+    <value>Podcasts arkaplanda podcast oynatmak için coğrafi konum iznine ihtiyaç duyar. Konum bilgisi kullanılmaz.</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Tümü</value>
+  </data>
+  <data name="ShareMenu.Text" xml:space="preserve">
+    <value>Paylaş</value>
+  </data>
+  <data name="Translations.Text" xml:space="preserve">
+    <value>Çeviriler:</value>
+  </data>
+  <data name="FeedbackButton.Content" xml:space="preserve">
+    <value>İnceleme</value>
+  </data>
+  <data name="StreamingIsDisabled" xml:space="preserve">
+    <value>Tarifeli bağlantı tespit edildi. Akış devre dışı bırakıldı. Seçenekler ekranından tarifeli bağlantılar üzerinden akışa izin ver seçeneğini aktif ederek akışı etkinleştirebilirsiniz.</value>
+  </data>
+  <data name="DeleteAllButton.Content" xml:space="preserve">
+    <value>Hepsini sil</value>
+  </data>
+  <data name="Login.Text" xml:space="preserve">
+    <value>Giriş:</value>
+  </data>
+  <data name="Password.Text" xml:space="preserve">
+    <value>Parola:</value>
+  </data>
+  <data name="UrlText.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="StreamOnMetered.Text" xml:space="preserve">
+    <value>Tarifeli bağlantılar üzerinden akışa izin ver:</value>
+  </data>
+  <data name="PrivacyPolicy.Content" xml:space="preserve">
+    <value>Gizlilik Politikası</value>
+  </data>
+  <data name="DownloadSlidableListItem.RightLabel" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="EpisodeSlidableListItem.RightLabel" xml:space="preserve">
+    <value>Çalma listesine ekle</value>
+  </data>
+  <data name="PlaylistEntrySlidableListItem.RightLabel" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="PodcastSlidableListItem.LeftLabel" xml:space="preserve">
+    <value>Çalma listesine ekle</value>
+  </data>
+  <data name="PodcastSlidableListItem.RightLabel" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="DataFound" xml:space="preserve">
+    <value>Bulut Eşitleme daha güncel veriler buldu. Bu verileri kullanmak ister misin?</value>
+  </data>
+  <data name="BoolToPlayedUnplayed.FalseValue" xml:space="preserve">
+    <value>Oynatılmış olarak işaretle</value>
+  </data>
+  <data name="BoolToPlayedUnplayed.TrueValue" xml:space="preserve">
+    <value>Oynatılmamış olarak işaretle</value>
+  </data>
+  <data name="OneDriveCancel" xml:space="preserve">
+    <value>Hayır</value>
+  </data>
+  <data name="OneDriveWarning" xml:space="preserve">
+    <value>Podcasts, verilerinizi diğer cihazlar ile eşitlemek için OneDrive klasörünüze erişmek istiyor. Devam etmek istiyor musunuz?</value>
+  </data>
+  <data name="OneDriveYes" xml:space="preserve">
+    <value>Evet</value>
+  </data>
+  <data name="AutoSyncOnClose.Text" xml:space="preserve">
+    <value>Yakınınızda senkronize edin (*):</value>
+  </data>
+  <data name="AutoSyncHelp.Text" xml:space="preserve">
+    <value>(*): Uygulamayı kapattıktan sonra OneDrive senkronizasyonu yapılacaktır. Bu seçenek devre dışı, aşağıdaki düğmeleri kullanarak manuel olarak yapmanız gerekecek.</value>
+  </data>
+</root>

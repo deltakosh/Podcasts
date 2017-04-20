@@ -1,0 +1,402 @@
+﻿<Page
+    x:Class="Podcasts.Shell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:Podcasts"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    Loaded="Shell_OnLoaded"
+    KeyDown="Page_KeyDown"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="HamburgerMenuItem" x:DataType="controls:HamburgerMenuGlyphItem">
+            <Grid Width="240" Height="48" Background="{StaticResource PaneBackground}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <FontIcon Grid.Column="0" 
+                          Margin="12,12,11,12" 
+                          FontFamily="Segoe MDL2 Assets" 
+                          FontWeight="SemiLight"
+                          Glyph="{Binding Glyph}" 
+                           />
+                <TextBlock Grid.Column="1" 
+                           Text="{x:Bind Label}"                             
+                           FontSize="16" 
+                           FontWeight="SemiLight"
+                           VerticalAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Full">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1280" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HamburgerMenu.DisplayMode" Value="CompactInline" />
+                        <Setter Target="HamburgerMenu.IsPaneOpen" Value="True" />
+                        <Setter Target="MediaGrip.Visibility" Value="Collapsed"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Medium">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="400"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MenuLine.Visibility" Value="Collapsed" />
+                        <Setter Target="SlidingGrid.Visibility" Value="Visible"/>
+                        <Setter Target="MediaControlsGrid.RowDefinitions[0].Height" Value="30" />
+                        <Setter Target="MediaControlsGrid.RowDefinitions[1].Height" Value="50" />
+                        <Setter Target="MediaControlsGrid.RowDefinitions[2].Height" Value="40" />
+                        <Setter Target="MediaControlsGrid.ColumnDefinitions[0].Width" Value="*" />
+                        <Setter Target="MediaControlsGrid.ColumnDefinitions[1].Width" Value="*" />
+                        <Setter Target="MediaControlsGrid.ColumnDefinitions[2].Width" Value="0" />
+                        <Setter Target="MediaControlSliderGrid.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="MediaControlSliderGrid.(Grid.Column)" Value="0" />
+                        <Setter Target="MediaControlSlider.Margin" Value="5,6,5,0" />
+                        <Setter Target="MediaControlInfo.Visibility" Value="Collapsed" />
+                        <Setter Target="MediaControlControls.(Grid.Row)" Value="2" />
+                        <Setter Target="MediaControlControls.(Grid.Column)" Value="0" />
+                        <Setter Target="MediaControlControls.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="MediaControlsWaitRing.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="MediaControlsWaitRing.(Grid.Column)" Value="0" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[0].MinWidth" Value="0" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[1].MinWidth" Value="45" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[2].MinWidth" Value="45" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[3].MinWidth" Value="45" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[4].MinWidth" Value="45" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[5].MinWidth" Value="45" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[6].MinWidth" Value="45" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[7].MinWidth" Value="0" />
+                        <Setter Target="VideoControls.MinWidth" Value="45" />
+                        <Setter Target="MediaControlInfoReduced.Visibility" Value="Visible"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Small">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MenuLine.Visibility" Value="Collapsed" />
+                        <Setter Target="SlidingGrid.Visibility" Value="Visible"/>
+                        <Setter Target="MediaControlsGrid.RowDefinitions[0].Height" Value="30" />
+                        <Setter Target="MediaControlsGrid.RowDefinitions[1].Height" Value="50" />
+                        <Setter Target="MediaControlsGrid.RowDefinitions[2].Height" Value="40" />
+                        <Setter Target="MediaControlsGrid.ColumnDefinitions[0].Width" Value="*" />
+                        <Setter Target="MediaControlsGrid.ColumnDefinitions[1].Width" Value="*" />
+                        <Setter Target="MediaControlsGrid.ColumnDefinitions[2].Width" Value="0" />
+                        <Setter Target="MediaControlSliderGrid.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="MediaControlSliderGrid.(Grid.Column)" Value="0" />
+                        <Setter Target="MediaControlSlider.Margin" Value="5,6,5,0" />
+                        <Setter Target="MediaControlInfo.Visibility" Value="Collapsed" />
+                        <Setter Target="MediaControlControls.(Grid.Row)" Value="2" />
+                        <Setter Target="MediaControlControls.(Grid.Column)" Value="0" />
+                        <Setter Target="MediaControlControls.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="MediaControlsWaitRing.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="MediaControlsWaitRing.(Grid.Column)" Value="0" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[0].MinWidth" Value="45" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[1].MinWidth" Value="45" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[2].MinWidth" Value="45" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[3].MinWidth" Value="45" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[4].MinWidth" Value="0" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[5].MinWidth" Value="0" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[6].MinWidth" Value="0" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[7].MinWidth" Value="0" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[8].MinWidth" Value="45" />
+                        <Setter Target="VideoControls.MinWidth" Value="45" />
+                        <Setter Target="PlaylistButton.Visibility" Value="Collapsed" />
+                        <Setter Target="MediaControlInfoReduced.Visibility" Value="Visible"/>
+                        <Setter Target="EllipsisButton.Visibility" Value="Visible"/>
+                        <Setter Target="Rewind2.Visibility" Value="Visible"/>
+                        <Setter Target="Forward2.Visibility" Value="Visible"/>
+                        <Setter Target="Rewind.Visibility" Value="Collapsed"/>
+                        <Setter Target="Forward.Visibility" Value="Collapsed"/>
+                        <Setter Target="Volume.Visibility" Value="Collapsed"/>
+                        <Setter Target="Cast.Visibility" Value="Collapsed"/>
+                        <Setter Target="PlaySpeed.Visibility" Value="Collapsed"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.Resources>
+            <Style x:Key="Header1" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="White"></Setter>
+                <Setter Property="FontSize" Value="16"></Setter>
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+                <Setter Property="TextTrimming" Value="CharacterEllipsis"></Setter>
+            </Style>
+
+            <Style x:Key="Header2" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="White"></Setter>
+                <Setter Property="FontSize" Value="13"></Setter>
+                <Setter Property="FontWeight" Value="Light"></Setter>
+                <Setter Property="TextTrimming" Value="CharacterEllipsis"></Setter>
+            </Style>
+
+            <Style TargetType="FontIcon">
+                <Setter Property="Foreground" Value="White"></Setter>
+                <Setter Property="FontSize" Value="32"></Setter>
+                <Setter Property="FontFamily" Value="Segoe MDL2 Assets"></Setter>
+            </Style>
+
+            <Style x:Key="FlyoutPresenterStyle" TargetType="FlyoutPresenter">
+                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                <Setter Property="IsTabStop" Value="False"/>
+                <Setter Property="Background" Value="{StaticResource Accent}"/>
+                <Setter Property="BorderBrush" Value="{ThemeResource SystemControlForegroundChromeHighBrush}"/>
+                <Setter Property="BorderThickness" Value="{ThemeResource FlyoutBorderThemeThickness}"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="MinWidth" Value="{ThemeResource FlyoutThemeMinWidth}"/>
+                <Setter Property="MaxWidth" Value="{ThemeResource FlyoutThemeMaxWidth}"/>
+                <Setter Property="MinHeight" Value="{ThemeResource FlyoutThemeMinHeight}"/>
+                <Setter Property="MaxHeight" Value="{ThemeResource FlyoutThemeMaxHeight}"/>
+                <Setter Property="ScrollViewer.HorizontalScrollMode" Value="Auto"/>
+                <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+                <Setter Property="ScrollViewer.VerticalScrollMode" Value="Auto"/>
+                <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+                <Setter Property="ScrollViewer.ZoomMode" Value="Disabled"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="FlyoutPresenter">
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Margin="0,0,5,0">
+                                <ScrollViewer x:Name="ScrollViewer" AutomationProperties.AccessibilityView="Raw" HorizontalScrollMode="{TemplateBinding ScrollViewer.HorizontalScrollMode}" HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}" VerticalScrollMode="{TemplateBinding ScrollViewer.VerticalScrollMode}" ZoomMode="{TemplateBinding ScrollViewer.ZoomMode}">
+                                    <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                </ScrollViewer>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Flyout x:Key="VolumeFlyout" FlyoutPresenterStyle="{StaticResource FlyoutPresenterStyle}">
+                <StackPanel Orientation="Horizontal" Margin="20,10" >
+                    <FontIcon Margin="0,0,20,0" Glyph="" Foreground="White"></FontIcon>
+                    <Slider Minimum="0" Maximum="100" ValueChanged="VolumeChanged" Width="200" Loaded="Volume_OnLoaded"></Slider>
+                </StackPanel>
+            </Flyout>
+
+            <Flyout x:Key="EllispisFlyout" FlyoutPresenterStyle="{StaticResource FlyoutPresenterStyle}">
+                <StackPanel Orientation="Vertical" Margin="10">
+                    <Button Margin="0,0,0,10" Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" HorizontalAlignment="Center" Flyout="{StaticResource VolumeFlyout}"></Button>
+                    <Button Margin="0,0,0,10" Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" HorizontalAlignment="Center" Click="Cast_Click"></Button>
+                    <Button Foreground="White" Style="{StaticResource SimpleTextButtonStyle}" Tag="1.0x" HorizontalAlignment="Center" x:Name="Speed2" Flyout="{StaticResource PlaySpeedFlyout}"></Button>
+                </StackPanel>
+            </Flyout>
+
+            <Style x:Key="PlaylistFlyoutPresenterStyle" TargetType="FlyoutPresenter">
+                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                <Setter Property="IsTabStop" Value="False"/>
+                <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"/>
+                <Setter Property="BorderBrush" Value="{ThemeResource SystemControlForegroundChromeHighBrush}"/>
+                <Setter Property="BorderThickness" Value="{ThemeResource FlyoutBorderThemeThickness}"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="MinWidth" Value="{ThemeResource FlyoutThemeMinWidth}"/>
+                <Setter Property="MaxWidth" Value="350"/>
+                <Setter Property="MinHeight" Value="{ThemeResource FlyoutThemeMinHeight}"/>
+                <Setter Property="MaxHeight" Value="{ThemeResource FlyoutThemeMaxHeight}"/>
+                <Setter Property="ScrollViewer.HorizontalScrollMode" Value="Auto"/>
+                <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+                <Setter Property="ScrollViewer.VerticalScrollMode" Value="Auto"/>
+                <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+                <Setter Property="ScrollViewer.ZoomMode" Value="Disabled"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="FlyoutPresenter">
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Margin="0,0,5,0">
+                                <ScrollViewer x:Name="ScrollViewer" AutomationProperties.AccessibilityView="Raw" HorizontalScrollMode="{TemplateBinding ScrollViewer.HorizontalScrollMode}" HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}" VerticalScrollMode="{TemplateBinding ScrollViewer.VerticalScrollMode}" ZoomMode="{TemplateBinding ScrollViewer.ZoomMode}">
+                                    <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                </ScrollViewer>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Flyout x:Key="PlaylistFlyout" FlyoutPresenterStyle="{StaticResource PlaylistFlyoutPresenterStyle}">
+                <local:PlaylistControl></local:PlaylistControl>
+            </Flyout>
+
+            <Flyout x:Key="PlaySpeedFlyout"  FlyoutPresenterStyle="{StaticResource FlyoutPresenterStyle}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button HorizontalAlignment="Center" Foreground="White" Style="{StaticResource SimpleTextButtonStyle}" Tag="3.0x" x:Name="Speed3X" Click="Speed3X_OnClick" Grid.Row="0" Margin="10"></Button>
+                    <Button HorizontalAlignment="Center" Foreground="White" Style="{StaticResource SimpleTextButtonStyle}" Tag="2.5x" x:Name="Speed25X" Click="Speed25X_OnClick" Grid.Row="1" Margin="10"></Button>
+                    <Button HorizontalAlignment="Center" Foreground="White" Style="{StaticResource SimpleTextButtonStyle}" Tag="2.0x" x:Name="Speed2X" Click="Speed2X_OnClick" Grid.Row="2" Margin="10"></Button>
+                    <Button HorizontalAlignment="Center" Foreground="White" Style="{StaticResource SimpleTextButtonStyle}" Tag="1.5x" x:Name="Speed15X" Click="Speed15X_OnClick" Grid.Row="3" Margin="10"></Button>
+                    <Button HorizontalAlignment="Center" Foreground="White" Style="{StaticResource SimpleTextButtonStyle}" Tag="1.25x" x:Name="Speed125X" Click="Speed125X_OnClick" Grid.Row="4" Margin="10"></Button>
+                    <Button HorizontalAlignment="Center" Foreground="White" Style="{StaticResource SimpleTextButtonStyle}" Tag="1.0x" x:Name="Speed1X" Click="Speed1X_OnClick" Grid.Row="5" Margin="10"></Button>
+                </Grid>
+            </Flyout>
+
+            <Flyout x:Key="VideoFlyout" FlyoutPresenterStyle="{StaticResource PlaylistFlyoutPresenterStyle}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Style="{StaticResource ImageAndTextButtonStyle}" x:Uid="FullscreenButton" Tag="" x:Name="FullScreen" Click="FullScreen_Click" Grid.Row="0" Margin="10"></Button>
+                    <Button Style="{StaticResource ImageAndTextButtonStyle}" x:Uid="VisibilityButton" Tag="" x:Name="VisibilityButton" Click="Visibility_Click" Grid.Row="1" Margin="10"></Button>
+                </Grid>
+            </Flyout>
+        </Grid.Resources>
+        <Grid x:Name="ClientGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <controls:HamburgerMenu 
+                                    x:Name="HamburgerMenu" Grid.Row="0" 
+                                    ItemClick="HamburgerMenu_OnItemClick"
+                                    OptionsItemClick="HamburgerMenu_OnOptionsItemClick"
+                                    ItemTemplate="{StaticResource HamburgerMenuItem}"
+                                    OptionsItemTemplate="{StaticResource HamburgerMenuItem}"     
+                                    OpenPaneLength="250" PanePlacement="Left" DisplayMode="Overlay" CompactPaneLength="47" PaneBackground="{StaticResource PaneBackground}" IsPaneOpen="False">
+                <!--Items-->
+                <controls:HamburgerMenu.ItemsSource>
+                    <controls:HamburgerMenuItemCollection>
+                        <controls:HamburgerMenuGlyphItem x:Uid="SearchMenu" x:Name="SearchMenu" Glyph="" Tag="Search" />
+                        <controls:HamburgerMenuGlyphItem x:Uid="NowPlayingMenu" x:Name="NowPlayingMenu" Glyph="" Tag="NowPlaying"/>
+                        <controls:HamburgerMenuGlyphItem x:Uid="PlayListMenu" x:Name="PlayListMenu" Glyph="" Tag="PlayList"/>
+                        <controls:HamburgerMenuGlyphItem x:Uid="MyPodcastsMenu" x:Name="MyPodcastsMenu" Glyph="" Tag="Library"/>
+                        <controls:HamburgerMenuGlyphItem x:Uid="DownloadsMenu" x:Name="DownloadsMenu" Glyph="" Tag="Downloads"/>
+                    </controls:HamburgerMenuItemCollection>
+                </controls:HamburgerMenu.ItemsSource>
+
+                <!--Options-->
+                <controls:HamburgerMenu.OptionsItemsSource>
+                    <controls:HamburgerMenuItemCollection>
+                        <controls:HamburgerMenuGlyphItem x:Uid="OptionsMenu" x:Name="OptionsMenu" Glyph="" Tag="Options"/>
+                    </controls:HamburgerMenuItemCollection>
+                </controls:HamburgerMenu.OptionsItemsSource>
+
+                <!--Content-->
+                <Grid Background="{StaticResource Background}">
+                    <ContentControl IsTabStop="False" Content="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" x:Name="SplitContent">
+                        <ContentControl.RenderTransform>
+                            <TranslateTransform x:Name="SplitContentTransform"/>
+                        </ContentControl.RenderTransform>
+                    </ContentControl>
+                    <Image x:Name="DissolveImage" Visibility="Collapsed" Stretch="Fill" IsHitTestVisible="False"></Image>
+                    <Border BorderThickness="1" BorderBrush="{StaticResource DarkerBackground}" x:Name="MenuLine" HorizontalAlignment="Left" Width="1"/>
+                </Grid>
+            </controls:HamburgerMenu>
+            <Grid Background="Transparent" Visibility="Collapsed" Grid.Row="0" Width="10" x:Name="SlidingGrid" HorizontalAlignment="Left" ManipulationMode="TranslateX" ManipulationStarted="SlidingGrid_ManipulationStarted" ManipulationDelta="SlidingGrid_ManipulationDelta" ManipulationCompleted="SlidingGrid_ManipulationCompleted"></Grid>
+            <Grid Visibility="Collapsed" Grid.Row="0" x:Name="VideoPlayerGrid" Background="{StaticResource Background}">
+                <MediaPlayerElement x:Name="mediaPlayerElement" AreTransportControlsEnabled="False" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" PointerPressed="mediaPlayerElement_PointerPressed"/>
+            </Grid>
+            <Grid Grid.Row="1" Background="{StaticResource Accent}" x:Name="RootControlGrid">
+                <Grid Visibility="{Binding CurrentEpisode, Converter={StaticResource NullToVisibility}}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Rectangle Fill="Black" Opacity="0.2" VerticalAlignment="Top" Height="1" Grid.Row="0"></Rectangle>
+                    <Button TabIndex="8" HorizontalAlignment="Center" Style="{StaticResource IconButtonStyle}" Grid.Row="1" Tag="" Height="24" RenderTransformOrigin="0.5 0.5" Foreground="White" x:Name="MediaGrip" Click="MediaGrip_Click">
+                        <Button.RenderTransform>
+                            <ScaleTransform ScaleX="1.4"/>
+                        </Button.RenderTransform>
+                    </Button>
+                    <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Grid.Row="1" Tag="" x:Name="EllipsisButton" HorizontalAlignment="Right" Flyout="{StaticResource EllispisFlyout}" Visibility="Collapsed"></Button>
+                    <Grid x:Name="MediaControlsGrid" Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="400"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Column="0" x:Name="MediaControlInfoReduced" Grid.Row="0" Visibility="Collapsed" Grid.ColumnSpan="3" Margin="4,5">
+                            <TextBlock Text="{Binding CurrentEpisode.Title}" Style="{StaticResource Header2}" HorizontalAlignment="Center" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Column="0" x:Name="MediaControlInfo" Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding CurrentEpisode.PictureUrl}" Stretch="Uniform" Margin="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                            <Grid Margin="5,0,20,0" VerticalAlignment="Center" Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="{Binding CurrentEpisode.Title}" Style="{StaticResource Header1}"></TextBlock>
+                                <TextBlock Text="{Binding CurrentEpisode.Subtitle}" Style="{StaticResource Header2}" Grid.Row="1" TextWrapping="WrapWholeWords"></TextBlock>
+                            </Grid>
+                        </Grid>
+                        <Grid x:Name="MediaControlSliderGrid" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Visibility="{Binding State.IsLoading, Converter={StaticResource BoolToVisibility}, ConverterParameter=True}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <ProgressBar IsIndeterminate="True" Margin="20,0" Foreground="White" Grid.ColumnSpan="5" VerticalAlignment="Top" Visibility="{Binding State.IsStreaming, Converter={StaticResource BoolToVisibility}}"></ProgressBar>
+                            <RepeatButton TabIndex="9" XYFocusUp="{x:Bind MediaGrip}" Margin="10,0,10,0" Foreground="White" Style="{StaticResource ImageRepeatButtonStyle}" Tag="" x:Name="Rewind" HorizontalAlignment="Center" Grid.Column="0" Click="Rewind_Click"></RepeatButton>
+                            <TextBlock Style="{StaticResource Header2}" FontSize="12" Grid.Column="1" Text="{Binding CurrentEntry.Position, Converter={StaticResource SecondsToTimeSpan}}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                            <Slider TabIndex="10" XYFocusUp="{x:Bind MediaGrip}" x:Name="MediaControlSlider" Margin="10,6,10,0"  Value="{Binding CurrentEntry.Position, Mode=TwoWay}" Maximum="{Binding CurrentEntry.Duration}" Grid.Column="2" ThumbToolTipValueConverter="{StaticResource SecondsToTimeSpan}" ValueChanged="MediaControlSlider_ValueChanged"></Slider>
+                            <TextBlock Style="{StaticResource Header2}" FontSize="12" Grid.Column="3" x:Name="Duration" Tapped="Duration_OnTapped" Text="{Binding CurrentEntry.Duration, Converter={StaticResource SecondsToTimeSpan}}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Style="{StaticResource Header2}" Visibility="Collapsed" x:Name="RemainingDuration" Tapped="RemainingDuration_OnTapped" FontSize="12" Grid.Column="3" Text="{Binding CurrentEntry.RemainingDuration, Converter={StaticResource SecondsToTimeSpan}, ConverterParameter=True}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                            <RepeatButton TabIndex="11" XYFocusUp="{x:Bind MediaGrip}" Margin="10,0,10,0" Foreground="White" Style="{StaticResource ImageRepeatButtonStyle}" Tag="" x:Name="Forward" HorizontalAlignment="Center" Grid.Column="4" Click="Forward_Click"></RepeatButton>
+                        </Grid>
+                        <Grid Grid.Row="1" Grid.Column="2" x:Name="MediaControlControls" HorizontalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition MinWidth="0"/>
+                                <ColumnDefinition MinWidth="60"/>
+                                <ColumnDefinition MinWidth="60"/>
+                                <ColumnDefinition MinWidth="60"/>
+                                <ColumnDefinition MinWidth="60"/>
+                                <ColumnDefinition MinWidth="60"/>
+                                <ColumnDefinition MinWidth="60"/>
+                                <ColumnDefinition MinWidth="60"/>
+                                <ColumnDefinition MinWidth="0"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <RepeatButton Foreground="White" Style="{StaticResource ImageRepeatButtonStyle}" Tag="" x:Name="Rewind2" HorizontalAlignment="Center" Grid.Column="0" Visibility="Collapsed" Click="Rewind_Click"></RepeatButton>
+                            <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="Prev" HorizontalAlignment="Center" Grid.Column="1" Click="Prev_Click" IsEnabled="{Binding CanGoPrev}"></Button>
+                            <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="Play" HorizontalAlignment="Center" Grid.Column="2" Click="Play_OnClick" Visibility="{Binding State.IsPlaying, Converter={StaticResource BoolToVisibility}, ConverterParameter=True}"></Button>
+                            <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="Pause" HorizontalAlignment="Center" Grid.Column="2" Click="Pause_OnClick" Visibility="{Binding State.IsPlaying, Converter={StaticResource BoolToVisibility}}"></Button>
+                            <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="Next" HorizontalAlignment="Center" Grid.Column="3" Click="Next_OnClick" IsEnabled="{Binding CanGoNext}"></Button>
+                            <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="Volume" HorizontalAlignment="Center" Grid.Column="4" Flyout="{StaticResource VolumeFlyout}"></Button>
+                            <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="PlaylistButton" HorizontalAlignment="Center" Grid.Column="5" Flyout="{StaticResource PlaylistFlyout}" RenderTransformOrigin="0.5 0.5">
+                                <Button.RenderTransform>
+                                    <ScaleTransform x:Name="PlaylistTransform"/>
+                                </Button.RenderTransform>
+                            </Button>
+                            <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="Cast" HorizontalAlignment="Center" Grid.Column="6" Click="Cast_Click"></Button>
+                            <Button Foreground="White" Style="{StaticResource SimpleTextButtonStyle}" Tag="1.0x" x:Name="PlaySpeed" HorizontalAlignment="Center" Grid.Column="7" Flyout="{StaticResource PlaySpeedFlyout}"></Button>
+                            <RepeatButton Foreground="White" Style="{StaticResource ImageRepeatButtonStyle}" Tag="" x:Name="Forward2" HorizontalAlignment="Center" Grid.Column="8" Visibility="Collapsed" Click="Forward_Click"></RepeatButton>
+                            <Button MinWidth="60" Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="VideoControls" HorizontalAlignment="Center" Grid.Column="9" Flyout="{StaticResource VideoFlyout}" Visibility="Collapsed"></Button>
+                        </Grid>
+                        <Grid Grid.Row="1"  x:Name="MediaControlsWaitRing" Visibility="{Binding State.IsLoading, Converter={StaticResource BoolToVisibility}}" Grid.Column="1">
+                            <ProgressRing VerticalAlignment="Center" HorizontalAlignment="Center" Width="40" Height="40" IsActive="True" Foreground="White"></ProgressRing>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Image x:Name="BlurBackgroundImage" Visibility="Collapsed" Stretch="Fill" Grid.Row="1" Opacity="0" IsHitTestVisible="False"></Image>
+        <Grid x:Name="waitRing" Visibility="Collapsed" Grid.Row="1">
+            <Rectangle Fill="Black" Opacity="0.2"></Rectangle>
+            <ProgressRing VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="100" IsActive="True" Foreground="{StaticResource Accent}"></ProgressRing>
+        </Grid>
+    </Grid>
+</Page>

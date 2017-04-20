@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Про Podcasts v</value>
+  </data>
+  <data name="AddToLibraryCategoryLabel.Text" xml:space="preserve">
+    <value>Категорія:</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="CastFiles" xml:space="preserve">
+    <value>Podcasts файли</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Підтвердження</value>
+  </data>
+  <data name="Confirm_PodcastDelete" xml:space="preserve">
+    <value>Ви дійсно бажаєте видалити цей подкаст з бібліотеки?</value>
+  </data>
+  <data name="Country.Text" xml:space="preserve">
+    <value>Бажана мова для подкастів:</value>
+  </data>
+  <data name="DownloadButton.Content" xml:space="preserve">
+    <value>Завантажити</value>
+  </data>
+  <data name="Empty.Text" xml:space="preserve">
+    <value>Тут дещо пусто...
+Будь ласка виконайте пошук</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Помилка</value>
+  </data>
+  <data name="Error_LoadFromFile" xml:space="preserve">
+    <value>Не вдалося завантажити вказаний файл</value>
+  </data>
+  <data name="Error_SaveToFile" xml:space="preserve">
+    <value>Не вдалося завантажити вказаний файл</value>
+  </data>
+  <data name="Error_UnableToParseRSS" xml:space="preserve">
+    <value>Не вдалося проаналізувати RSS</value>
+  </data>
+  <data name="GotIt.Content" xml:space="preserve">
+    <value>Почати Podcasts</value>
+  </data>
+  <data name="LibraryLabel.Header" xml:space="preserve">
+    <value>Бібліотека</value>
+  </data>
+  <data name="LibraryTitle.Text" xml:space="preserve">
+    <value>Бібліотека</value>
+  </data>
+  <data name="Load.Content" xml:space="preserve">
+    <value>Завантаження</value>
+  </data>
+  <data name="MarkAsPlayedButton.Content" xml:space="preserve">
+    <value>Помітити відтвореним</value>
+  </data>
+  <data name="MarkAsUnplayedButton.Content" xml:space="preserve">
+    <value>Помітити невідтвореним</value>
+  </data>
+  <data name="MarketBox.PlaceholderText" xml:space="preserve">
+    <value>Ринок (US, FR, ...)</value>
+  </data>
+  <data name="MyPodcastsMenu.Label" xml:space="preserve">
+    <value>Бібліотека</value>
+  </data>
+  <data name="NoEpisode.Text" xml:space="preserve">
+    <value>Podcasts почувається самотнім.
+Вам варто ввімкнути подкаст...</value>
+  </data>
+  <data name="NowPlayingMenu.Label" xml:space="preserve">
+    <value>Поточне відтворення</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Гаразд</value>
+  </data>
+  <data name="OptionsMenu.Label" xml:space="preserve">
+    <value>Параметри</value>
+  </data>
+  <data name="OptionsTitle.Text" xml:space="preserve">
+    <value>Параметри</value>
+  </data>
+  <data name="PlayButton.Content" xml:space="preserve">
+    <value>Відтворити</value>
+  </data>
+  <data name="Played.Text" xml:space="preserve">
+    <value>Відтворено</value>
+  </data>
+  <data name="PublishedOn" xml:space="preserve">
+    <value>Опубліковано на</value>
+  </data>
+  <data name="Save.Content" xml:space="preserve">
+    <value>Зберегти</value>
+  </data>
+  <data name="SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Пошук за ключовими словами...</value>
+  </data>
+  <data name="SearchMenu.Label" xml:space="preserve">
+    <value>Пошук</value>
+  </data>
+  <data name="SearchTitle.Text" xml:space="preserve">
+    <value>Пошук</value>
+  </data>
+  <data name="SeeAll" xml:space="preserve">
+    <value>Всі подкасти</value>
+  </data>
+  <data name="SeeOnlyUnPlayed" xml:space="preserve">
+    <value>Не відтворені</value>
+  </data>
+  <data name="Success_AddPodcastToLibrary" xml:space="preserve">
+    <value>Подкаст успішно доданий до бібліотеки</value>
+  </data>
+  <data name="Success_LoadFromFile" xml:space="preserve">
+    <value>Файл успішно завантажений</value>
+  </data>
+  <data name="Success_SaveToFile" xml:space="preserve">
+    <value>Файл успішно збережений</value>
+  </data>
+  <data name="Validate.Content" xml:space="preserve">
+    <value>Перевірити</value>
+  </data>
+  <data name="MarkAsPlayedMenu.Text" xml:space="preserve">
+    <value>Позначити як невідтворений</value>
+  </data>
+  <data name="DeletePodcastMenu.Text" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="PodcastCategoryMenu.Text" xml:space="preserve">
+    <value>Категорія</value>
+  </data>
+  <data name="AddToLibraryMenu.Text" xml:space="preserve">
+    <value>Додати до бібліотеки</value>
+  </data>
+  <data name="Error_UnableToSyncPodcast" xml:space="preserve">
+    <value>Помилка синхронізації подкасту</value>
+  </data>
+  <data name="AddToMyPodcasts.Content" xml:space="preserve">
+    <value>Додати до бібліотеки</value>
+  </data>
+  <data name="DeleteButton.Content" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="RefreshButton.Content" xml:space="preserve">
+    <value>Оновити</value>
+  </data>
+  <data name="MarkAsUnplayedMenu.Text" xml:space="preserve">
+    <value>Позначити як невідтворений</value>
+  </data>
+  <data name="DownloadMenu.Text" xml:space="preserve">
+    <value>Завантажити</value>
+  </data>
+  <data name="Downloaded.Text" xml:space="preserve">
+    <value>Завантажені</value>
+  </data>
+  <data name="AddToPlaylistMenu.Text" xml:space="preserve">
+    <value>Додати в плейлист</value>
+  </data>
+  <data name="AddToPlaylistButton.Content" xml:space="preserve">
+    <value>Додати в плейлист</value>
+  </data>
+  <data name="ExtendReason" xml:space="preserve">
+    <value>Збереження даних у хмарі</value>
+  </data>
+  <data name="DownloadLast.Text" xml:space="preserve">
+    <value>Завантажити останній випуск:</value>
+  </data>
+  <data name="DeleteDownloadMenu.Text" xml:space="preserve">
+    <value>Видалити завантаження</value>
+  </data>
+  <data name="Error_UnableToDeleteDownload" xml:space="preserve">
+    <value>Не вдалося видалити завантаження</value>
+  </data>
+  <data name="DeleteDownloadButton.Content" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="Error_NoInternet" xml:space="preserve">
+    <value>Інтернет з'єднання не виявлено</value>
+  </data>
+  <data name="ConnectingMessage" xml:space="preserve">
+    <value>Під'єднуємось до аудіо підсистеми...</value>
+  </data>
+  <data name="LoadingMessage" xml:space="preserve">
+    <value>Завантажуємо бібліотеку...</value>
+  </data>
+  <data name="ParsingMessage" xml:space="preserve">
+    <value>Розбір подкастів...</value>
+  </data>
+  <data name="StopDownloadButton.Content" xml:space="preserve">
+    <value>Зупинити завантаження</value>
+  </data>
+  <data name="StopDownloadMenu.Text" xml:space="preserve">
+    <value>Зупинити завантаження</value>
+  </data>
+  <data name="AutoPlay.Text" xml:space="preserve">
+    <value>Автовідтворення:</value>
+  </data>
+  <data name="ForwardStep.Text" xml:space="preserve">
+    <value>Відмотати вперед: (в секундах)</value>
+  </data>
+  <data name="RewindStep.Text" xml:space="preserve">
+    <value>Відмотати назад: (в секундах)</value>
+  </data>
+  <data name="OPMLFiles" xml:space="preserve">
+    <value>OPML файли</value>
+  </data>
+  <data name="DownloadOnMetered.Text" xml:space="preserve">
+    <value>Дозволити завантаження через лімітовані мережі</value>
+  </data>
+  <data name="NoCategory" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeleteWhenPlayed.Text" xml:space="preserve">
+    <value>Видаляти завантажені подкасти які були відтворені:</value>
+  </data>
+  <data name="DownPodcastMenu.Text" xml:space="preserve">
+    <value>Донизу</value>
+  </data>
+  <data name="UpPodcastMenu.Text" xml:space="preserve">
+    <value>Догори</value>
+  </data>
+  <data name="Unplayed" xml:space="preserve">
+    <value>{0} невідтворено подкаст(и)</value>
+  </data>
+  <data name="DownloadsMenu.Label" xml:space="preserve">
+    <value>Завантаження</value>
+  </data>
+  <data name="FeedbackMenu.Label" xml:space="preserve">
+    <value>Відгук</value>
+  </data>
+  <data name="DownloadsTitle.Text" xml:space="preserve">
+    <value>Завантаження</value>
+  </data>
+  <data name="PlayListMenu.Label" xml:space="preserve">
+    <value>Плейлист</value>
+  </data>
+  <data name="Downloads" xml:space="preserve">
+    <value>завантажено</value>
+  </data>
+  <data name="PodcastsPlural" xml:space="preserve">
+    <value>подкаст(и)</value>
+  </data>
+  <data name="PlaylistTitle.Text" xml:space="preserve">
+    <value>Плейлист</value>
+  </data>
+  <data name="NotificationMessage" xml:space="preserve">
+    <value>Нові випуски: {0}</value>
+  </data>
+  <data name="Notifications.Text" xml:space="preserve">
+    <value>Сповіщення:</value>
+  </data>
+  <data name="RefreshOnLoad.Text" xml:space="preserve">
+    <value>Оновити при завантаженні:</value>
+  </data>
+  <data name="PlayMenu.Text" xml:space="preserve">
+    <value>Відтворити</value>
+  </data>
+  <data name="ExternalStorage.Text" xml:space="preserve">
+    <value>Внутрішня пам'ять:</value>
+  </data>
+  <data name="PickedFolder.Text" xml:space="preserve">
+    <value>Поточна папка:</value>
+  </data>
+  <data name="SystemAccentColor.Text" xml:space="preserve">
+    <value>Використовувати системний акцентний колір(*):</value>
+  </data>
+  <data name="AddAllToPlaylistMenu.Text" xml:space="preserve">
+    <value>Додати всі невідтворені в плейлист</value>
+  </data>
+  <data name="AlreadyInLibrary.Text" xml:space="preserve">
+    <value>Вже в бібліотеці</value>
+  </data>
+  <data name="AutomaticallyAddNewEpisodeToPlayList.Text" xml:space="preserve">
+    <value>Автоматично додавати нові випуски в плейлист:</value>
+  </data>
+  <data name="DownloadsHeader.Header" xml:space="preserve">
+    <value>Завантаження</value>
+  </data>
+  <data name="GeneralHeader.Header" xml:space="preserve">
+    <value>Основне</value>
+  </data>
+  <data name="MediaHeader.Header" xml:space="preserve">
+    <value>Медіа</value>
+  </data>
+  <data name="RefreshAll.Content" xml:space="preserve">
+    <value>Оновити всі подкасти</value>
+  </data>
+  <data name="DeleteOderThan.Text" xml:space="preserve">
+    <value>Видаляти завантаження старіші ніж (у днях):</value>
+  </data>
+  <data name="TimerHeader.Header" xml:space="preserve">
+    <value>Таймер сну</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Почати</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Зупинити</value>
+  </data>
+  <data name="ClearButton.Content" xml:space="preserve">
+    <value>Очистити</value>
+  </data>
+  <data name="DownloadAllButton.Content" xml:space="preserve">
+    <value>Завантажити все</value>
+  </data>
+  <data name="ForcePushToCloud.Content" xml:space="preserve">
+    <value>Надіслати OneDrive</value>
+  </data>
+  <data name="DarkTheme.Text" xml:space="preserve">
+    <value>Темна тема(*): </value>
+  </data>
+  <data name="NeedRestart.Text" xml:space="preserve">
+    <value>(*): Потрібен перезапуск</value>
+  </data>
+  <data name="SupportButton.Content" xml:space="preserve">
+    <value>Надіслати пожертву</value>
+  </data>
+  <data name="SupportHeader.Header" xml:space="preserve">
+    <value>Підтримка</value>
+  </data>
+  <data name="SupportText.Text" xml:space="preserve">
+    <value>Вам подобається Podcasts? Якщо так, ви можете підтримати розробника надіславши пожертву.</value>
+  </data>
+  <data name="ThankYou" xml:space="preserve">
+    <value>Дякуємо за Вашу підтримку!</value>
+  </data>
+  <data name="ImportButton.Content" xml:space="preserve">
+    <value>Імпортувати</value>
+  </data>
+  <data name="SupportMaxButton.Content" xml:space="preserve">
+    <value>Надіслати більшу пожертву</value>
+  </data>
+  <data name="CloudSync.Text" xml:space="preserve">
+    <value>OneDrive Sync:</value>
+  </data>
+  <data name="ForceGetFromCloud.Content" xml:space="preserve">
+    <value>Отримати від OneDrive</value>
+  </data>
+  <data name="CodeAndDesign.Text" xml:space="preserve">
+    <value>Код та дизайн:</value>
+  </data>
+  <data name="Logo.Text" xml:space="preserve">
+    <value>Логотип:</value>
+  </data>
+  <data name="PlayLink.Text" xml:space="preserve">
+    <value>Відтворити</value>
+  </data>
+  <data name="Filters.Text" xml:space="preserve">
+    <value>Фільтри:</value>
+  </data>
+  <data name="UnplayedEpisodesAsc" xml:space="preserve">
+    <value>Невідтворені випуски (Зрос.)</value>
+  </data>
+  <data name="UnplayedEpisodesDesc" xml:space="preserve">
+    <value>Невідтворені випуски (Спад.)</value>
+  </data>
+  <data name="Forever" xml:space="preserve">
+    <value>ніколи</value>
+  </data>
+  <data name="VideoPlayback.Text" xml:space="preserve">
+    <value>Відео відтворення:</value>
+  </data>
+  <data name="FullscreenButton.Content" xml:space="preserve">
+    <value>Повноекранний режим</value>
+  </data>
+  <data name="RotateButton.Content" xml:space="preserve">
+    <value>Обертання</value>
+  </data>
+  <data name="VisibilityButton.Content" xml:space="preserve">
+    <value>Замінити</value>
+  </data>
+  <data name="AddAllToPlaylistMenuDesc.Text" xml:space="preserve">
+    <value>Додати всі невідтворені в плейлист (Спад.)</value>
+  </data>
+  <data name="InvertSkipControls.Text" xml:space="preserve">
+    <value>Інвертувати керування пропусками (Bluetooth):</value>
+  </data>
+  <data name="RemovedPlayedEpisodeFromPlayList.Text" xml:space="preserve">
+    <value>Вилучити відтворені випуски з плейлиста:</value>
+  </data>
+  <data name="AscButton.Content" xml:space="preserve">
+    <value>Зрос.</value>
+  </data>
+  <data name="DescButton.Content" xml:space="preserve">
+    <value>Спад.</value>
+  </data>
+  <data name="ExportID.Content" xml:space="preserve">
+    <value>Експорт ID</value>
+  </data>
+  <data name="ImportID.Content" xml:space="preserve">
+    <value>Імпорт ID</value>
+  </data>
+  <data name="MandatoryLocator" xml:space="preserve">
+    <value>Podcasts вимагає дозволу геопозиціонування, щоб грати у фоновому режимі.Ваше розташування не буде використоватись.</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Всі</value>
+  </data>
+  <data name="ShareMenu.Text" xml:space="preserve">
+    <value>частка</value>
+  </data>
+  <data name="Translations.Text" xml:space="preserve">
+    <value>переклади:</value>
+  </data>
+  <data name="FeedbackButton.Content" xml:space="preserve">
+    <value>Відгук</value>
+  </data>
+  <data name="StreamingIsDisabled" xml:space="preserve">
+    <value>Виявлено лімітоване з’єднання. Стрімінг вимкнено. Вам можете ввімкнути це в настройках.</value>
+  </data>
+  <data name="DeleteAllButton.Content" xml:space="preserve">
+    <value>Видалити все</value>
+  </data>
+  <data name="Login.Text" xml:space="preserve">
+    <value>Логін:</value>
+  </data>
+  <data name="Password.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="UrlText.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="StreamOnMetered.Text" xml:space="preserve">
+    <value>Дозволити стрімінг через лімітовані мережі</value>
+  </data>
+  <data name="PrivacyPolicy.Content" xml:space="preserve">
+    <value>політика конфіденційності</value>
+  </data>
+  <data name="DownloadSlidableListItem.RightLabel" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="EpisodeSlidableListItem.RightLabel" xml:space="preserve">
+    <value>Додати в плейлист</value>
+  </data>
+  <data name="PlaylistEntrySlidableListItem.RightLabel" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="PodcastSlidableListItem.LeftLabel" xml:space="preserve">
+    <value>Додати в плейлист</value>
+  </data>
+  <data name="PodcastSlidableListItem.RightLabel" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="DataFound" xml:space="preserve">
+    <value>Синхронізація в Хмарі знайшла оновлені дані. Хочете використати їх?</value>
+  </data>
+  <data name="BoolToPlayedUnplayed.FalseValue" xml:space="preserve">
+    <value>Помітити відтвореним</value>
+  </data>
+  <data name="BoolToPlayedUnplayed.TrueValue" xml:space="preserve">
+    <value>Помітити невідтвореним</value>
+  </data>
+  <data name="OneDriveCancel" xml:space="preserve">
+    <value>Немає</value>
+  </data>
+  <data name="OneDriveWarning" xml:space="preserve">
+    <value>Для того щоб синхронізувати ваші дані між пристроями Podcast потребує доступу до вашої папки OneDrive. Бажаєте продовжити?</value>
+  </data>
+  <data name="OneDriveYes" xml:space="preserve">
+    <value>Так</value>
+  </data>
+  <data name="AutoSyncOnClose.Text" xml:space="preserve">
+    <value>Синхронізувати на закритті (*):</value>
+  </data>
+  <data name="AutoSyncHelp.Text" xml:space="preserve">
+    <value>(*): OneDrive синхронізація буде зроблено після виходу з програми. Це ця опція відключена, вам доведеться зробити це вручну за допомогою наступних кнопок.</value>
+  </data>
+</root>

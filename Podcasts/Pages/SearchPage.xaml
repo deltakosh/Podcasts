@@ -1,0 +1,97 @@
+﻿<local:RootPage
+    x:Class="Podcasts.SearchPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Podcasts"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Loaded="RootPage_Loaded"
+    SizeChanged="RootPage_SizeChanged"
+    mc:Ignorable="d">
+    <Grid x:Name="RootGrid" Background="{StaticResource Background}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Full">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1280" />
+                    </VisualState.StateTriggers>
+                </VisualState>                
+                <VisualState x:Name="Intermediate">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="SearchTitle.Margin" Value="40,0,0,0" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Medium">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="SearchGrid.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="SearchGrid.Width" Value="Auto" />
+                        <Setter Target="RootGrid.RowDefinitions[0].Height" Value="100" />
+                        <Setter Target="SearchZone.Margin" Value="10,5" />
+                        <Setter Target="SearchZone.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="SearchTitle.Margin" Value="40,0,0,0" />
+                        <Setter Target="ResultsListView.Margin" Value="0,10,0,0" />
+                        <Setter Target="ResultsListView.ItemContainerStyle" Value="{StaticResource NoOverChange}" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.Resources>
+            <Flyout x:Key="AddToLibraryFlyout" Opening="EditCategoryFlyout_OnOpening">
+                <local:AddToMyPodcasts x:Name="AddToMyPodcastsEditor" OnUpdate="CategoryEditor_OnUpdate"></local:AddToMyPodcasts>
+            </Flyout>
+            <MenuFlyout x:Key="MenuFlyout" Placement="Right" Closed="MenuFlyout_OnClosed">
+                <MenuFlyoutItem x:Uid="AddToLibraryMenu" Text="toto" x:Name="AddToLibraryMenu" Click="AddToLibraryMenu_Click" />
+            </MenuFlyout>
+            <Flyout x:Key="BrowseFlyout" Opening="Flyout_Opening">
+                <local:BrowseControl OnUpdate="BrowseControl_OnUpdate"/>
+            </Flyout>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="{StaticResource HeaderBackground}" Padding="0,5,0,0" x:Name="HeaderGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="SearchTitle" Margin="20,0,0,0" Foreground="{StaticResource Foreground}" Grid.Row="0" x:Uid="SearchTitle" FontSize="26" FontWeight="ExtraLight" TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis"></TextBlock>
+            <Grid Grid.Row="1" Margin="0,5" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="SearchZone">
+                <Grid Margin="0,0,0,5" Width="400" x:Name="SearchGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0" InputScope="Search" Style="{StaticResource SearchTextBox}" x:Uid="SearchBox" x:Name="SearchBox" TextChanged="SearchBox_TextChanged"></TextBox>
+                    <Button Margin="5,0,0,0" BorderThickness="0" Style="{StaticResource ImageButtonStyle}" Grid.Column="1" Tag="" x:Name="BrowserButton" Foreground="{StaticResource Foreground}" Flyout="{StaticResource BrowseFlyout}"/>
+                </Grid>
+                <ProgressBar x:Name="ProgressRing" Height="2" HorizontalAlignment="Stretch" IsIndeterminate="True" Visibility="Collapsed" Foreground="{StaticResource Foreground}" VerticalAlignment="Bottom" Margin="0,2,0,2">
+                    <ProgressBar.RenderTransform>
+                        <TranslateTransform Y="3"></TranslateTransform>
+                    </ProgressBar.RenderTransform>
+                </ProgressBar>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <GridView x:Name="ResultsListView" SelectionMode="None" ItemClick="ResultsListView_ItemClick" IsItemClickEnabled="True" Margin="0,10,0,0">
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsWrapGrid Orientation="Horizontal" HorizontalAlignment="Center"></ItemsWrapGrid>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <local:SearchResponseControl Loaded="FrameworkElement_OnLoaded"/>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+            <TextBlock Opacity="0.6" Margin="40" Grid.Row="0" FontSize="24" FontWeight="ExtraLight" x:Uid="Empty" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="{Binding ElementName=ResultsListView, Path=ItemsSource.Length, Converter={StaticResource NumberToVisibility}, ConverterParameter=True}" TextWrapping="WrapWholeWords"></TextBlock>
+        </Grid>
+    </Grid>
+</local:RootPage>

@@ -1,0 +1,69 @@
+﻿<UserControl
+    x:Class="Podcasts.PodcastControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Podcasts"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    <controls:SlidableListItem  x:Name="PodcastSlidableListItem"
+                                x:Uid="PodcastSlidableListItem"
+                                HorizontalAlignment="Stretch"
+                                LeftIcon="ShowResults" 
+                                RightIcon="Delete" 
+                                LeftLabel="Set Favourite"
+                                LeftBackground="Green" 
+                                RightBackground="Red"
+                                LeftForeground ="White" 
+                                RightForeground ="White"
+                                ActivationWidth="60"
+                                IsLeftCommandEnabled="False"
+                                IsRightCommandEnabled="False"
+                                IsOffsetLimited="True"
+                                MouseSlidingEnabled="True"
+                                IsPointerReleasedOnSwipingHandled="True"
+                                LeftCommandRequested="PodcastSlidableListItem_LeftCommandRequested"
+                                RightCommandRequested="PodcastSlidableListItem_RightCommandRequested">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Full">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Medium">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="PodcastSlidableListItem.IsLeftCommandEnabled" Value="True" />
+                        <Setter Target="PodcastSlidableListItem.IsRightCommandEnabled" Value="True" />
+                        <Setter Target="RootGrid.ColumnDefinitions[0].Width" Value="50" />
+                        <Setter Target="RootGrid.Height" Value="50" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid Height="100" Margin="0" Background="Transparent" x:Name="RootGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Source="{Binding LocalImage}" Stretch="Uniform"></Image>
+            <Grid Grid.Column="1" Margin="10,5,5,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition MinHeight="20"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="Title" Text="{Binding Title}" local:FixedRescaler.FontSize="18" FontWeight="Normal" TextWrapping="WrapWholeWords"></TextBlock>
+                <TextBlock x:Name="Description" Text="{Binding Description}" Grid.Row="1" local:FixedRescaler.FontSize="15" FontWeight="ExtraLight" TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis"></TextBlock>
+            </Grid>
+            <Border MinWidth="20" MinHeight="20" BorderThickness="1" BorderBrush="White" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="{StaticResource Accent}" Visibility="{Binding HasUnplayed, Converter={StaticResource BoolToVisibility}}" CornerRadius="10" Margin="0,0,5,5" Padding="4, 0">
+                <TextBlock Text="{Binding UnplayedCount}" FontSize="14" Foreground="White" FontWeight="ExtraLight" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            </Border>
+        </Grid>
+    </controls:SlidableListItem>
+</UserControl>

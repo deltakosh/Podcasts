@@ -1,0 +1,191 @@
+﻿<local:RootPage
+    x:Class="Podcasts.PlayListPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Podcasts"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    Loaded="PlayListPage_OnLoaded"
+    SizeChanged="RootPage_SizeChanged"
+    mc:Ignorable="d">
+
+    <Grid x:Name="RootGrid" Background="{StaticResource Background}">
+        <Grid.Resources>
+            <MenuFlyout x:Key="MenuFlyout" Placement="Right">
+                <MenuFlyoutItem x:Uid="MarkAsPlayedMenu" x:Name="MarkAsPlayedMenu" Click="MarkAsPlayed_OnClick" />
+                <MenuFlyoutItem x:Uid="MarkAsUnplayedMenu" x:Name="MarkAsUnplayedMenu" Click="MarkAsUnplayed_OnClick" />
+                <MenuFlyoutSeparator x:Name="DownloadSeparator"/>
+                <MenuFlyoutItem x:Uid="DownloadMenu" x:Name="DownloadMenu" Click="DownloadMenu_OnClick" />
+                <MenuFlyoutItem x:Uid="DeleteDownloadMenu" x:Name="DeleteDownloadMenu" Click="DeleteDownloadMenu_OnClick" />
+                <MenuFlyoutItem x:Uid="StopDownloadMenu" x:Name="StopDownloadMenu" Click="StopDownloadMenu_OnClick" />
+                <MenuFlyoutSeparator/>
+                <MenuFlyoutItem x:Uid="PlayMenu" x:Name="PlayMenu" Click="PlayMenu_OnClick" />
+                <MenuFlyoutSeparator/>
+                <MenuFlyoutItem x:Uid="UpPodcastMenu" x:Name="UpPodcastMenu" Click="UpPodcastMenu_OnClick" />
+                <MenuFlyoutItem x:Uid="DownPodcastMenu" x:Name="DownPodcastMenu" Click="DownPodcastMenu_OnClick" />
+                <MenuFlyoutSeparator/>
+                <MenuFlyoutItem x:Uid="ShareMenu" x:Name="ShareMenu" Click="ShareMenu_OnClick" />
+            </MenuFlyout>
+
+            <DataTemplate x:Key="Regular">
+                <Grid Height="100"
+              RightTapped="RootGrid_RightTapped">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image x:Name="Image" Source="{Binding Episode.PictureUrl}" Stretch="Uniform" Grid.RowSpan="5" HorizontalAlignment="Left" VerticalAlignment="Center" ImageFailed="Image_ImageFailed"></Image>
+                    <TextBlock Text="{Binding Episode.Title}" Grid.Row="0" Grid.Column="1" Margin="10,5,10,0" TextWrapping="Wrap" local:FixedRescaler.FontSize="20" FontWeight="{Binding IsSelected, Converter={StaticResource BoolToFontWeight}, ConverterParameter=True}" TextTrimming="CharacterEllipsis"></TextBlock>
+                    <TextBlock Text="{Binding Episode.Podcast.Title}" Grid.Column="1" Grid.Row="1" Margin="10,0" local:FixedRescaler.FontSize="16" FontWeight="ExtraLight" TextTrimming="CharacterEllipsis"></TextBlock>
+                    <TextBlock Text="{Binding Episode.PublishedText}" Grid.Column="1" Grid.Row="2" Margin="10,5,0,0" local:FixedRescaler.FontSize="16" FontWeight="ExtraLight" TextTrimming="CharacterEllipsis"></TextBlock>
+                    <ProgressBar IsIndeterminate="{Binding Episode.DownloadProgress, Converter={StaticResource ProgressToIndeterminate}}" Grid.Row="4" Height="4" Grid.Column="1" Grid.ColumnSpan="2" BorderThickness="0" Foreground="{StaticResource Accent}" Background="White" Value="{Binding Episode.DownloadProgress}" Visibility="{Binding Episode.DownloadInProgress, Converter={StaticResource BoolToVisibility}}" Minimum="0" Maximum="100"/>
+                    <Grid Grid.Row="3" Grid.Column="1" Margin="10,4,10,2" x:Name="IconGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid x:Name="PlayedTagGrid">
+                            <local:TextTag x:Uid="Played" Visibility="{Binding Episode.IsPlayed, Converter={StaticResource BoolToVisibility}}"/>
+                        </Grid>
+                        <local:TextTag x:Uid="Downloaded" Grid.Column="1" Visibility="{Binding Episode.IsAlreadyDownloaded, Converter={StaticResource BoolToVisibility}}"/>
+                    </Grid>
+                    <local:IconButton Text="" Glyph="" x:Name="Delete" PointerPressed="Delete_PointerPressed" HorizontalAlignment="Center" Grid.Column="2" VerticalAlignment="Center" Grid.RowSpan="4" Visibility="{Binding Converter={StaticResource XboxToVisibility}}"></local:IconButton>
+                </Grid>
+            </DataTemplate>
+            <DataTemplate x:Key="Small">
+                <controls:SlidableListItem  x:Uid="PlaylistEntrySlidableListItem"
+                                    HorizontalAlignment="Stretch"
+                                    LeftIcon="{Binding Episode.IsPlayed, Converter={StaticResource BoolToIconPlayedUnplayed}}"
+                                    LeftLabel="{Binding Episode.IsPlayed, Converter={StaticResource BoolToPlayedUnplayed}}"
+                                    RightIcon="Delete"
+                                    LeftBackground="Green"
+                                    RightBackground="Red"
+                                    LeftForeground ="White"
+                                    RightForeground ="White"
+                                    ActivationWidth="60"
+                                    IsLeftCommandEnabled="True"
+                                    IsRightCommandEnabled="True"
+                                    IsOffsetLimited="True"
+                                    MouseSlidingEnabled="True"
+                                    IsPointerReleasedOnSwipingHandled="True"
+                                    LeftCommandRequested="PlaylistEntrySlidableListItem_LeftCommandRequested"
+                                    RightCommandRequested="PlaylistEntrySlidableListItem_RightCommandRequested">
+                    <Grid Height="75" RightTapped="RootGrid_RightTapped" Background="{StaticResource DarkBackground}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Image x:Name="Image" Source="{Binding Episode.PictureUrl}" Stretch="Uniform" Grid.RowSpan="5" HorizontalAlignment="Left" VerticalAlignment="Center" ImageFailed="Image_ImageFailed"></Image>
+                        <TextBlock Text="{Binding Episode.Title}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,5,5,0" local:FixedRescaler.FontSize="16" FontWeight="{Binding IsSelected, Converter={StaticResource BoolToFontWeight}, ConverterParameter=True}" TextTrimming="CharacterEllipsis" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="{Binding Episode.PublishedText}" Grid.Column="1" Grid.Row="1" Margin="5,5,0,0" local:FixedRescaler.FontSize="16" FontWeight="ExtraLight" TextTrimming="CharacterEllipsis"></TextBlock>
+                        <ProgressBar IsIndeterminate="{Binding Episode.DownloadProgress, Converter={StaticResource ProgressToIndeterminate}}" Grid.Row="3" Height="4" Grid.Column="1" Grid.ColumnSpan="2" BorderThickness="0" Foreground="{StaticResource Accent}" Background="White" Value="{Binding Episode.DownloadProgress}" Visibility="{Binding Episode.DownloadInProgress, Converter={StaticResource BoolToVisibility}}" Minimum="0" Maximum="100"/>
+                        <Grid Grid.Row="2" Grid.Column="1" Margin="5,4,5,2" x:Name="IconGrid">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid x:Name="PlayedTagGrid">
+                                <local:TextTag x:Uid="Played" Visibility="{Binding Episode.IsPlayed, Converter={StaticResource BoolToVisibility}}"/>
+                            </Grid>
+                            <local:TextTag x:Uid="Downloaded" Grid.Column="1" Visibility="{Binding Episode.IsAlreadyDownloaded, Converter={StaticResource BoolToVisibility}}"/>
+                        </Grid>
+                    </Grid>
+                </controls:SlidableListItem>
+            </DataTemplate>
+        </Grid.Resources>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Full">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1280" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Intermediate">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Title.Margin" Value="20,0,0,0" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Small">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Title.Margin" Value="20,0,0,0" />
+                        <Setter Target="RootGrid.RowDefinitions[0].Height" Value="100" />
+                        <Setter Target="PlaylistListView.ItemTemplate" Value="{StaticResource Small}" />
+                        <Setter Target="PlaylistListView.Padding" Value="0,0,0,0" />
+                        <Setter Target="PlaylistListView.AllowDrop" Value="False" />
+                        <Setter Target="PlaylistListView.CanReorderItems" Value="False" />
+                        <Setter Target="PlaylistListView.IsSwipeEnabled" Value="False" />
+                        <Setter Target="TitleInfos.Margin" Value="0,5,10,0" />
+                        <Setter Target="TitleInfos.FontSize" Value="14" />
+                        <Setter Target="CommandBar.HorizontalAlignment" Value="Center" />
+                        <Setter Target="CommandBar.Margin" Value="0,5,0,10" />
+                        <Setter Target="DownloadAllButton.Style" Value="{StaticResource ImageAndUnderneathTextButtonStyle}" />
+                        <Setter Target="ClearButton.Style" Value="{StaticResource ImageAndUnderneathTextButtonStyle}" />
+                        <Setter Target="OrderAscending.Style" Value="{StaticResource ImageAndUnderneathTextButtonStyle}" />
+                        <Setter Target="OrderDescending.Style" Value="{StaticResource ImageAndUnderneathTextButtonStyle}" />
+                        <Setter Target="PlaylistListView.ItemContainerStyle" Value="{StaticResource NoOverChange}" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="Header" HorizontalAlignment="Stretch" Margin="0" Background="{StaticResource HeaderBackground}">
+            <Grid Grid.Column="0" Margin="20,5,0,0" x:Name="HeaderGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Uid="PlaylistTitle" x:Name="Title" Foreground="{StaticResource Foreground}" FontSize="26" FontWeight="ExtraLight" TextTrimming="CharacterEllipsis"></TextBlock>
+                    <TextBlock x:Name="TitleInfos" Foreground="{StaticResource Foreground}" Grid.Column="1" FontSize="18" FontWeight="ExtraLight" Margin="0,5,10,10"></TextBlock>
+                </Grid>
+                <Grid Grid.Row="1" Margin="0,0,0,10" x:Name="CommandBar">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Button Foreground="{StaticResource Foreground}" Style="{StaticResource ImageAndTextButtonStyle}" x:Uid="DownloadAllButton" Tag="" x:Name="DownloadAllButton" Margin="0,0,30,0" Click="DownloadAllButton_Click"></Button>
+                        <Button Foreground="{StaticResource Foreground}" Style="{StaticResource ImageAndTextButtonStyle}" x:Uid="ClearButton" Tag="" x:Name="ClearButton" Margin="0,0,30,0" Click="ClearButton_Click"></Button>
+                        <Button Foreground="{StaticResource Foreground}" Style="{StaticResource ImageAndTextButtonStyle}" x:Uid="AscButton" Tag="" x:Name="OrderAscending" Margin="0,0,30,0" Click="OrderAscending_Click"></Button>
+                        <Button Foreground="{StaticResource Foreground}" Style="{StaticResource ImageAndTextButtonStyle}" x:Uid="DescButton" Tag="" x:Name="OrderDescending" Margin="0,0,30,0" Click="OrderDescending_Click"></Button>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+        <GridView x:Name="PlaylistListView"
+              AllowDrop="True" CanReorderItems="True" IsSwipeEnabled="True"
+              ItemsSource="{Binding Entries}" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="PlaylistListView_OnItemClick"  Margin="0" ItemTemplate="{StaticResource Regular}" Padding="0">
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid Orientation="Horizontal" HorizontalAlignment="Center" x:Name="ItemsPanel"></ItemsWrapGrid>
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+        </GridView>
+    </Grid>
+</local:RootPage>

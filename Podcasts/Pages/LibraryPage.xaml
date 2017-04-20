@@ -1,0 +1,125 @@
+﻿<local:RootPage
+    x:Class="Podcasts.LibraryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Podcasts"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Loaded="LibraryPage_OnLoaded"
+    SizeChanged="RootPage_SizeChanged"
+    mc:Ignorable="d">
+
+    <Grid x:Name="RootGrid" Background="{StaticResource Background}">
+        <Grid.Resources>
+            <DataTemplate x:Key="PodcastTemplate">
+                <local:PodcastControl RightTapped="UIElement_OnRightTapped"></local:PodcastControl>
+            </DataTemplate>
+            <DataTemplate x:Key="EpisodeTemplate">
+                <local:EpisodeControl RightTapped="EpisodeControl_RightTapped" DisplayDuration="False"></local:EpisodeControl>
+            </DataTemplate>
+            <DataTemplate x:Key="HeaderTemplate">
+                <Grid Margin="0,10,0,0">
+                    <TextBlock Text="{Binding Key, Converter={StaticResource UpperString}}"/>
+                </Grid>
+            </DataTemplate>
+
+            <MenuFlyout x:Key="MenuFlyout" Placement="Right" Closed="MenuFlyout_OnClosed">
+                <MenuFlyoutItem x:Uid="MarkAsPlayedMenu" x:Name="MarkAsPlayedMenu" Click="MarkAsPlayedMenu_Click" />
+                <MenuFlyoutItem x:Uid="PodcastCategoryMenu" x:Name="PodcastCategoryMenu" Click="PodcastCategoryMenu_Click" />
+                <MenuFlyoutSeparator/>
+                <MenuFlyoutItem x:Uid="DeletePodcastMenu" x:Name="DeletePodcastMenu" Click="DeletePodcastMenu_Click" />
+                <MenuFlyoutSeparator/>
+                <MenuFlyoutItem x:Uid="UpPodcastMenu" x:Name="UpPodcastMenu" Click="UpPodcastMenu_OnClick" />
+                <MenuFlyoutItem x:Uid="DownPodcastMenu" x:Name="DownPodcastMenu" Click="DownPodcastMenu_OnClick" />
+                <MenuFlyoutSeparator x:Name="AddAllToPlaylistMenuSeparator"/>
+                <MenuFlyoutItem x:Uid="AddAllToPlaylistMenu" x:Name="AddAllToPlaylistMenu" Click="AddAllToPlaylistMenu_OnClick" />
+                <MenuFlyoutItem x:Uid="AddAllToPlaylistMenuDesc" x:Name="AddAllToPlaylistMenuDesc" Click="AddAllToPlaylistMenuDesc_OnClick" />
+            </MenuFlyout>
+
+            <MenuFlyout x:Key="EpisodeMenuFlyout" Placement="Right" Closed="MenuFlyout_OnClosed">
+                <MenuFlyoutItem x:Uid="MarkAsPlayedMenu" x:Name="EpisodeMarkAsPlayedMenu" Click="EpisodeMarkAsPlayed_OnClick" />
+                <MenuFlyoutItem x:Uid="MarkAsUnplayedMenu" x:Name="MarkAsUnplayedMenu" Click="MarkAsUnplayed_OnClick" />
+                <MenuFlyoutSeparator/>
+                <MenuFlyoutItem x:Uid="DownloadMenu" x:Name="DownloadMenu" Click="DownloadMenu_OnClick" />
+                <MenuFlyoutItem x:Uid="DeleteDownloadMenu" x:Name="DeleteDownloadMenu" Click="DeleteDownloadMenu_OnClick" />
+                <MenuFlyoutItem x:Uid="StopDownloadMenu" x:Name="StopDownloadMenu" Click="StopDownloadMenu_OnClick" />
+                <MenuFlyoutSeparator/>
+                <MenuFlyoutItem x:Uid="AddToPlaylistMenu" x:Name="AddToPlaylistMenu" Click="AddToPlaylistMenu_OnClick" />
+                <MenuFlyoutSeparator/>
+                <MenuFlyoutItem x:Uid="AddAllToPlaylistMenu" x:Name="AddAllEpisodesToPlaylistMenu" Click="AddAllEpisodesToPlaylistMenu_OnClick" />
+            </MenuFlyout>
+
+            <Flyout x:Key="EditCategoryFlyout" Opening="EditCategoryFlyout_OnOpening">
+                <local:AddToMyPodcasts x:Name="AddToMyPodcastsEditor" OnUpdate="CategoryEditor_OnUpdate"></local:AddToMyPodcasts>
+            </Flyout>
+        </Grid.Resources>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Full">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1280" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Intermediate">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="LibraryTitle.Margin" Value="20,0,0,0" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Medium">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="LibraryTitle.Margin" Value="20,0,0,0" />
+                        <Setter Target="RootGrid.RowDefinitions[0].Height" Value="100" />
+                        <Setter Target="itemGridView.Padding" Value="0" />
+                        <Setter Target="FiltersText.Visibility" Value="Collapsed" />
+                        <Setter Target="RefreshButton.Style" Value="{StaticResource ImageAndUnderneathTextButtonStyle}" />
+                        <Setter Target="HeaderControls.HorizontalAlignment" Value="Center" />
+                        <Setter Target="itemGridView.ItemContainerStyle" Value="{StaticResource NoOverChange}" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid Background="{StaticResource HeaderBackground}" Padding="20,5,0,0" x:Name="Header">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Foreground="{StaticResource Foreground}" Grid.Row="0" x:Name="LibraryTitle" x:Uid="LibraryTitle" FontSize="26" FontWeight="ExtraLight" TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis"></TextBlock>
+            <Grid Grid.Row="1" Margin="5,0,0,10" x:Name="HeaderControls">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Foreground="{StaticResource Foreground}" Style="{StaticResource ImageAndTextButtonStyle}" x:Uid="RefreshButton" Tag="" x:Name="RefreshButton"  Margin="0,2,30,0" Click="RefreshButton_Click"></Button>
+                <TextBlock x:Uid="Filters" x:Name="FiltersText" Margin="0,0,20,0" Grid.Column="1" Foreground="{StaticResource Foreground}" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
+                <ComboBox Width="180" x:Name="Filters" SelectionChanged="Filters_SelectionChanged" Grid.Column="2" HorizontalAlignment="Left" Foreground="{StaticResource Foreground}" BorderBrush="{StaticResource LocalAccent}" Margin="0,0,10,0"/>
+            </Grid>
+        </Grid>
+        <GridView Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" x:Name="itemGridView" ItemsSource="{Binding}" SelectionMode="None" IsItemClickEnabled="True" ItemClick="itemGridView_ItemClick" Padding="30,10">
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid Orientation="Horizontal" Margin="10,0"></ItemsWrapGrid>
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+            <GridView.GroupStyle>
+                <GroupStyle HidesIfEmpty="True" HeaderTemplate="{StaticResource HeaderTemplate}">
+                </GroupStyle>
+            </GridView.GroupStyle>
+        </GridView>
+    </Grid>
+</local:RootPage>
