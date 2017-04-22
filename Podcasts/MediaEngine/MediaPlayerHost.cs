@@ -521,6 +521,11 @@ namespace Podcasts
 
                 RestorePosition();
 
+                if (CurrentEntry == null)
+                {
+                    return;
+                }
+
                 Debug.WriteLine("Switched to episode#" + CurrentEntry.Episode.Title);
 
                 if (currentItem.Source.Duration.HasValue)
@@ -613,8 +618,15 @@ namespace Podcasts
             displayInfo.MusicProperties.Title = entry.Episode.Title;
             displayInfo.MusicProperties.AlbumTitle = entry.PodcastTitle ?? "";
             displayInfo.Type = MediaPlaybackType.Music;
-            var albumArtUri = new Uri(entry.Episode.PictureUrl);
-            displayInfo.Thumbnail = RandomAccessStreamReference.CreateFromUri(albumArtUri);
+            try
+            {
+                var albumArtUri = new Uri(entry.Episode.PictureUrl);
+                displayInfo.Thumbnail = RandomAccessStreamReference.CreateFromUri(albumArtUri);
+            }
+            catch
+            {
+                // Ignore error. Uri could be malformed or weird.
+            }
 
             item.ApplyDisplayProperties(displayInfo);
 
@@ -657,6 +669,11 @@ namespace Podcasts
                 }
 
                 // Set playlist
+                if (playbackList.Items.Count == 0)
+                {
+                    return;
+                }
+
                 var currentIndex = Math.Min(Playlist.CurrentPlaylist.Entries.Count - 1, Math.Max(0, Playlist.CurrentPlaylist.CurrentIndex));
 
                 playbackList.StartingItem = playbackList.Items[currentIndex];
@@ -840,7 +857,10 @@ namespace Podcasts
             try
             {
                 Debug.WriteLine("Play");
-                Player.Play();
+                if (Player.PlaybackSession.PlaybackState == MediaPlaybackState.None || Player.PlaybackSession.PlaybackState == MediaPlaybackState.Paused)
+                {
+                    Player.Play();
+                }
                 lastOrderReceived = LastMediaOrder.Play;
                 ForcePlayNext = false;
             }
@@ -895,7 +915,7 @@ namespace Podcasts
 
                 if (currentEntry != null && currentEntry.Duration > 1 && currentPosition > 1)
                 {
-                    Debug.WriteLine("SaveCurrentPosition to " + currentEntry.Episode.Title + "(" + currentPosition + ")");
+                   // Debug.WriteLine("SaveCurrentPosition to " + currentEntry.Episode.Title + "(" + currentPosition + ")");
                     currentEntry.Position = currentPosition.Value;
 
                     if ((currentEntry.Duration >= currentPosition) && (currentPosition / currentEntry.Duration) > 0.95 && currentEntry.Episode != null)
