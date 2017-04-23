@@ -1,0 +1,171 @@
+﻿<local:RootPage x:Class="Podcasts.AboutPage"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:local="using:Podcasts"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                Loaded="AboutPage_Loaded"
+                mc:Ignorable="d">
+
+    <Grid x:Name="RootGrid" Background="{StaticResource Background}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Full">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1280" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Intermediate">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="AboutTitle.Margin" Value="20,0,0,0" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Medium">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="AboutTitle.Margin" Value="20,0,0,0" />
+                        <Setter Target="VersionText.FontSize" Value="15" />
+                        <Setter Target="VersionText.Margin" Value="0,10" />
+                        <Setter Target="RootGrid.RowDefinitions[0].Height" Value="100" />
+                        <Setter Target="CodeAndDesign.FontSize" Value="15" />
+                        <Setter Target="CodeAndDesignAuthor.FontSize" Value="15" />
+                        <Setter Target="Translations.FontSize" Value="15" />
+                        <Setter Target="Translator0.FontSize" Value="15" />
+                        <Setter Target="Translator1.FontSize" Value="15" />
+                        <Setter Target="Translator2.FontSize" Value="15" />
+                        <Setter Target="Translator3.FontSize" Value="15" />
+                        <Setter Target="Translator4.FontSize" Value="15" />
+                        <Setter Target="Translator5.FontSize" Value="15" />
+                        <Setter Target="Translator6.FontSize" Value="15" />
+                        <Setter Target="Translator7.FontSize" Value="15" />
+                        <Setter Target="Translator8.FontSize" Value="15" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.Resources>
+            <Style x:Name="TranslatorTextStyle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontWeight" Value="ExtraLight"/>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="TextWrapping" Value="WrapWholeWords"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="{StaticResource HeaderBackground}" Padding="20,5,0,0" x:Name="HeaderGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="AboutTitle" Foreground="{StaticResource Foreground}" Grid.Row="0" x:Uid="AboutTitle" FontSize="26" FontWeight="ExtraLight" TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis"></TextBlock>
+            <TextBlock x:Name="VersionText" Foreground="{StaticResource Foreground}" Grid.Row="1" FontSize="18" FontWeight="ExtraLight" Margin="5,5,5,10"></TextBlock>
+        </Grid>
+        <ScrollViewer x:Name="SupportScrollViewer"
+                      Grid.Row="1"
+                      Padding="15,20,20,0"
+                      VerticalScrollBarVisibility="Auto"
+                      VerticalScrollMode="Auto">
+            <StackPanel x:Name="AboutPanel"
+                        MinWidth="500"
+                        MaxWidth="500"
+                        HorizontalAlignment="Left">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="CodeAndDesign"
+                               x:Uid="CodeAndDesign"
+                               Grid.Row="0"
+                               Grid.Column="0"
+                               FontSize="16"
+                               FontWeight="ExtraLight"
+                               TextWrapping="WrapWholeWords" />
+                    <TextBlock x:Name="CodeAndDesignAuthor"
+                               Grid.Row="0"
+                               Grid.Column="1"
+                               FontSize="16"
+                               FontWeight="ExtraLight"
+                               Text="David Catuhe"
+                               TextWrapping="WrapWholeWords" />
+                    <Rectangle Grid.Row="1"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Height="1"
+                               Margin="0,10"
+                               Fill="{StaticResource Accent}" />
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="Translations"
+                               x:Uid="Translations"
+                               Grid.Row="0"
+                               Grid.Column="0"
+                               Style="{StaticResource TranslatorTextStyle}"/>
+                    <StackPanel Grid.Row="0" Grid.Column="1">
+                        <TextBlock x:Name="Translator0"
+                                   Text="Alberto Cuffaro (IT)" 
+                                   Style="{StaticResource TranslatorTextStyle}"/>
+                        <TextBlock x:Name="Translator1"
+                                   Text="Edgar Ferreira (PT)" 
+                                   Style="{StaticResource TranslatorTextStyle}"/>
+                        <TextBlock x:Name="Translator2"
+                                   Text="Ezequiel Veliz (ES)"
+                                   Style="{StaticResource TranslatorTextStyle}"/>
+                        <TextBlock x:Name="Translator3"
+                                   Text="FM Schaper (DE)"
+                                   Style="{StaticResource TranslatorTextStyle}"/>
+                        <TextBlock x:Name="Translator4"
+                                   Text="Salih Tekin (TR)"
+                                   Style="{StaticResource TranslatorTextStyle}"/>
+                        <TextBlock x:Name="Translator5"
+                                   Text="Volodymyr Bratko (UK)" 
+                                   Style="{StaticResource TranslatorTextStyle}"/>
+                        <TextBlock x:Name="Translator6"
+                                   Text="UWP 之家 (ZH)"
+                                   Style="{StaticResource TranslatorTextStyle}"/>
+                        <TextBlock x:Name="Translator7"
+                                   Text="Magnus Gøranson (NO)"
+                                   Style="{StaticResource TranslatorTextStyle}"/>
+                        <TextBlock x:Name="Translator8"
+                                   Text="Dmitry Naboychenko (RU)"
+                                   Style="{StaticResource TranslatorTextStyle}"/>
+                    </StackPanel>
+                    <Rectangle Grid.Row="1"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Height="0"
+                               Margin="0,10"
+                               Fill="{StaticResource Accent}" />
+                </Grid>
+                <Rectangle Height="1"
+                           Margin="0,10"
+                           Fill="{StaticResource Accent}" />
+                <HyperlinkButton x:Uid="RepoIssues"
+                                 Margin="0,-10,0,20"
+                                 HorizontalAlignment="Center"
+                                 NavigateUri="https://github.com/deltakosh/Podcasts/issues" />
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</local:RootPage>
