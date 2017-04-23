@@ -48,6 +48,14 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
+        <Grid.Resources>
+            <Style x:Name="TranslatorTextStyle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontWeight" Value="ExtraLight"/>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="TextWrapping" Value="WrapWholeWords"/>
+            </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition/>
@@ -112,64 +120,35 @@
                                x:Uid="Translations"
                                Grid.Row="0"
                                Grid.Column="0"
-                               FontSize="16"
-                               FontWeight="ExtraLight"
-                               TextWrapping="WrapWholeWords" />
+                               Style="{StaticResource TranslatorTextStyle}"/>
                     <StackPanel Grid.Row="0" Grid.Column="1">
                         <TextBlock x:Name="Translator0"
-                                   HorizontalAlignment="Right"
-                                   FontSize="16"
-                                   FontWeight="ExtraLight"
-                                   Text="Alberto Cuffaro (IT)"
-                                   TextWrapping="WrapWholeWords" />
+                                   Text="Alberto Cuffaro (IT)" 
+                                   Style="{StaticResource TranslatorTextStyle}"/>
                         <TextBlock x:Name="Translator1"
-                                   HorizontalAlignment="Right"
-                                   FontSize="16"
-                                   FontWeight="ExtraLight"
-                                   Text="Edgar Ferreira (PT)"
-                                   TextWrapping="WrapWholeWords" />
+                                   Text="Edgar Ferreira (PT)" 
+                                   Style="{StaticResource TranslatorTextStyle}"/>
                         <TextBlock x:Name="Translator2"
-                                   HorizontalAlignment="Right"
-                                   FontSize="16"
-                                   FontWeight="ExtraLight"
                                    Text="Ezequiel Veliz (ES)"
-                                   TextWrapping="WrapWholeWords" />
+                                   Style="{StaticResource TranslatorTextStyle}"/>
                         <TextBlock x:Name="Translator3"
-                                   HorizontalAlignment="Right"
-                                   FontSize="16"
-                                   FontWeight="ExtraLight"
                                    Text="FM Schaper (DE)"
-                                   TextWrapping="WrapWholeWords" />
+                                   Style="{StaticResource TranslatorTextStyle}"/>
                         <TextBlock x:Name="Translator4"
-                                   HorizontalAlignment="Right"
-                                   FontSize="16"
-                                   FontWeight="ExtraLight"
                                    Text="Salih Tekin (TR)"
-                                   TextWrapping="WrapWholeWords" />
+                                   Style="{StaticResource TranslatorTextStyle}"/>
                         <TextBlock x:Name="Translator5"
-                                   HorizontalAlignment="Right"
-                                   FontSize="16"
-                                   FontWeight="ExtraLight"
-                                   Text="Volodymyr Bratko (UK)"
-                                   TextWrapping="WrapWholeWords" />
+                                   Text="Volodymyr Bratko (UK)" 
+                                   Style="{StaticResource TranslatorTextStyle}"/>
                         <TextBlock x:Name="Translator6"
-                                   HorizontalAlignment="Right"
-                                   FontSize="16"
-                                   FontWeight="ExtraLight"
                                    Text="UWP 之家 (ZH)"
-                                   TextWrapping="WrapWholeWords" />
+                                   Style="{StaticResource TranslatorTextStyle}"/>
                         <TextBlock x:Name="Translator7"
-                                   HorizontalAlignment="Right"
-                                   FontSize="16"
-                                   FontWeight="ExtraLight"
                                    Text="Magnus Gøranson (NO)"
-                                   TextWrapping="WrapWholeWords" />
+                                   Style="{StaticResource TranslatorTextStyle}"/>
                         <TextBlock x:Name="Translator8"
-                                   HorizontalAlignment="Right"
-                                   FontSize="16"
-                                   FontWeight="ExtraLight"
                                    Text="Dmitry Naboychenko (RU)"
-                                   TextWrapping="WrapWholeWords" />
+                                   Style="{StaticResource TranslatorTextStyle}"/>
                     </StackPanel>
                     <Rectangle Grid.Row="1"
                                Grid.Column="0"
