@@ -27,7 +27,6 @@
                         <Setter Target="MediaPanel.HorizontalAlignment" Value="Left" />
                         <Setter Target="DownloadsPanel.HorizontalAlignment" Value="Left" />
                         <Setter Target="TimerPanel.HorizontalAlignment" Value="Left" />
-                        <Setter Target="SupportPanel.HorizontalAlignment" Value="Left" />
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Medium">
@@ -57,19 +56,6 @@
                         <Setter Target="AutoPlay.FontSize" Value="15" />
                         <Setter Target="RewindStep.FontSize" Value="15" />
                         <Setter Target="ForwardStep.FontSize" Value="15" />
-                        <Setter Target="SupportText.FontSize" Value="15" />
-                        <Setter Target="CodeAndDesign.FontSize" Value="15" />
-                        <Setter Target="CodeAndDesignAuthor.FontSize" Value="15" />
-                        <Setter Target="Translations.FontSize" Value="15" />
-                        <Setter Target="Translator0.FontSize" Value="15" />
-                        <Setter Target="Translator1.FontSize" Value="15" />
-                        <Setter Target="Translator2.FontSize" Value="15" />
-                        <Setter Target="Translator3.FontSize" Value="15" />
-                        <Setter Target="Translator4.FontSize" Value="15" />
-                        <Setter Target="Translator5.FontSize" Value="15" />
-                        <Setter Target="Translator6.FontSize" Value="15" />
-                        <Setter Target="Translator7.FontSize" Value="15" />
-                        <Setter Target="Translator8.FontSize" Value="15" />
                         <Setter Target="Logo.FontSize" Value="15" />
                         <Setter Target="LogoAuthor.FontSize" Value="15" />
                         <Setter Target="Country.(Grid.Column)" Value="0" />
@@ -98,15 +84,12 @@
                         <Setter Target="MediaPanel.HorizontalAlignment" Value="Stretch" />
                         <Setter Target="DownloadsPanel.HorizontalAlignment" Value="Stretch" />
                         <Setter Target="TimerPanel.HorizontalAlignment" Value="Stretch" />
-                        <Setter Target="SupportPanel.HorizontalAlignment" Value="Stretch" />
                         <Setter Target="GeneralPanel.MinWidth" Value="0" />
                         <Setter Target="LibraryPanel.MinWidth" Value="0" />
                         <Setter Target="MediaPanel.MinWidth" Value="0" />
                         <Setter Target="DownloadsPanel.MinWidth" Value="0" />
                         <Setter Target="TimerPanel.MinWidth" Value="0" />
-                        <Setter Target="SupportPanel.MinWidth" Value="0" />
                         <Setter Target="GeneralScrollViewer.Padding" Value="15,20,20,0" />
-                        <Setter Target="SupportScrollViewer.Padding" Value="15,20,20,0" />
                         <Setter Target="LibraryScrollViewer.Padding" Value="15,20,20,0" />
                         <Setter Target="MediaScrollViewer.Padding" Value="15,20,20,0" />
                         <Setter Target="DownloadScrollViewer.Padding" Value="15,20,20,0" />
@@ -124,8 +107,6 @@
                         <Setter Target="ImportButton.HorizontalAlignment" Value="Stretch" />
                         <Setter Target="PushToCloud.HorizontalAlignment" Value="Stretch" />
                         <Setter Target="ForceGetFromCloud.HorizontalAlignment" Value="Stretch" />
-                        <Setter Target="SupportButton.HorizontalAlignment" Value="Stretch" />
-                        <Setter Target="SupportMaxButton.HorizontalAlignment" Value="Stretch" />
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -137,12 +118,6 @@
             <Style TargetType="local:RingSlice">
                 <Setter Property="Fill" Value="{StaticResource Accent}"/>
                 <Setter Property="StrokeThickness" Value="0"/>
-            </Style>
-            <Style x:Name="TranslatorTextStyle" TargetType="TextBlock">
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="FontWeight" Value="ExtraLight"/>
-                <Setter Property="HorizontalAlignment" Value="Right"/>
-                <Setter Property="TextWrapping" Value="WrapWholeWords"/>
             </Style>
         </Grid.Resources>
         <Grid.RowDefinitions>
@@ -159,56 +134,6 @@
         </Grid>
         <Grid Grid.Row="1" Margin="10,10,0,0" HorizontalAlignment="Left" x:Name="MainGrid">
             <Pivot x:Name="Pivot">
-                <PivotItem x:Uid="SupportHeader" Margin="0" x:Name="SupportPivot">
-                    <ScrollViewer x:Name="SupportScrollViewer" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Padding="15,20,20,0">
-                        <StackPanel MinWidth="500" MaxWidth="500" HorizontalAlignment="Left" x:Name="SupportPanel">
-                            <TextBlock x:Uid="SupportText" x:Name="SupportText"  FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
-                            <Button Style="{StaticResource ActionButtonStyle}" x:Uid="SupportButton" x:Name="SupportButton" HorizontalAlignment="Stretch" Click="SupportButton_OnClick" Margin="0,20,0,0"/>
-                            <Button Style="{StaticResource ActionButtonStyle}" x:Uid="SupportMaxButton" x:Name="SupportMaxButton" HorizontalAlignment="Stretch" Click="SupportMaxButton_OnClick" Margin="0,20,0,0"/>
-                            <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1"></Rectangle>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock x:Uid="CodeAndDesign" x:Name="CodeAndDesign" Grid.Row="0" Grid.Column="0" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
-                                <TextBlock Text="David Catuhe" x:Name="CodeAndDesignAuthor" Grid.Row="0" Grid.Column="1" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
-                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
-                            </Grid>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock x:Uid="Translations" x:Name="Translations" Grid.Row="0" Grid.Column="0" Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                                <StackPanel Grid.Row="0" Grid.Column="1">
-                                    <TextBlock Text="Alberto Cuffaro (IT)" x:Name="Translator0" Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                                    <TextBlock Text="Edgar Ferreira (PT)" x:Name="Translator1"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                                    <TextBlock Text="Ezequiel Veliz (ES)" x:Name="Translator2"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                                    <TextBlock Text="FM Schaper (DE)" x:Name="Translator3"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                                    <TextBlock Text="Salih Tekin (TR)" x:Name="Translator4"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                                    <TextBlock Text="Volodymyr Bratko (UK)" x:Name="Translator5"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                                    <TextBlock Text="UWP 之家 (ZH)" x:Name="Translator6"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                                    <TextBlock Text="Magnus Gøranson (NO)" x:Name="Translator7"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                                    <TextBlock Text="Dmitry Naboychenko (RU)" x:Name="Translator8"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                                </StackPanel>
-                                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
-                            </Grid>
-                            <Rectangle Fill="{StaticResource Accent}" Margin="0" Height="1"></Rectangle>
-                            <Button Style="{StaticResource ActionButtonStyle}" x:Uid="FeedbackButton" x:Name="FeedbackButton" HorizontalAlignment="Stretch" Click="FeedbackButton_OnClick" Margin="0,10,0,0"/>
-                            <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1"></Rectangle>
-                            <HyperlinkButton x:Uid="PrivacyPolicy" NavigateUri="http://www.urzagatherer.com/Privacy Policy.Podcasts.htm" HorizontalAlignment="Center" Margin="0,-10,0,20"/>
-                        </StackPanel>
-                    </ScrollViewer>
-                </PivotItem>
                 <PivotItem x:Uid="GeneralHeader" Margin="0">
                     <ScrollViewer x:Name="GeneralScrollViewer" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Padding="15,20,20,0">
                         <StackPanel MinWidth="500" MaxWidth="500" HorizontalAlignment="Left" x:Name="GeneralPanel">

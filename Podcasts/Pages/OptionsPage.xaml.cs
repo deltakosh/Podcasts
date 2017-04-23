@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Windows.ApplicationModel;
-using Windows.ApplicationModel.Store;
-using Windows.Storage;
 using Windows.Storage.AccessCache;
 using Windows.Storage.Pickers;
 using Windows.System;
@@ -127,42 +125,6 @@ namespace Podcasts
                 StartTimer.Content = StringsHelper.Start;
             }
 
-            if (!AppSettings.Instance.TipSent)
-            {
-                try
-                {
-                    if ((Application.Current as App).LicenseInformation == null)
-                    {
-                        Pivot.Items.Remove(SupportPivot);
-                    }
-                    else
-                    {
-                        var active = (Application.Current as App).LicenseInformation.ProductLicenses["Support"].IsActive || (Application.Current as App).LicenseInformation.ProductLicenses["SupportMax"].IsActive;
-
-                        if (active)
-                        {
-                            MarkSupportActivated();
-                        }
-                    }
-                }
-                catch
-                {
-                    // Ignore error
-                }
-            }
-            else
-            {
-                MarkSupportActivated();
-            }
-        }
-
-        void MarkSupportActivated()
-        {
-            Pivot.Items.Remove(SupportPivot);
-            Pivot.Items.Add(SupportPivot);
-            SupportButton.Visibility = Visibility.Collapsed;
-            SupportMaxButton.Visibility = Visibility.Collapsed;
-            SupportText.Text = StringsHelper.ThankYou;
         }
 
         private void CheckTimer()
@@ -425,28 +387,6 @@ namespace Podcasts
             LocalSettings.Instance.DarkTheme = DarkThemeToggle.IsOn;
         }
 
-        private async void SupportButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                WaitRingManager.IsWaitRingVisible = true;
-                await CurrentApp.RequestProductPurchaseAsync("Support");
-                WaitRingManager.IsWaitRingVisible = false;
-                var active = (Application.Current as App).LicenseInformation.ProductLicenses["Support"].IsActive;
-
-                if (active)
-                {
-                    MarkSupportActivated();
-                    AppSettings.Instance.TipSent = true;
-                    await App.MessageAsync(StringsHelper.ThankYou);
-                }
-            }
-            catch
-            {
-                WaitRingManager.IsWaitRingVisible = false;
-            }
-        }
-
         private async void Import_Click(object sender, RoutedEventArgs e)
         {
             var filePicker = new FileOpenPicker();
@@ -484,28 +424,6 @@ namespace Podcasts
                     await Messenger.ErrorAsync($"{StringsHelper.Error_LoadFromFile}: {ex.Message}");
                     await WaitRingManager.ShowBlurBackground(false);
                 }
-            }
-        }
-
-        private async void SupportMaxButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                WaitRingManager.IsWaitRingVisible = true;
-                await CurrentApp.RequestProductPurchaseAsync("SupportMax");
-                WaitRingManager.IsWaitRingVisible = false;
-                var active = (Application.Current as App).LicenseInformation.ProductLicenses["SupportMax"].IsActive;
-
-                if (active)
-                {
-                    MarkSupportActivated();
-                    AppSettings.Instance.TipSent = true;
-                    await App.MessageAsync(StringsHelper.ThankYou);
-                }
-            }
-            catch
-            {
-                WaitRingManager.IsWaitRingVisible = false;
             }
         }
 
@@ -579,12 +497,6 @@ namespace Podcasts
         private void AutoSyncOnCloseToggle_OnToggled(object sender, RoutedEventArgs e)
         {
             LocalSettings.Instance.AutoSyncOnClose = AutoSyncOnCloseToggle.IsOn;
-        }
-
-        private async void FeedbackButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            App.TrackEvent("Review");
-            await Launcher.LaunchUriAsync(new Uri("ms-windows-store:REVIEW?PFN=15798DavidCatuhe.Cast_x8akzp4bebrnj", UriKind.Absolute));
         }
     }
 }

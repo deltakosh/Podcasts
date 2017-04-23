@@ -1,1 +1,1 @@
-﻿Interface utilisateur améliorée
+﻿Nouvelle page "A propos"
