@@ -99,7 +99,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <Content Include="analytics.xml" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -132,7 +131,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Podcasts_StoreKey.pfx" />
     <None Include="Service References\Application Insights\ConnectedService.json" />
     <None Include="Store\1000x800.png" />
     <None Include="Store\2400x1200.png" />
@@ -209,6 +207,9 @@
       <DependentUpon>ExpandableTextBlock.xaml</DependentUpon>
     </Compile>
     <Compile Include="MediaEngine\LastMediaOrder.cs" />
+    <Compile Include="Pages\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PlayListPage.xaml.cs">
       <DependentUpon>PlayListPage.xaml</DependentUpon>
     </Compile>
@@ -315,6 +316,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\ExpandableTextBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AboutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

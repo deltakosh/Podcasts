@@ -1,2 +1,2 @@
-MainPackage=D:\DeltakoshTFS\Cast\Podcasts\bin\x64\Release\Upload\Podcasts_7.5.10.0_x64.appx
-SymbolPackage=D:\DeltakoshTFS\Cast\Podcasts\AppPackages\Podcasts_7.5.10.0\Podcasts_7.5.10.0_x64.appxsym
+MainPackage=D:\Repos\Podcasts\Podcasts\bin\x64\Release\Upload\Podcasts_7.5.14.0_x64.appx
+SymbolPackage=D:\Repos\Podcasts\Podcasts\bin\x64\Release\Upload\Podcasts_7.5.14.0\Podcasts_7.5.14.0_x64.appxsym

@@ -279,6 +279,7 @@
                 <!--Options-->
                 <controls:HamburgerMenu.OptionsItemsSource>
                     <controls:HamburgerMenuItemCollection>
+                        <controls:HamburgerMenuGlyphItem x:Uid="AboutMenu" x:Name="AboutMenu" Glyph="" Tag="About"/>
                         <controls:HamburgerMenuGlyphItem x:Uid="OptionsMenu" x:Name="OptionsMenu" Glyph="" Tag="Options"/>
                     </controls:HamburgerMenuItemCollection>
                 </controls:HamburgerMenu.OptionsItemsSource>

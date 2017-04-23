@@ -414,7 +414,7 @@ namespace Podcasts
             else
             {
                 CurrentPlaylist.Clear();
-                if (loadedPlaylist.Entries.Count > 0)
+                if (loadedPlaylist != null && loadedPlaylist.Entries.Count > 0)
                 {
                     CurrentPlaylist.Entries.AddRange(loadedPlaylist.Entries.ToList());
                     CurrentPlaylist.CurrentIndex = loadedPlaylist.CurrentIndex;
