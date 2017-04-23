@@ -581,4 +581,13 @@ You should play a podcast...</value>
   <data name="AutoSyncHelp.Text" xml:space="preserve">
     <value>(*): OneDrive synchronization will be done after closing the app. If this option is disabled, you will have to do it manually using the following buttons.</value>
   </data>
+  <data name="AboutMenu.Label" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AboutTitle.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="RepoIssues.Content" xml:space="preserve">
+    <value>Issues</value>
+  </data>
 </root>

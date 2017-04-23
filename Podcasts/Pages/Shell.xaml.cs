@@ -463,6 +463,9 @@ namespace Podcasts
                 case 5:
                     HamburgerMenu.SelectedOptionsIndex = 0;
                     break;
+                case 6:
+                    HamburgerMenu.SelectedOptionsIndex = 1;
+                    break;
             }
         }
 
@@ -824,8 +827,16 @@ namespace Podcasts
 
             switch (tag)
             {
-                case "Options":
+                case "About":
                     selectedMenuIndex = 5;
+                    if (GetCurrentPage() != typeof(AboutPage))
+                    {
+                        Navigate(typeof(AboutPage));
+                    }
+                    break;
+
+                case "Options":
+                    selectedMenuIndex = 6;
                     if (GetCurrentPage() != typeof(OptionsPage))
                     {
                         Navigate(typeof(OptionsPage));
