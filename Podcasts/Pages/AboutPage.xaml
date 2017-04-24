@@ -22,6 +22,7 @@
                     <VisualState.Setters>
                         <Setter Target="AboutTitle.Margin" Value="20,0,0,0" />
                         <Setter Target="SupportPanel.HorizontalAlignment" Value="Left" />
+                        <Setter Target="ContributorsPanel.HorizontalAlignment" Value="Left" />
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Medium">
@@ -30,7 +31,9 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="SupportText.FontSize" Value="15" />
+                        <Setter Target="ContributorsText.FontSize" Value="15" />
                         <Setter Target="SupportPanel.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="ContributorsPanel.HorizontalAlignment" Value="Stretch" />
                         <Setter Target="AboutTitle.Margin" Value="20,0,0,0" />
                         <Setter Target="VersionText.FontSize" Value="15" />
                         <Setter Target="VersionText.Margin" Value="0,10" />
@@ -38,6 +41,7 @@
                         <Setter Target="CodeAndDesign.FontSize" Value="15" />
                         <Setter Target="CodeAndDesignAuthor.FontSize" Value="15" />
                         <Setter Target="Translations.FontSize" Value="15" />
+                        <Setter Target="Contributor1.FontSize" Value="15" />
                         <Setter Target="Translator0.FontSize" Value="15" />
                         <Setter Target="Translator1.FontSize" Value="15" />
                         <Setter Target="Translator2.FontSize" Value="15" />
@@ -48,7 +52,9 @@
                         <Setter Target="Translator7.FontSize" Value="15" />
                         <Setter Target="Translator8.FontSize" Value="15" />
                         <Setter Target="SupportPanel.MinWidth" Value="0" />
+                        <Setter Target="ContributorsPanel.MinWidth" Value="0" />
                         <Setter Target="SupportScrollViewer.Padding" Value="15,20,20,0" />
+                        <Setter Target="ContributorsScrollViewer.Padding" Value="15,20,20,0" />
                         <Setter Target="SupportButton.HorizontalAlignment" Value="Stretch" />
                         <Setter Target="SupportMaxButton.HorizontalAlignment" Value="Stretch" />
                     </VisualState.Setters>
