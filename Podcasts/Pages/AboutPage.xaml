@@ -22,6 +22,7 @@
                     <VisualState.Setters>
                         <Setter Target="AboutTitle.Margin" Value="20,0,0,0" />
                         <Setter Target="SupportPanel.HorizontalAlignment" Value="Left" />
+                        <Setter Target="ContributorsPanel.HorizontalAlignment" Value="Left" />
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Medium">
@@ -30,7 +31,9 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="SupportText.FontSize" Value="15" />
+                        <Setter Target="ContributorsText.FontSize" Value="15" />
                         <Setter Target="SupportPanel.HorizontalAlignment" Value="Stretch" />
+                        <Setter Target="ContributorsPanel.HorizontalAlignment" Value="Stretch" />
                         <Setter Target="AboutTitle.Margin" Value="20,0,0,0" />
                         <Setter Target="VersionText.FontSize" Value="15" />
                         <Setter Target="VersionText.Margin" Value="0,10" />
@@ -38,6 +41,7 @@
                         <Setter Target="CodeAndDesign.FontSize" Value="15" />
                         <Setter Target="CodeAndDesignAuthor.FontSize" Value="15" />
                         <Setter Target="Translations.FontSize" Value="15" />
+                        <Setter Target="Contributor1.FontSize" Value="15" />
                         <Setter Target="Translator0.FontSize" Value="15" />
                         <Setter Target="Translator1.FontSize" Value="15" />
                         <Setter Target="Translator2.FontSize" Value="15" />
@@ -48,7 +52,9 @@
                         <Setter Target="Translator7.FontSize" Value="15" />
                         <Setter Target="Translator8.FontSize" Value="15" />
                         <Setter Target="SupportPanel.MinWidth" Value="0" />
+                        <Setter Target="ContributorsPanel.MinWidth" Value="0" />
                         <Setter Target="SupportScrollViewer.Padding" Value="15,20,20,0" />
+                        <Setter Target="ContributorsScrollViewer.Padding" Value="15,20,20,0" />
                         <Setter Target="SupportButton.HorizontalAlignment" Value="Stretch" />
                         <Setter Target="SupportMaxButton.HorizontalAlignment" Value="Stretch" />
                     </VisualState.Setters>
@@ -75,58 +81,83 @@
             <TextBlock x:Name="AboutTitle" Foreground="{StaticResource Foreground}" Grid.Row="0" x:Uid="AboutTitle" FontSize="26" FontWeight="ExtraLight" TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis"></TextBlock>
             <TextBlock x:Name="VersionText" Foreground="{StaticResource Foreground}" Grid.Row="1" FontSize="18" FontWeight="ExtraLight" Margin="5,5,5,10"></TextBlock>
         </Grid>
-        <ScrollViewer x:Name="SupportScrollViewer" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Padding="15,20,20,0" Grid.Row="1">
-            <StackPanel MinWidth="500" MaxWidth="500" HorizontalAlignment="Left" x:Name="SupportPanel">
-                <TextBlock x:Uid="SupportText" x:Name="SupportText"  FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
-                <Button Style="{StaticResource ActionButtonStyle}" x:Uid="SupportButton" x:Name="SupportButton" HorizontalAlignment="Stretch" Click="SupportButton_OnClick" Margin="0,20,0,0"/>
-                <Button Style="{StaticResource ActionButtonStyle}" x:Uid="SupportMaxButton" x:Name="SupportMaxButton" HorizontalAlignment="Stretch" Click="SupportMaxButton_OnClick" Margin="0,20,0,0"/>
-                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1"></Rectangle>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <TextBlock x:Uid="CodeAndDesign" x:Name="CodeAndDesign" Grid.Row="0" Grid.Column="0" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
-                    <TextBlock Text="David Catuhe" x:Name="CodeAndDesignAuthor" Grid.Row="0" Grid.Column="1" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
-                    <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <TextBlock x:Uid="Translations" x:Name="Translations" Grid.Row="0" Grid.Column="0" Style="{StaticResource TranslatorTextStyle}" HorizontalAlignment="Left"></TextBlock>
-                    <StackPanel Grid.Row="0" Grid.Column="1">
-                        <TextBlock Text="Alberto Cuffaro (IT)" x:Name="Translator0" Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                        <TextBlock Text="Edgar Ferreira (PT)" x:Name="Translator1"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                        <TextBlock Text="Ezequiel Veliz (ES)" x:Name="Translator2"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                        <TextBlock Text="FM Schaper (DE)" x:Name="Translator3"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                        <TextBlock Text="Salih Tekin (TR)" x:Name="Translator4"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                        <TextBlock Text="Volodymyr Bratko (UK)" x:Name="Translator5"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                        <TextBlock Text="UWP 之家 (ZH)" x:Name="Translator6"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                        <TextBlock Text="Magnus Gøranson (NO)" x:Name="Translator7"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
-                        <TextBlock Text="Dmitry Naboychenko (RU)" x:Name="Translator8"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
+        <Pivot x:Name="Pivot" Grid.Row="1">
+            <PivotItem x:Uid="SupportHeader" Margin="0">
+                <ScrollViewer x:Name="SupportScrollViewer" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Padding="15,20,20,0" Grid.Row="1">
+                    <StackPanel MinWidth="500" MaxWidth="500" HorizontalAlignment="Left" x:Name="SupportPanel">
+                        <TextBlock x:Uid="SupportText" x:Name="SupportText"  FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                        <Button Style="{StaticResource ActionButtonStyle}" x:Uid="SupportButton" x:Name="SupportButton" HorizontalAlignment="Stretch" Click="SupportButton_OnClick" Margin="0,20,0,0"/>
+                        <Button Style="{StaticResource ActionButtonStyle}" x:Uid="SupportMaxButton" x:Name="SupportMaxButton" HorizontalAlignment="Stretch" Click="SupportMaxButton_OnClick" Margin="0,20,0,0"/>
+                        <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1"></Rectangle>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock x:Uid="CodeAndDesign" x:Name="CodeAndDesign" Grid.Row="0" Grid.Column="0" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                            <TextBlock Text="David Catuhe" x:Name="CodeAndDesignAuthor" Grid.Row="0" Grid.Column="1" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                            <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock x:Uid="Translations" x:Name="Translations" Grid.Row="0" Grid.Column="0" Style="{StaticResource TranslatorTextStyle}" HorizontalAlignment="Left"></TextBlock>
+                            <StackPanel Grid.Row="0" Grid.Column="1">
+                                <TextBlock Text="Alberto Cuffaro (IT)" x:Name="Translator0" Style="{StaticResource TranslatorTextStyle}"></TextBlock>
+                                <TextBlock Text="Edgar Ferreira (PT)" x:Name="Translator1"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
+                                <TextBlock Text="Ezequiel Veliz (ES)" x:Name="Translator2"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
+                                <TextBlock Text="FM Schaper (DE)" x:Name="Translator3"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
+                                <TextBlock Text="Salih Tekin (TR)" x:Name="Translator4"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
+                                <TextBlock Text="Volodymyr Bratko (UK)" x:Name="Translator5"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
+                                <TextBlock Text="UWP 之家 (ZH)" x:Name="Translator6"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
+                                <TextBlock Text="Magnus Gøranson (NO)" x:Name="Translator7"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
+                                <TextBlock Text="Dmitry Naboychenko (RU)" x:Name="Translator8"  Style="{StaticResource TranslatorTextStyle}"></TextBlock>
+                            </StackPanel>
+                            <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
+                        </Grid>
+                        <Rectangle Fill="{StaticResource Accent}" Margin="0" Height="1"></Rectangle>
+                        <Button Style="{StaticResource ActionButtonStyle}" x:Uid="FeedbackButton" x:Name="FeedbackButton" HorizontalAlignment="Stretch" Click="FeedbackButton_OnClick" Margin="0,10,0,0"/>
+                        <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1"></Rectangle>
+                        <HyperlinkButton x:Uid="RepoIssues"
+                                         Margin="0,-10,0,5"
+                                         HorizontalAlignment="Center"
+                                         NavigateUri="https://github.com/deltakosh/Podcasts/issues" />
+                        <HyperlinkButton x:Uid="PrivacyPolicy" NavigateUri="http://www.urzagatherer.com/Privacy Policy.Podcasts.htm" HorizontalAlignment="Center" Margin="0,-10,0,20"/>
                     </StackPanel>
-                    <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
-                </Grid>
-                <Rectangle Fill="{StaticResource Accent}" Margin="0" Height="1"></Rectangle>
-                <Button Style="{StaticResource ActionButtonStyle}" x:Uid="FeedbackButton" x:Name="FeedbackButton" HorizontalAlignment="Stretch" Click="FeedbackButton_OnClick" Margin="0,10,0,0"/>
-                <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1"></Rectangle>
-                <HyperlinkButton x:Uid="RepoIssues"
-                                 Margin="0,-10,0,5"
-                                 HorizontalAlignment="Center"
-                                 NavigateUri="https://github.com/deltakosh/Podcasts/issues" />
-                <HyperlinkButton x:Uid="PrivacyPolicy" NavigateUri="http://www.urzagatherer.com/Privacy Policy.Podcasts.htm" HorizontalAlignment="Center" Margin="0,-10,0,20"/>
-            </StackPanel>
-        </ScrollViewer>
+                </ScrollViewer>
+            </PivotItem>
+            <PivotItem x:Uid="ContributorsHeader" Margin="0">
+                <ScrollViewer x:Name="ContributorsScrollViewer" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Padding="15,20,20,0" Grid.Row="1">
+                    <StackPanel MinWidth="500" MaxWidth="500" HorizontalAlignment="Left" x:Name="ContributorsPanel">
+                        <TextBlock x:Uid="ContributorsText" x:Name="ContributorsText"  FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                        <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1"></Rectangle>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Aalok Singh" x:Name="Contributor1" Grid.Row="0" Grid.Column="1" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                            <Rectangle Fill="{StaticResource Accent}" Margin="0, 10" Height="1" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1"></Rectangle>
+                        </Grid>
+                    </StackPanel>
+                </ScrollViewer>
+            </PivotItem>
+        </Pivot>
+
 
     </Grid>
 </local:RootPage>
