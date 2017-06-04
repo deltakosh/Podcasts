@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" IgnorableNamespaces="uap mp uap3">
-  <Identity Name="15798DavidCatuhe.Cast" Publisher="CN=A497AE31-0484-435B-8E45-4491C81DB665" Version="7.5.14.0" />
+  <Identity Name="15798DavidCatuhe.Cast" Publisher="CN=A497AE31-0484-435B-8E45-4491C81DB665" Version="7.6.0.0" />
   <mp:PhoneIdentity PhoneProductId="dff38ccb-25a2-4a62-a85b-de9691e17180" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Podcasts (beta)</DisplayName>

@@ -581,4 +581,19 @@ Bir podcast oynatmalısın...</value>
   <data name="AutoSyncHelp.Text" xml:space="preserve">
     <value>(*): Uygulamayı kapattıktan sonra OneDrive senkronizasyonu yapılacaktır. Bu seçenek devre dışı, aşağıdaki düğmeleri kullanarak manuel olarak yapmanız gerekecek.</value>
   </data>
+  <data name="ContributorsHeader.Header" xml:space="preserve">
+    <value>Katkıda bulunanlar</value>
+  </data>
+  <data name="ContributorsText.Text" xml:space="preserve">
+    <value>Özel sayesinde bu uygulama geliştirme yardımcı tüm insanlar:</value>
+  </data>
+  <data name="AboutMenu.Label" xml:space="preserve">
+    <value>Hakkında</value>
+  </data>
+  <data name="AboutTitle.Text" xml:space="preserve">
+    <value>Hakkında</value>
+  </data>
+  <data name="RepoIssues.Content" xml:space="preserve">
+    <value>Sorunları</value>
+  </data>
 </root>

@@ -1,5 +1,5 @@
-MainPackage=D:\Repos\Podcasts\Podcasts\bin\ARM\Release\Upload\Podcasts_7.5.14.0_ARM.appx
-SymbolPackage=D:\Repos\Podcasts\Podcasts\bin\ARM\Release\Upload\Podcasts_7.5.14.0\Podcasts_7.5.14.0_ARM.appxsym
+MainPackage=D:\Repos\Podcasts\Podcasts\bin\ARM\Release\Upload\Podcasts_7.6.0.0_ARM.appx
+SymbolPackage=D:\Repos\Podcasts\Podcasts\bin\ARM\Release\Upload\Podcasts_7.6.0.0\Podcasts_7.6.0.0_ARM.appxsym
 ResourcePack=D:\Repos\Podcasts\Podcasts\_language-de.appx
 ResourcePack=D:\Repos\Podcasts\Podcasts\_language-es.appx
 ResourcePack=D:\Repos\Podcasts\Podcasts\_language-fr.appx

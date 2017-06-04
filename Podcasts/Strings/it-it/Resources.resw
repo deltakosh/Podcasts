@@ -578,4 +578,19 @@ Dovresti riprodurre un podcast...</value>
   <data name="AutoSyncHelp.Text" xml:space="preserve">
     <value>La sincronizzazione con Onedrive verrà eseguita alla chiusura dell'app. Se disabiliti questa opzione dovrai farlo manualmente con i tasti qui sotto.</value>
   </data>
+  <data name="ContributorsHeader.Header" xml:space="preserve">
+    <value>Contributori</value>
+  </data>
+  <data name="ContributorsText.Text" xml:space="preserve">
+    <value>Un ringraziamento speciale a tutte le persone che hanno contribuito a sviluppare questa applicazione:</value>
+  </data>
+  <data name="AboutMenu.Label" xml:space="preserve">
+    <value>Circa</value>
+  </data>
+  <data name="AboutTitle.Text" xml:space="preserve">
+    <value>Circa</value>
+  </data>
+  <data name="RepoIssues.Content" xml:space="preserve">
+    <value>Problemi</value>
+  </data>
 </root>

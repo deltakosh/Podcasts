@@ -581,4 +581,19 @@ Você pode tocar um Podcast…</value>
   <data name="AutoSyncHelp.Text" xml:space="preserve">
     <value>(*): A sincronização do OneDrive será feita após o fechamento do aplicativo. Se esta opção estiver desactivada, terá de o fazer manualmente utilizando os seguintes botões.</value>
   </data>
+  <data name="ContributorsHeader.Header" xml:space="preserve">
+    <value>Contribuintes</value>
+  </data>
+  <data name="ContributorsText.Text" xml:space="preserve">
+    <value>Agradecimentos especiais a todas as pessoas que ajudaram a desenvolver esta aplicação:</value>
+  </data>
+  <data name="AboutMenu.Label" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="AboutTitle.Text" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="RepoIssues.Content" xml:space="preserve">
+    <value>Questões</value>
+  </data>
 </root>

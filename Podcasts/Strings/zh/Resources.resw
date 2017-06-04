@@ -578,4 +578,19 @@
   <data name="FeedbackButton.Content" xml:space="preserve">
     <value>评价和反馈</value>
   </data>
+  <data name="ContributorsHeader.Header" xml:space="preserve">
+    <value>派遣</value>
+  </data>
+  <data name="ContributorsText.Text" xml:space="preserve">
+    <value>特别感谢所有帮助开发此应用程序的人员:</value>
+  </data>
+  <data name="AboutMenu.Label" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="AboutTitle.Text" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="RepoIssues.Content" xml:space="preserve">
+    <value>问题</value>
+  </data>
 </root>

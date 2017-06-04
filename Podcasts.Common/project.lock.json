@@ -19820,7 +19820,7 @@
       ]
     },
     "Microsoft.NETCore.UniversalWindowsPlatform/5.3.3": {
-      "sha512": "6RAOKosX9uB14zhLE0ewitX2biQhllegPimfKWLo5XUytA7aaYesKFEW+mg9JVRNXkTItB83Yn680vaUPmO6QA==",
+      "sha512": "aCy8WhdcWqIl+gUoY905OWPCP1NqVOtT4Oejn7SIZb9KPKkB5cUfvLEmsY3xwud0TIaJaExKTUhrFluzKtSblQ==",
       "type": "package",
       "path": "microsoft.netcore.universalwindowsplatform/5.3.3",
       "files": [
@@ -25905,21 +25905,21 @@
     "UAP,Version=v10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\rcbev\\.nuget\\packages\\": {}
+    "C:\\Users\\david\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\rcbev\\Source\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj",
+      "projectUniqueName": "D:\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj",
       "projectName": "Podcasts.Common",
-      "projectPath": "C:\\Users\\rcbev\\Source\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj",
-      "projectJsonPath": "C:\\Users\\rcbev\\Source\\Repos\\Podcasts\\Podcasts.Common\\project.json",
+      "projectPath": "D:\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj",
+      "projectJsonPath": "D:\\Repos\\Podcasts\\Podcasts.Common\\project.json",
       "projectStyle": "ProjectJson"
     },
     "dependencies": {
       "Microsoft.Graph": "1.2.1",
       "Microsoft.Identity.Client": "1.0.304142221-alpha",
       "Microsoft.IdentityModel.Clients.ActiveDirectory": "3.13.9",
-      "Microsoft.NETCore.UniversalWindowsPlatform": "[5.3.3, )",
+      "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.3",
       "Microsoft.OneDriveSDK": "2.0.6",
       "Microsoft.OneDriveSDK.Authentication": "1.0.8",
       "Microsoft.Toolkit.Uwp": "1.4.1",

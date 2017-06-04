@@ -19925,7 +19925,7 @@
       ]
     },
     "Microsoft.NETCore.UniversalWindowsPlatform/5.3.3": {
-      "sha512": "6RAOKosX9uB14zhLE0ewitX2biQhllegPimfKWLo5XUytA7aaYesKFEW+mg9JVRNXkTItB83Yn680vaUPmO6QA==",
+      "sha512": "aCy8WhdcWqIl+gUoY905OWPCP1NqVOtT4Oejn7SIZb9KPKkB5cUfvLEmsY3xwud0TIaJaExKTUhrFluzKtSblQ==",
       "type": "package",
       "path": "microsoft.netcore.universalwindowsplatform/5.3.3",
       "files": [
@@ -26008,20 +26008,20 @@
     "UAP,Version=v10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\rcbev\\.nuget\\packages\\": {}
+    "C:\\Users\\david\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\rcbev\\Source\\Repos\\Podcasts\\BackgroundTask\\BackgroundTask.csproj",
+      "projectUniqueName": "D:\\Repos\\Podcasts\\BackgroundTask\\BackgroundTask.csproj",
       "projectName": "BackgroundTask",
-      "projectPath": "C:\\Users\\rcbev\\Source\\Repos\\Podcasts\\BackgroundTask\\BackgroundTask.csproj",
-      "projectJsonPath": "C:\\Users\\rcbev\\Source\\Repos\\Podcasts\\BackgroundTask\\project.json",
+      "projectPath": "D:\\Repos\\Podcasts\\BackgroundTask\\BackgroundTask.csproj",
+      "projectJsonPath": "D:\\Repos\\Podcasts\\BackgroundTask\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\Users\\rcbev\\Source\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj": {
-              "projectPath": "C:\\Users\\rcbev\\Source\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj"
+            "D:\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj": {
+              "projectPath": "D:\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj"
             }
           }
         }

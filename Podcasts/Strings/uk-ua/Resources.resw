@@ -581,4 +581,19 @@
   <data name="AutoSyncHelp.Text" xml:space="preserve">
     <value>(*): OneDrive синхронізація буде зроблено після виходу з програми. Це ця опція відключена, вам доведеться зробити це вручну за допомогою наступних кнопок.</value>
   </data>
+  <data name="ContributorsHeader.Header" xml:space="preserve">
+    <value>Співробітники</value>
+  </data>
+  <data name="ContributorsText.Text" xml:space="preserve">
+    <value>Особливу подяку усім, хто допомагав розробки цього додатка:</value>
+  </data>
+  <data name="AboutMenu.Label" xml:space="preserve">
+    <value>Про</value>
+  </data>
+  <data name="AboutTitle.Text" xml:space="preserve">
+    <value>Про</value>
+  </data>
+  <data name="RepoIssues.Content" xml:space="preserve">
+    <value>Питання</value>
+  </data>  
 </root>

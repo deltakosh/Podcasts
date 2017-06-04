@@ -1,1 +1,1 @@
-D:\Repos\Podcasts\Podcasts\bin\ARM\Release\Upload\Podcasts_7.5.14.0\Podcasts_7.5.14.0_x86_x64_arm.appxbundle
+D:\Repos\Podcasts\Podcasts\bin\ARM\Release\Upload\Podcasts_7.6.0.0\Podcasts_7.6.0.0_x86_x64_arm.appxbundle

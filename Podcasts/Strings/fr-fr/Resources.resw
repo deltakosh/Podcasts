@@ -581,13 +581,19 @@ Vous devriez lire un podcast ...</value>
   <data name="AutoSyncHelp.Text" xml:space="preserve">
     <value>(*) : La synchronisation OneDrive se fera après la fermeture de l'application. Si cette option est désactivée, vous devrez la faire manuellement en utilisant les boutons ci-dessous.</value>
   </data>
-    <data name="AboutMenu.Label" xml:space="preserve">
+  <data name="AboutMenu.Label" xml:space="preserve">
     <value>A propos</value>
   </data>
-    <data name="AboutTitle.Text" xml:space="preserve">
+  <data name="AboutTitle.Text" xml:space="preserve">
     <value>A propos</value>
   </data>
-    <data name="RepoIssues.Content" xml:space="preserve">
+  <data name="RepoIssues.Content" xml:space="preserve">
     <value>Problèmes</value>
+  </data>
+  <data name="ContributorsHeader.Header" xml:space="preserve">
+    <value>Contributeurs</value>
+  </data>
+  <data name="ContributorsText.Text" xml:space="preserve">
+    <value>Remerciements particuliers à toutes les personnes qui ont contribué au développement de cette application :</value>
   </data>
 </root>

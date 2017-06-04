@@ -566,4 +566,19 @@
   <data name="AutoSyncHelp.Text" xml:space="preserve">
     <value>(*): OneDrive синхронизация будет сделано после закрытия приложения. Это эта опция отключена, вам придется сделать это вручную с помощью следующих кнопок.</value>
   </data>
+  <data name="ContributorsHeader.Header" xml:space="preserve">
+    <value>Участники</value>
+  </data>
+  <data name="ContributorsText.Text" xml:space="preserve">
+    <value>Особая благодарность всем людям, которые помогали в разработке этого приложения:</value>
+  </data>
+  <data name="AboutMenu.Label" xml:space="preserve">
+    <value>О</value>
+  </data>
+  <data name="AboutTitle.Text" xml:space="preserve">
+    <value>О</value>
+  </data>
+  <data name="RepoIssues.Content" xml:space="preserve">
+    <value>Вопросов</value>
+  </data>
 </root>

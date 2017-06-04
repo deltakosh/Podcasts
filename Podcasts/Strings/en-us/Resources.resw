@@ -590,4 +590,10 @@ You should play a podcast...</value>
   <data name="RepoIssues.Content" xml:space="preserve">
     <value>Issues</value>
   </data>
+  <data name="ContributorsHeader.Header" xml:space="preserve">
+    <value>Contributors</value>
+  </data>
+  <data name="ContributorsText.Text" xml:space="preserve">
+    <value>Special thanks to all people who helped developing this application:</value>
+  </data>
 </root>

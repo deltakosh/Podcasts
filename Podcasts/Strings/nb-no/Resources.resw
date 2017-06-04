@@ -581,4 +581,19 @@ Spill av en podcast ...</value>
   <data name="AutoSyncHelp.Text" xml:space="preserve">
     <value>(*): OneDrive synkronisering vil bli gjort etter stengetid app. Det dette alternativet er deaktivert, må du gjøre det manuelt ved hjelp av følgende knapper.</value>
   </data>
+  <data name="ContributorsHeader.Header" xml:space="preserve">
+    <value>Bidragsytere</value>
+  </data>
+  <data name="ContributorsText.Text" xml:space="preserve">
+    <value>Spesiell takk til alle menneskene som bidro til å utvikle dette programmet:</value>
+  </data>
+  <data name="AboutMenu.Label" xml:space="preserve">
+    <value>Om</value>
+  </data>
+  <data name="AboutTitle.Text" xml:space="preserve">
+    <value>Om</value>
+  </data>
+  <data name="RepoIssues.Content" xml:space="preserve">
+    <value>Problemer</value>
+  </data>
 </root>

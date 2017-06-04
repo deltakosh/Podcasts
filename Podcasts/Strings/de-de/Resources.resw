@@ -581,4 +581,19 @@ Ich möchte (ab)spielen...</value>
   <data name="AutoSyncHelp.Text" xml:space="preserve">
     <value>(*): Die OneDrive-Synchronisation wird nach dem Schließen der App durchgeführt. Ist diese Option deaktiviert, müssen Sie sie manuell mit den folgenden Schaltflächen ausführen.</value>
   </data>
+  <data name="ContributorsHeader.Header" xml:space="preserve">
+    <value>Beigesteuert</value>
+  </data>
+  <data name="ContributorsText.Text" xml:space="preserve">
+    <value>Besonderer Dank an alle Menschen, die dazu beigetragen, die Entwicklung dieser Anwendung:</value>
+  </data>
+  <data name="AboutMenu.Label" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="AboutTitle.Text" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="RepoIssues.Content" xml:space="preserve">
+    <value>Fragen</value>
+  </data>
 </root>
