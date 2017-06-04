@@ -88,7 +88,7 @@ namespace Podcasts
         public bool HasUnplayed => Episodes.Any(e => !e.IsPlayed);
         public int UnplayedCount => Episodes.Sum(e => e.IsPlayed ? 0 : 1);
 
-        public bool IsInLibrary => !string.IsNullOrEmpty(Category);
+        public bool IsInLibrary => Category != null;
 
         public void RaisePlayedCountChanged()
         {

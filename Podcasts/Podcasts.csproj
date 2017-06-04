@@ -99,7 +99,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <Content Include="analytics.xml" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -129,9 +128,6 @@
     <Content Include="Data\whatsnew-de.txt" />
     <Content Include="Data\whatsnew-fr.txt" />
     <Content Include="Data\whatsnew-en.txt" />
-    <AppxManifest Include="Package.appxmanifest">
-      <SubType>Designer</SubType>
-    </AppxManifest>
     <None Include="Podcasts_StoreKey.pfx" />
     <None Include="Service References\Application Insights\ConnectedService.json" />
     <None Include="Store\1000x800.png" />

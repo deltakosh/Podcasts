@@ -1,2 +1,2 @@
-MainPackage=D:\Repos\Podcasts\Podcasts\bin\x64\Release\Upload\Podcasts_7.6.0.0_x64.appx
-SymbolPackage=D:\Repos\Podcasts\Podcasts\bin\x64\Release\Upload\Podcasts_7.6.0.0\Podcasts_7.6.0.0_x64.appxsym
+MainPackage=D:\Repos\Podcasts\Podcasts\bin\x64\Release\Upload\Podcasts_7.6.1.0_x64.appx
+SymbolPackage=D:\Repos\Podcasts\Podcasts\bin\x64\Release\Upload\Podcasts_7.6.1.0\Podcasts_7.6.1.0_x64.appxsym
