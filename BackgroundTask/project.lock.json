@@ -26008,20 +26008,20 @@
     "UAP,Version=v10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\david\\.nuget\\packages\\": {}
+    "C:\\Users\\davca\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "D:\\Repos\\Podcasts\\BackgroundTask\\BackgroundTask.csproj",
+      "projectUniqueName": "C:\\Repos\\Podcasts\\BackgroundTask\\BackgroundTask.csproj",
       "projectName": "BackgroundTask",
-      "projectPath": "D:\\Repos\\Podcasts\\BackgroundTask\\BackgroundTask.csproj",
-      "projectJsonPath": "D:\\Repos\\Podcasts\\BackgroundTask\\project.json",
+      "projectPath": "C:\\Repos\\Podcasts\\BackgroundTask\\BackgroundTask.csproj",
+      "projectJsonPath": "C:\\Repos\\Podcasts\\BackgroundTask\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "D:\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj": {
-              "projectPath": "D:\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj"
+            "C:\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj": {
+              "projectPath": "C:\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj"
             }
           }
         }

@@ -11,7 +11,7 @@
     <AssemblyName>Podcasts</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.15063.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
@@ -102,6 +102,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <AppxManifest Include="AppManifest.xml" />
     <Content Include="Assets\IconFull.png" />
     <Content Include="Assets\Icon.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
@@ -128,7 +129,6 @@
     <Content Include="Data\whatsnew-de.txt" />
     <Content Include="Data\whatsnew-fr.txt" />
     <Content Include="Data\whatsnew-en.txt" />
-    <None Include="Podcasts_StoreKey.pfx" />
     <None Include="Service References\Application Insights\ConnectedService.json" />
     <None Include="Store\1000x800.png" />
     <None Include="Store\2400x1200.png" />
@@ -410,10 +410,10 @@
     <SDKReference Include="Microsoft.VCLibs, Version=14.0">
       <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
     </SDKReference>
-    <SDKReference Include="WindowsDesktop, Version=10.0.15063.0">
+    <SDKReference Include="WindowsDesktop, Version=10.0.14393.0">
       <Name>Windows Desktop Extensions for the UWP</Name>
     </SDKReference>
-    <SDKReference Include="WindowsMobile, Version=10.0.15063.0">
+    <SDKReference Include="WindowsMobile, Version=10.0.14393.0">
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
   </ItemGroup>

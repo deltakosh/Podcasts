@@ -27101,23 +27101,23 @@
     "UAP,Version=v10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\david\\.nuget\\packages\\": {}
+    "C:\\Users\\davca\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "D:\\Repos\\Podcasts\\Podcasts\\Podcasts.csproj",
+      "projectUniqueName": "C:\\Repos\\Podcasts\\Podcasts\\Podcasts.csproj",
       "projectName": "Podcasts",
-      "projectPath": "D:\\Repos\\Podcasts\\Podcasts\\Podcasts.csproj",
-      "projectJsonPath": "D:\\Repos\\Podcasts\\Podcasts\\project.json",
+      "projectPath": "C:\\Repos\\Podcasts\\Podcasts\\Podcasts.csproj",
+      "projectJsonPath": "C:\\Repos\\Podcasts\\Podcasts\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "D:\\Repos\\Podcasts\\BackgroundTask\\BackgroundTask.csproj": {
-              "projectPath": "D:\\Repos\\Podcasts\\BackgroundTask\\BackgroundTask.csproj"
+            "C:\\Repos\\Podcasts\\BackgroundTask\\BackgroundTask.csproj": {
+              "projectPath": "C:\\Repos\\Podcasts\\BackgroundTask\\BackgroundTask.csproj"
             },
-            "D:\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj": {
-              "projectPath": "D:\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj"
+            "C:\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj": {
+              "projectPath": "C:\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj"
             }
           }
         }
