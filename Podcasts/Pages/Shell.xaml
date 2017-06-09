@@ -29,6 +29,7 @@
                            VerticalAlignment="Center" />
             </Grid>
         </DataTemplate>
+        <x:Double x:Key="CarFontSize">48</x:Double>
     </Page.Resources>
     <Grid>
         <VisualStateManager.VisualStateGroups>
@@ -48,6 +49,7 @@
                         <AdaptiveTrigger MinWindowWidth="400"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
+                        <Setter Target="CarButton.Visibility" Value="Visible" />
                         <Setter Target="MenuLine.Visibility" Value="Collapsed" />
                         <Setter Target="SlidingGrid.Visibility" Value="Visible"/>
                         <Setter Target="MediaControlsGrid.RowDefinitions[0].Height" Value="30" />
@@ -82,6 +84,7 @@
                         <AdaptiveTrigger MinWindowWidth="0"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
+                        <Setter Target="CarButton.Visibility" Value="Visible" />
                         <Setter Target="MenuLine.Visibility" Value="Collapsed" />
                         <Setter Target="SlidingGrid.Visibility" Value="Visible"/>
                         <Setter Target="MediaControlsGrid.RowDefinitions[0].Height" Value="30" />
@@ -114,6 +117,95 @@
                         <Setter Target="EllipsisButton.Visibility" Value="Visible"/>
                         <Setter Target="Rewind2.Visibility" Value="Visible"/>
                         <Setter Target="Forward2.Visibility" Value="Visible"/>
+                        <Setter Target="Rewind.Visibility" Value="Collapsed"/>
+                        <Setter Target="Forward.Visibility" Value="Collapsed"/>
+                        <Setter Target="Volume.Visibility" Value="Collapsed"/>
+                        <Setter Target="Cast.Visibility" Value="Collapsed"/>
+                        <Setter Target="PlaySpeed.Visibility" Value="Collapsed"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Car">
+                    <VisualState.Setters>
+                        <Setter Target="RootControlGrid.(Grid.Row)" Value="1"/>
+
+                        <Setter Target="CarButton.Visibility" Value="Collapsed" />
+                        <Setter Target="StreetButton.Visibility" Value="Visible"/>
+
+                        <Setter Target="MediaControlControls.HorizontalAlignment" Value="Stretch"/>
+                        <Setter Target="MenuLine.Visibility" Value="Collapsed" />
+                        <Setter Target="SlidingGrid.Visibility" Value="Visible"/>
+
+                        <Setter Target="MediaControlsGrid.RowDefinitions[0].Height" Value="3*" />
+                        <Setter Target="MediaControlsGrid.RowDefinitions[1].Height" Value="5*" />
+                        <Setter Target="MediaControlsGrid.RowDefinitions[2].Height" Value="4*" />
+                        <Setter Target="MediaControlsGrid.ColumnDefinitions[0].Width" Value="*" />
+                        <Setter Target="MediaControlsGrid.ColumnDefinitions[1].Width" Value="*" />
+                        <Setter Target="MediaControlsGrid.ColumnDefinitions[2].Width" Value="0" />
+
+                        <Setter Target="MediaControlSliderGrid.(Grid.ColumnSpan)" Value="3" />
+                        <Setter Target="MediaControlSliderGrid.(Grid.Row)" Value="1" />
+                        <Setter Target="MediaControlSliderGrid.(Grid.Column)" Value="0" />
+                        <Setter Target="MediaControlSliderGrid.Margin" Value="5,6,5,60" />
+
+                        <Setter Target="MediaControlInfoReduced.Visibility" Value="Visible" />
+                        <Setter Target="MediaControlInfo.Visibility" Value="Collapsed" />
+                        <Setter Target="MediaControlInfoReducedTextBlock.FontSize" Value="28"/>
+
+                        <Setter Target="MediaControlControls.(Grid.Row)" Value="2" />
+                        <Setter Target="MediaControlControls.(Grid.Column)" Value="0" />
+                        <Setter Target="MediaControlControls.(Grid.ColumnSpan)" Value="2" />
+
+                        <Setter Target="MediaControlControlsRow2.Height" Value="*" />
+                        <Setter Target="MediaControlControlsRow3.Height" Value="*" />
+
+                        <Setter Target="MediaControlsWaitRing.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="MediaControlsWaitRing.(Grid.Column)" Value="0" />
+
+                        <Setter Target="MediaControlControls.ColumnDefinitions[0].MinWidth" Value="5*" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[1].MinWidth" Value="5*" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[2].MinWidth" Value="5*" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[3].MinWidth" Value="5*" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[4].MinWidth" Value="0" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[5].MinWidth" Value="0" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[6].MinWidth" Value="0" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[7].MinWidth" Value="0" />
+                        <Setter Target="MediaControlControls.ColumnDefinitions[8].MinWidth" Value="5*" />
+
+                        <Setter Target="VideoControls.MinWidth" Value="45" />
+
+                        <Setter Target="PlaylistButton.Visibility" Value="Collapsed" />
+                        <Setter Target="EllipsisButton.Visibility" Value="Collapsed"/>
+
+                        <Setter Target="Rewind2.Visibility" Value="Visible"/>
+                        <Setter Target="Rewind2.FontSize" Value="{StaticResource CarFontSize}"/>
+                        <Setter Target="Rewind2.Margin" Value="0,50,0,0"/>
+                        <Setter Target="Rewind2.(Grid.ColumnSpan)" Value="4"/>
+                        <Setter Target="Rewind2.(Grid.Row)" Value="2"/>
+                        <Setter Target="Rewind2.(Grid.Column)" Value="0"/>
+
+                        <Setter Target="Forward2.Visibility" Value="Visible"/>
+                        <Setter Target="Forward2.FontSize" Value="{StaticResource CarFontSize}"/>
+                        <Setter Target="Forward2.Margin" Value="0,50,0,0"/>
+                        <Setter Target="Forward2.(Grid.ColumnSpan)" Value="4"/>
+                        <Setter Target="Forward2.(Grid.Row)" Value="2"/>
+                        <Setter Target="Forward2.(Grid.Column)" Value="5"/>
+
+                        <Setter Target="Play.FontSize" Value="{StaticResource CarFontSize}"/>
+                        <Setter Target="Play.(Grid.ColumnSpan)" Value="3"/>
+                        <Setter Target="Play.(Grid.Column)" Value="3"/>
+
+                        <Setter Target="Pause.FontSize" Value="{StaticResource CarFontSize}"/>
+                        <Setter Target="Pause.(Grid.ColumnSpan)" Value="3"/>
+                        <Setter Target="Pause.(Grid.Column)" Value="3"/>
+
+                        <Setter Target="Next.FontSize" Value="{StaticResource CarFontSize}"/>
+                        <Setter Target="Next.(Grid.ColumnSpan)" Value="2"/>
+                        <Setter Target="Next.(Grid.Column)" Value="7"/>
+
+                        <Setter Target="Prev.FontSize" Value="{StaticResource CarFontSize}"/>
+                        <Setter Target="Prev.(Grid.ColumnSpan)" Value="2"/>
+                        <Setter Target="Prev.(Grid.Column)" Value="0"/>
+
                         <Setter Target="Rewind.Visibility" Value="Collapsed"/>
                         <Setter Target="Forward.Visibility" Value="Collapsed"/>
                         <Setter Target="Volume.Visibility" Value="Collapsed"/>
@@ -279,8 +371,8 @@
                 <!--Options-->
                 <controls:HamburgerMenu.OptionsItemsSource>
                     <controls:HamburgerMenuItemCollection>
-                        <controls:HamburgerMenuGlyphItem x:Uid="AboutMenu" x:Name="AboutMenu" Glyph="" Tag="About"/>
                         <controls:HamburgerMenuGlyphItem x:Uid="OptionsMenu" x:Name="OptionsMenu" Glyph="" Tag="Options"/>
+                        <controls:HamburgerMenuGlyphItem x:Uid="AboutMenu" x:Name="AboutMenu" Glyph="" Tag="About"/>
                     </controls:HamburgerMenuItemCollection>
                 </controls:HamburgerMenu.OptionsItemsSource>
 
@@ -312,6 +404,8 @@
                             <ScaleTransform ScaleX="1.4"/>
                         </Button.RenderTransform>
                     </Button>
+                    <Button Foreground="White" Grid.Row="1"  x:Name="CarButton" Background="Transparent" HorizontalAlignment="Left" Click="Car_Click" Content="&#xEC47;" FontFamily="Segoe MDL2 Assets" Visibility="Collapsed" ></Button>
+                    <Button Foreground="White" Grid.Row="1"  x:Name="StreetButton" Background="Transparent" HorizontalAlignment="Left" Click="Street_Click" Content="&#xE913;" FontFamily="Segoe MDL2 Assets" Visibility="Collapsed" ></Button>
                     <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Grid.Row="1" Tag="" x:Name="EllipsisButton" HorizontalAlignment="Right" Flyout="{StaticResource EllispisFlyout}" Visibility="Collapsed"></Button>
                     <Grid x:Name="MediaControlsGrid" Grid.Row="2">
                         <Grid.ColumnDefinitions>
@@ -325,7 +419,7 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <Grid Grid.Column="0" x:Name="MediaControlInfoReduced" Grid.Row="0" Visibility="Collapsed" Grid.ColumnSpan="3" Margin="4,5">
-                            <TextBlock Text="{Binding CurrentEpisode.Title}" Style="{StaticResource Header2}" HorizontalAlignment="Center" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"></TextBlock>
+                            <TextBlock x:Name="MediaControlInfoReducedTextBlock"  Text="{Binding CurrentEpisode.Title}" Style="{StaticResource Header2}" HorizontalAlignment="Center" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"></TextBlock>
                         </Grid>
                         <Grid Grid.Column="0" x:Name="MediaControlInfo" Grid.Row="1">
                             <Grid.ColumnDefinitions>
@@ -371,12 +465,17 @@
                                 <ColumnDefinition MinWidth="0"/>
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
-                            <RepeatButton Foreground="White" Style="{StaticResource ImageRepeatButtonStyle}" Tag="" x:Name="Rewind2" HorizontalAlignment="Center" Grid.Column="0" Visibility="Collapsed" Click="Rewind_Click"></RepeatButton>
-                            <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="Prev" HorizontalAlignment="Center" Grid.Column="1" Click="Prev_Click" IsEnabled="{Binding CanGoPrev}"></Button>
-                            <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="Play" HorizontalAlignment="Center" Grid.Column="2" Click="Play_OnClick" Visibility="{Binding State.IsPlaying, Converter={StaticResource BoolToVisibility}, ConverterParameter=True}"></Button>
-                            <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="Pause" HorizontalAlignment="Center" Grid.Column="2" Click="Pause_OnClick" Visibility="{Binding State.IsPlaying, Converter={StaticResource BoolToVisibility}}"></Button>
-                            <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="Next" HorizontalAlignment="Center" Grid.Column="3" Click="Next_OnClick" IsEnabled="{Binding CanGoNext}"></Button>
-                            <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="Volume" HorizontalAlignment="Center" Grid.Column="4" Flyout="{StaticResource VolumeFlyout}"></Button>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition x:Name="MediaControlControlsRow2" Height="0"/>
+                                <RowDefinition x:Name="MediaControlControlsRow3" Height="0"/>
+                            </Grid.RowDefinitions>
+                            <RepeatButton Foreground="White" Background="Transparent" FontFamily="Segoe MDL2 Assets" Content="&#xE81C;" x:Name="Rewind2" HorizontalAlignment="Center" Grid.Column="0" Visibility="Collapsed" Click="Rewind_Click"></RepeatButton>
+                            <Button Foreground="White" Background="Transparent" FontFamily="Segoe MDL2 Assets" Content="&#xE892;" x:Name="Prev" HorizontalAlignment="Center" Grid.Column="1" Click="Prev_Click" IsEnabled="{Binding CanGoPrev}"></Button>
+                            <Button Foreground="White" Background="Transparent" FontFamily="Segoe MDL2 Assets" Content="&#xE768;" x:Name="Play" HorizontalAlignment="Center" Grid.Column="2" Click="Play_OnClick" Visibility="{Binding State.IsPlaying, Converter={StaticResource BoolToVisibility}, ConverterParameter=True}"></Button>
+                            <Button Foreground="White" Background="Transparent" FontFamily="Segoe MDL2 Assets" Content="&#xE769;" x:Name="Pause" HorizontalAlignment="Center" Grid.Column="2" Click="Pause_OnClick" Visibility="{Binding State.IsPlaying, Converter={StaticResource BoolToVisibility}}"></Button>
+                            <Button Foreground="White" Background="Transparent" FontFamily="Segoe MDL2 Assets" Content="&#xE893;" x:Name="Next" HorizontalAlignment="Center" Grid.Column="3" Click="Next_OnClick" IsEnabled="{Binding CanGoNext}"></Button>
+                            <Button Foreground="White" Background="Transparent" FontFamily="Segoe MDL2 Assets" Content="&#xE995;" x:Name="Volume" HorizontalAlignment="Center" Grid.Column="4" Flyout="{StaticResource VolumeFlyout}"></Button>
                             <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="PlaylistButton" HorizontalAlignment="Center" Grid.Column="5" Flyout="{StaticResource PlaylistFlyout}" RenderTransformOrigin="0.5 0.5">
                                 <Button.RenderTransform>
                                     <ScaleTransform x:Name="PlaylistTransform"/>
@@ -384,7 +483,7 @@
                             </Button>
                             <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="Cast" HorizontalAlignment="Center" Grid.Column="6" Click="Cast_Click"></Button>
                             <Button Foreground="White" Style="{StaticResource SimpleTextButtonStyle}" Tag="1.0x" x:Name="PlaySpeed" HorizontalAlignment="Center" Grid.Column="7" Flyout="{StaticResource PlaySpeedFlyout}"></Button>
-                            <RepeatButton Foreground="White" Style="{StaticResource ImageRepeatButtonStyle}" Tag="" x:Name="Forward2" HorizontalAlignment="Center" Grid.Column="8" Visibility="Collapsed" Click="Forward_Click"></RepeatButton>
+                            <RepeatButton Foreground="White" Background="Transparent" FontFamily="Segoe MDL2 Assets" Content="&#xECC5;" x:Name="Forward2" HorizontalAlignment="Center" Grid.Column="8" Visibility="Collapsed" Click="Forward_Click"></RepeatButton>
                             <Button MinWidth="60" Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="VideoControls" HorizontalAlignment="Center" Grid.Column="9" Flyout="{StaticResource VideoFlyout}" Visibility="Collapsed"></Button>
                         </Grid>
                         <Grid Grid.Row="1"  x:Name="MediaControlsWaitRing" Visibility="{Binding State.IsLoading, Converter={StaticResource BoolToVisibility}}" Grid.Column="1">
