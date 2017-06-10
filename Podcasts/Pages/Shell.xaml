@@ -135,12 +135,14 @@
                         <Setter Target="MenuLine.Visibility" Value="Collapsed" />
                         <Setter Target="SlidingGrid.Visibility" Value="Visible"/>
 
-                        <Setter Target="MediaControlsGrid.RowDefinitions[0].Height" Value="3*" />
-                        <Setter Target="MediaControlsGrid.RowDefinitions[1].Height" Value="5*" />
-                        <Setter Target="MediaControlsGrid.RowDefinitions[2].Height" Value="4*" />
+                        <Setter Target="MediaControlsGrid.RowDefinitions[0].Height" Value="*" />
+                        <Setter Target="MediaControlsGrid.RowDefinitions[1].Height" Value="*" />
+                        <Setter Target="MediaControlsGrid.RowDefinitions[2].Height" Value="*" />
                         <Setter Target="MediaControlsGrid.ColumnDefinitions[0].Width" Value="*" />
                         <Setter Target="MediaControlsGrid.ColumnDefinitions[1].Width" Value="*" />
                         <Setter Target="MediaControlsGrid.ColumnDefinitions[2].Width" Value="0" />
+                        
+                        <Setter Target="MediaControlsGrid.Margin" Value="0,0,0,24" />
 
                         <Setter Target="MediaControlSliderGrid.(Grid.ColumnSpan)" Value="3" />
                         <Setter Target="MediaControlSliderGrid.(Grid.Row)" Value="1" />
@@ -404,8 +406,8 @@
                             <ScaleTransform ScaleX="1.4"/>
                         </Button.RenderTransform>
                     </Button>
-                    <Button Foreground="White" Grid.Row="1"  x:Name="CarButton" Background="Transparent" HorizontalAlignment="Left" Click="Car_Click" Content="&#xEC47;" FontFamily="Segoe MDL2 Assets" Visibility="Collapsed" ></Button>
-                    <Button Foreground="White" Grid.Row="1"  x:Name="StreetButton" Background="Transparent" HorizontalAlignment="Left" Click="Street_Click" Content="&#xE913;" FontFamily="Segoe MDL2 Assets" Visibility="Collapsed" ></Button>
+                    <Button Style="{StaticResource CarButtonStyle}" Grid.Row="1" Margin="12,0,0,0"  x:Name="CarButton" HorizontalAlignment="Left" Click="Car_Click" Content="&#xEC47;" Visibility="Collapsed" ></Button>
+                    <Button Style="{StaticResource CarButtonStyle}" Grid.Row="1" Margin="12,0,0,0"  x:Name="StreetButton" HorizontalAlignment="Left" Click="Street_Click" Content="&#xE913;" Visibility="Collapsed" ></Button>
                     <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Grid.Row="1" Tag="" x:Name="EllipsisButton" HorizontalAlignment="Right" Flyout="{StaticResource EllispisFlyout}" Visibility="Collapsed"></Button>
                     <Grid x:Name="MediaControlsGrid" Grid.Row="2">
                         <Grid.ColumnDefinitions>
@@ -470,12 +472,12 @@
                                 <RowDefinition x:Name="MediaControlControlsRow2" Height="0"/>
                                 <RowDefinition x:Name="MediaControlControlsRow3" Height="0"/>
                             </Grid.RowDefinitions>
-                            <RepeatButton Foreground="White" Background="Transparent" FontFamily="Segoe MDL2 Assets" Content="&#xE81C;" x:Name="Rewind2" HorizontalAlignment="Center" Grid.Column="0" Visibility="Collapsed" Click="Rewind_Click"></RepeatButton>
-                            <Button Foreground="White" Background="Transparent" FontFamily="Segoe MDL2 Assets" Content="&#xE892;" x:Name="Prev" HorizontalAlignment="Center" Grid.Column="1" Click="Prev_Click" IsEnabled="{Binding CanGoPrev}"></Button>
-                            <Button Foreground="White" Background="Transparent" FontFamily="Segoe MDL2 Assets" Content="&#xE768;" x:Name="Play" HorizontalAlignment="Center" Grid.Column="2" Click="Play_OnClick" Visibility="{Binding State.IsPlaying, Converter={StaticResource BoolToVisibility}, ConverterParameter=True}"></Button>
-                            <Button Foreground="White" Background="Transparent" FontFamily="Segoe MDL2 Assets" Content="&#xE769;" x:Name="Pause" HorizontalAlignment="Center" Grid.Column="2" Click="Pause_OnClick" Visibility="{Binding State.IsPlaying, Converter={StaticResource BoolToVisibility}}"></Button>
-                            <Button Foreground="White" Background="Transparent" FontFamily="Segoe MDL2 Assets" Content="&#xE893;" x:Name="Next" HorizontalAlignment="Center" Grid.Column="3" Click="Next_OnClick" IsEnabled="{Binding CanGoNext}"></Button>
-                            <Button Foreground="White" Background="Transparent" FontFamily="Segoe MDL2 Assets" Content="&#xE995;" x:Name="Volume" HorizontalAlignment="Center" Grid.Column="4" Flyout="{StaticResource VolumeFlyout}"></Button>
+                            <RepeatButton Style="{StaticResource CarImageRepeatButtonStyle}" Content="&#xE81C;" x:Name="Rewind2" Grid.Column="0" Visibility="Collapsed" Click="Rewind_Click"></RepeatButton>
+                            <Button Style="{StaticResource CarButtonStyle}" Content="&#xE892;" x:Name="Prev" Grid.Column="1" Click="Prev_Click" IsEnabled="{Binding CanGoPrev}"></Button>
+                            <Button Style="{StaticResource CarButtonStyle}" Content="&#xE768;" x:Name="Play" Grid.Column="2" Click="Play_OnClick" Visibility="{Binding State.IsPlaying, Converter={StaticResource BoolToVisibility}, ConverterParameter=True}"></Button>
+                            <Button Style="{StaticResource CarButtonStyle}" Content="&#xE769;" x:Name="Pause" Grid.Column="2" Click="Pause_OnClick" Visibility="{Binding State.IsPlaying, Converter={StaticResource BoolToVisibility}}"></Button>
+                            <Button Style="{StaticResource CarButtonStyle}" Content="&#xE893;" x:Name="Next" Grid.Column="3" Click="Next_OnClick" IsEnabled="{Binding CanGoNext}"></Button>
+                            <Button Style="{StaticResource CarButtonStyle}" Content="&#xE995;" x:Name="Volume" Grid.Column="4" Flyout="{StaticResource VolumeFlyout}"></Button>
                             <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="PlaylistButton" HorizontalAlignment="Center" Grid.Column="5" Flyout="{StaticResource PlaylistFlyout}" RenderTransformOrigin="0.5 0.5">
                                 <Button.RenderTransform>
                                     <ScaleTransform x:Name="PlaylistTransform"/>
@@ -483,7 +485,7 @@
                             </Button>
                             <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="Cast" HorizontalAlignment="Center" Grid.Column="6" Click="Cast_Click"></Button>
                             <Button Foreground="White" Style="{StaticResource SimpleTextButtonStyle}" Tag="1.0x" x:Name="PlaySpeed" HorizontalAlignment="Center" Grid.Column="7" Flyout="{StaticResource PlaySpeedFlyout}"></Button>
-                            <RepeatButton Foreground="White" Background="Transparent" FontFamily="Segoe MDL2 Assets" Content="&#xECC5;" x:Name="Forward2" HorizontalAlignment="Center" Grid.Column="8" Visibility="Collapsed" Click="Forward_Click"></RepeatButton>
+                            <RepeatButton Style="{StaticResource CarImageRepeatButtonStyle}" Content="&#xECC5;" x:Name="Forward2" Grid.Column="8" Visibility="Collapsed" Click="Forward_Click"></RepeatButton>
                             <Button MinWidth="60" Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="VideoControls" HorizontalAlignment="Center" Grid.Column="9" Flyout="{StaticResource VideoFlyout}" Visibility="Collapsed"></Button>
                         </Grid>
                         <Grid Grid.Row="1"  x:Name="MediaControlsWaitRing" Visibility="{Binding State.IsLoading, Converter={StaticResource BoolToVisibility}}" Grid.Column="1">

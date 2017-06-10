@@ -4,6 +4,10 @@
     xmlns:local="using:Podcasts.Properties">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="ms-appx:///Styles/DefaultAccent.xaml"/>
+        <ResourceDictionary Source="ms-appx:///Styles/Accent.xaml"/>
+        <ResourceDictionary Source="ms-appx:///Styles/DarkTheme.xaml"/>
+        <ResourceDictionary Source="ms-appx:///Styles/DefaultStyles.xaml"/>
+        <ResourceDictionary Source="ms-appx:///Styles/LightTheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>
