@@ -858,15 +858,5 @@ namespace Podcasts
             RemainingDuration.Visibility = Visibility.Collapsed;
             LocalSettings.Instance.FavorRemainingDuration = false;
         }
-
-        private void Car_Click(object sender, RoutedEventArgs e)
-        {
-            VisualStateManager.GoToState(this, "Car", true);
-        }
-
-        private void Street_Click(object sender, RoutedEventArgs e)
-        {
-            VisualStateManager.GoToState(this, "Medium", true);
-        }
     }
 }
