@@ -25905,14 +25905,14 @@
     "UAP,Version=v10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\eck_m\\.nuget\\packages\\": {}
+    "C:\\Users\\davca\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\eck_m\\Source\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj",
+      "projectUniqueName": "C:\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj",
       "projectName": "Podcasts.Common",
-      "projectPath": "C:\\Users\\eck_m\\Source\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj",
-      "projectJsonPath": "C:\\Users\\eck_m\\Source\\Repos\\Podcasts\\Podcasts.Common\\project.json",
+      "projectPath": "C:\\Repos\\Podcasts\\Podcasts.Common\\Podcasts.Common.csproj",
+      "projectJsonPath": "C:\\Repos\\Podcasts\\Podcasts.Common\\project.json",
       "projectStyle": "ProjectJson"
     },
     "dependencies": {
