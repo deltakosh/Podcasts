@@ -869,6 +869,7 @@ namespace Podcasts
 
         private void Street_Click(object sender, RoutedEventArgs e)
         {
+            //Checks for the Window Size to determine what state to return to.
             int width = Convert.ToInt16(Window.Current.Bounds.Width);
 
             if (width < 400) {

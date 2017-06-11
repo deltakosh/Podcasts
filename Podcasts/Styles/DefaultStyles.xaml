@@ -3491,7 +3491,8 @@
             </Setter.Value>
         </Setter>
     </Style>
-
+    
+    <!-- Allows you to set Icon Sizeses-->
     <x:Double x:Key="CarIconFontSize">24</x:Double>
     
     <Style x:Key="CarIconButtonStyle" TargetType="Button">

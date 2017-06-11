@@ -29,6 +29,7 @@
                            VerticalAlignment="Center" />
             </Grid>
         </DataTemplate>
+        <!-- Allows you to set Icon Sizes in "Carmode"-->
         <x:Double x:Key="CarFontSize">48</x:Double>
     </Page.Resources>
     <Grid>
