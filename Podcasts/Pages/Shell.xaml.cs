@@ -827,19 +827,19 @@ namespace Podcasts
 
             switch (tag)
             {
-                case "About":
-                    selectedMenuIndex = 5;
-                    if (GetCurrentPage() != typeof(AboutPage))
-                    {
-                        Navigate(typeof(AboutPage));
-                    }
-                    break;
-
                 case "Options":
-                    selectedMenuIndex = 6;
+                    selectedMenuIndex = 5;
                     if (GetCurrentPage() != typeof(OptionsPage))
                     {
                         Navigate(typeof(OptionsPage));
+                    }
+                    break;
+
+                case "About":
+                    selectedMenuIndex = 6;
+                    if (GetCurrentPage() != typeof(AboutPage))
+                    {
+                        Navigate(typeof(AboutPage));
                     }
                     break;
             }

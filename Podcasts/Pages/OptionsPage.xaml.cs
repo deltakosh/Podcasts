@@ -58,7 +58,7 @@ namespace Podcasts
             ForwardSteps.ItemsSource = new[] { 10, 20, 30, 40, 50, 60 };
             ForwardSteps.SelectedItem = AppSettings.Instance.ForwardStep;
 
-            GlobalStateManager.SelectedMenuIndex = 6;
+            GlobalStateManager.SelectedMenuIndex = 5;
 
             var version = Package.Current.Id.Version;
             VersionText.Text = "Podcasts v" + version.StringVersion();

@@ -31,7 +31,7 @@ namespace Podcasts
             var version = Package.Current.Id.Version;
             VersionText.Text = "Podcasts v" + version.StringVersion();
 
-            GlobalStateManager.SelectedMenuIndex = 5;
+            GlobalStateManager.SelectedMenuIndex = 6;
 
 
             if (!AppSettings.Instance.TipSent)
