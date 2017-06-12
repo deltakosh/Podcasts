@@ -858,5 +858,29 @@ namespace Podcasts
             RemainingDuration.Visibility = Visibility.Collapsed;
             LocalSettings.Instance.FavorRemainingDuration = false;
         }
+
+
+        private void Car_Click(object sender, RoutedEventArgs e)
+        {
+            VisualStateManager.GoToState(this, "Car", true);
+        }
+
+
+
+        private void Street_Click(object sender, RoutedEventArgs e)
+        {
+            //Checks for the Window Size to determine what state to return to.
+            int width = Convert.ToInt16(Window.Current.Bounds.Width);
+
+            if (width < 400) {
+                VisualStateManager.GoToState(this, "Small", true);
+            }
+            else if (width < 1280) {
+                VisualStateManager.GoToState(this, "Medium", true);
+            }
+            else {
+                VisualStateManager.GoToState(this, "Full", true);
+            }
+        }
     }
 }
