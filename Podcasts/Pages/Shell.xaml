@@ -407,8 +407,8 @@
                             <ScaleTransform ScaleX="1.4"/>
                         </Button.RenderTransform>
                     </Button>
-                    <Button Style="{StaticResource CarIconButtonStyle}" Grid.Row="1" Margin="12,0,0,0"  x:Name="CarButton" HorizontalAlignment="Left" Click="Car_Click" Content="&#xEC47;" Visibility="Collapsed" ></Button>
-                    <Button Style="{StaticResource CarIconButtonStyle}" Grid.Row="1" Margin="12,0,0,0"  x:Name="StreetButton" HorizontalAlignment="Left" Click="Street_Click" Content="&#xE913;" Visibility="Collapsed" ></Button>
+                    <Button Style="{StaticResource CarIconButtonStyle}" FontSize="24" Grid.Row="1" Grid.RowSpan="2" Margin="12,12,0,0"  x:Name="CarButton" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Car_Click" Content="&#xEC47;" Visibility="Collapsed" ></Button>
+                    <Button Style="{StaticResource CarIconButtonStyle}" FontSize="24" Grid.Row="1" Grid.RowSpan="2" Margin="12,12,0,0"  x:Name="StreetButton" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Street_Click" Content="&#xE913;" Visibility="Collapsed" ></Button>
                     <Button Foreground="White" Style="{StaticResource ImageButtonStyle}" Grid.Row="1" Tag="" x:Name="EllipsisButton" HorizontalAlignment="Right" Flyout="{StaticResource EllispisFlyout}" Visibility="Collapsed"></Button>
                     <Grid x:Name="MediaControlsGrid" Grid.Row="2">
                         <Grid.ColumnDefinitions>
@@ -485,7 +485,7 @@
                                 </Button.RenderTransform>
                             </Button>
                             <Button Style="{StaticResource CarIconButtonStyle}" Content="&#xED47;" x:Name="Cast" Grid.Column="6" Click="Cast_Click"></Button>
-                            <Button Style="{StaticResource CarIconButtonStyle}" FontFamily="Segoe UI" Content="1.0x" x:Name="PlaySpeed" Grid.Column="7" Flyout="{StaticResource PlaySpeedFlyout}"></Button>
+                            <Button Style="{StaticResource CarIconButtonStyle}" FontFamily="Segoe UI" FontSize="15" Content="1.0x" x:Name="PlaySpeed" Grid.Column="7" Flyout="{StaticResource PlaySpeedFlyout}"></Button>
                             <RepeatButton Style="{StaticResource CarIconRepeatButtonStyle}" Content="&#xECC5;" x:Name="Forward2" Grid.Column="8" Visibility="Collapsed" Click="Forward_Click"></RepeatButton>
                             <Button MinWidth="60" Foreground="White" Style="{StaticResource ImageButtonStyle}" Tag="" x:Name="VideoControls" HorizontalAlignment="Center" Grid.Column="9" Flyout="{StaticResource VideoFlyout}" Visibility="Collapsed"></Button>
                         </Grid>

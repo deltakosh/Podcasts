@@ -3493,7 +3493,7 @@
     </Style>
     
     <!-- Allows you to set Icon Sizeses-->
-    <x:Double x:Key="CarIconFontSize">24</x:Double>
+    <x:Double x:Key="CarIconFontSize">20</x:Double>
     
     <Style x:Key="CarIconButtonStyle" TargetType="Button">
         <Setter Property="Background" Value="Transparent"/>
