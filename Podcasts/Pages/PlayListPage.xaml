@@ -84,6 +84,7 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="75"></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="30"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition></RowDefinition>
@@ -106,6 +107,7 @@
                             </Grid>
                             <local:TextTag x:Uid="Downloaded" Grid.Column="1" Visibility="{Binding Episode.IsAlreadyDownloaded, Converter={StaticResource BoolToVisibility}}"/>
                         </Grid>
+                        <local:IconButton Text="" Glyph="" x:Name="DeleteSmall" PointerPressed="Delete_PointerPressed" HorizontalAlignment="Center" Grid.Column="2" VerticalAlignment="Center" Grid.RowSpan="4" Visibility="{Binding Converter={StaticResource XboxToVisibility}}"></local:IconButton>
                     </Grid>
                 </controls:SlidableListItem>
             </DataTemplate>
