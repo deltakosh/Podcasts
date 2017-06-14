@@ -392,7 +392,8 @@
             </controls:HamburgerMenu>
             <Grid Background="Transparent" Visibility="Collapsed" Grid.Row="0" Width="10" x:Name="SlidingGrid" HorizontalAlignment="Left" ManipulationMode="TranslateX" ManipulationStarted="SlidingGrid_ManipulationStarted" ManipulationDelta="SlidingGrid_ManipulationDelta" ManipulationCompleted="SlidingGrid_ManipulationCompleted"></Grid>
             <Grid Visibility="Collapsed" Grid.Row="0" x:Name="VideoPlayerGrid" Background="{StaticResource Background}">
-                <MediaPlayerElement x:Name="mediaPlayerElement" AreTransportControlsEnabled="False" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" PointerPressed="mediaPlayerElement_PointerPressed"/>
+                <MediaPlayerElement x:Name="mediaPlayerElement" AreTransportControlsEnabled="False" Stretch="Uniform" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SizeChanged="MediaElementSizeChanged">
+                </MediaPlayerElement>
             </Grid>
             <Grid Grid.Row="1" Background="{StaticResource Accent}" x:Name="RootControlGrid">
                 <Grid Visibility="{Binding CurrentEpisode, Converter={StaticResource NullToVisibility}}">
