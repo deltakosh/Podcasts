@@ -350,9 +350,12 @@ namespace Podcasts
             GlobalFrame.Navigate(type);
         }
 
+
+
         void ShowFullscreenVideo(bool state)
         {
             mediaPlayerElement.IsFullWindow = state;
+            mediaPlayerElement.AreTransportControlsEnabled = state;
             if (CoreTools.IsRunningOnMobile)
             {
                 if (!state)
@@ -709,11 +712,6 @@ namespace Podcasts
             });
         }
 
-        private void mediaPlayerElement_PointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            ShowFullscreenVideo(false);
-        }
-
         private void Cast_Click(object sender, RoutedEventArgs e)
         {
             //Retrieve the location of the casting button
@@ -881,6 +879,11 @@ namespace Podcasts
             else {
                 VisualStateManager.GoToState(this, "Full", true);
             }
+        }
+
+        private void MediaElementSizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            mediaPlayerElement.AreTransportControlsEnabled = mediaPlayerElement.IsFullWindow;
         }
     }
 }
