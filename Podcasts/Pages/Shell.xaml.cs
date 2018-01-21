@@ -623,31 +623,31 @@ namespace Podcasts
                 switch (LocalSettings.Instance.PlaySpeed)
                 {
                     case 100:
-                        PlaySpeed.Tag = "1.0x";
+                        PlaySpeed.Content = "1.0x";
                         break;
                     case 125:
-                        PlaySpeed.Tag = "1.25x";
+                        PlaySpeed.Content = "1.25x";
                         break;
                     case 150:
-                        PlaySpeed.Tag = "1.5x";
+                        PlaySpeed.Content = "1.5x";
                         break;
                     case 200:
-                        PlaySpeed.Tag = "2.0x";
+                        PlaySpeed.Content = "2.0x";
                         break;
                     case 250:
-                        PlaySpeed.Tag = "2.5x";
+                        PlaySpeed.Content = "2.5x";
                         break;
                     case 300:
-                        PlaySpeed.Tag = "3.0x";
+                        PlaySpeed.Content = "3.0x";
                         break;
                 }
             }
             catch
             {
-                PlaySpeed.Tag = "1.0x";
+                PlaySpeed.Content = "1.0x";
             }
 
-            Speed2.Tag = PlaySpeed.Tag;
+            Speed2.Tag = PlaySpeed.Content;
         }
 
         private void MediaControlSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
