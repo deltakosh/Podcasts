@@ -166,3 +166,22 @@ localDev/src/*
 /dist/preview release/babylon.custom.js
 /dist/preview release/babylon.custom.max.js
 Build
+BundleArtifacts
+*.props
+project.lock.json
+project.lock.json
+*.appx
+*.appx
+_language-tr.appx
+_language-uk.appx
+_pkginfo.txt
+_scale-100.appx
+_scale-150.appx
+_language-fr.appx
+_language-it.appx
+_language-nb.appx
+_language-pt.appx
+_language-ru.appx
+*.props
+Podcasts.Common.nuget.props
+project.lock.json

@@ -144,6 +144,7 @@
                             <TextBlock x:Uid="ContributorsText" x:Name="ContributorsText"  FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
                             <Rectangle Fill="{StaticResource Accent}" Height="1" Margin="0,10"></Rectangle>
                             <TextBlock Text="Aalok Singh" x:Name="Contributor1" Grid.Row="0" HorizontalAlignment="Left" FontSize="16" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
+                            <TextBlock Text="MMEnter" x:Name="Contributor2" Grid.Row="0" HorizontalAlignment="Left" FontSize="{Binding ElementName=Contributor1, Path=FontSize}" TextWrapping="WrapWholeWords" FontWeight="ExtraLight"></TextBlock>
                         </StackPanel>
                     </ScrollViewer>
                 </PivotItem>

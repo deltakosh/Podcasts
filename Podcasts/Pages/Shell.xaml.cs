@@ -350,9 +350,12 @@ namespace Podcasts
             GlobalFrame.Navigate(type);
         }
 
+
+
         void ShowFullscreenVideo(bool state)
         {
             mediaPlayerElement.IsFullWindow = state;
+            mediaPlayerElement.AreTransportControlsEnabled = state;
             if (CoreTools.IsRunningOnMobile)
             {
                 if (!state)
@@ -620,31 +623,31 @@ namespace Podcasts
                 switch (LocalSettings.Instance.PlaySpeed)
                 {
                     case 100:
-                        PlaySpeed.Tag = "1.0x";
+                        PlaySpeed.Content = "1.0x";
                         break;
                     case 125:
-                        PlaySpeed.Tag = "1.25x";
+                        PlaySpeed.Content = "1.25x";
                         break;
                     case 150:
-                        PlaySpeed.Tag = "1.5x";
+                        PlaySpeed.Content = "1.5x";
                         break;
                     case 200:
-                        PlaySpeed.Tag = "2.0x";
+                        PlaySpeed.Content = "2.0x";
                         break;
                     case 250:
-                        PlaySpeed.Tag = "2.5x";
+                        PlaySpeed.Content = "2.5x";
                         break;
                     case 300:
-                        PlaySpeed.Tag = "3.0x";
+                        PlaySpeed.Content = "3.0x";
                         break;
                 }
             }
             catch
             {
-                PlaySpeed.Tag = "1.0x";
+                PlaySpeed.Content = "1.0x";
             }
 
-            Speed2.Tag = PlaySpeed.Tag;
+            Speed2.Tag = PlaySpeed.Content;
         }
 
         private void MediaControlSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -707,11 +710,6 @@ namespace Podcasts
                 AnimationTools.AnimateDouble(PlaylistTransform, "ScaleX", 1.0, 1250, null, false, true);
                 AnimationTools.AnimateDouble(PlaylistTransform, "ScaleY", 1.0, 1250, null, false, true);
             });
-        }
-
-        private void mediaPlayerElement_PointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            ShowFullscreenVideo(false);
         }
 
         private void Cast_Click(object sender, RoutedEventArgs e)
@@ -827,19 +825,19 @@ namespace Podcasts
 
             switch (tag)
             {
-                case "About":
-                    selectedMenuIndex = 5;
-                    if (GetCurrentPage() != typeof(AboutPage))
-                    {
-                        Navigate(typeof(AboutPage));
-                    }
-                    break;
-
                 case "Options":
-                    selectedMenuIndex = 6;
+                    selectedMenuIndex = 5;
                     if (GetCurrentPage() != typeof(OptionsPage))
                     {
                         Navigate(typeof(OptionsPage));
+                    }
+                    break;
+
+                case "About":
+                    selectedMenuIndex = 6;
+                    if (GetCurrentPage() != typeof(AboutPage))
+                    {
+                        Navigate(typeof(AboutPage));
                     }
                     break;
             }
@@ -857,6 +855,35 @@ namespace Podcasts
             Duration.Visibility = Visibility.Visible;
             RemainingDuration.Visibility = Visibility.Collapsed;
             LocalSettings.Instance.FavorRemainingDuration = false;
+        }
+
+
+        private void Car_Click(object sender, RoutedEventArgs e)
+        {
+            VisualStateManager.GoToState(this, "Car", true);
+        }
+
+
+
+        private void Street_Click(object sender, RoutedEventArgs e)
+        {
+            //Checks for the Window Size to determine what state to return to.
+            int width = Convert.ToInt16(Window.Current.Bounds.Width);
+
+            if (width < 400) {
+                VisualStateManager.GoToState(this, "Small", true);
+            }
+            else if (width < 1280) {
+                VisualStateManager.GoToState(this, "Medium", true);
+            }
+            else {
+                VisualStateManager.GoToState(this, "Full", true);
+            }
+        }
+
+        private void MediaElementSizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            mediaPlayerElement.AreTransportControlsEnabled = mediaPlayerElement.IsFullWindow;
         }
     }
 }
