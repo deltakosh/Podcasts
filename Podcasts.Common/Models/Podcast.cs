@@ -257,7 +257,10 @@ namespace Podcasts
                     foreach (var file in files)
                     {
                         var fileName = file.Name;
-                        var episode = Episodes.FirstOrDefault(e => e.LocalFilename.ContainsIgnoreCase(fileName));
+                        // #45 File name could have been truncated while previously saved. i.e. Filename123.mp3 could be saved as Filename12.mp3)
+                        // The extension prevent from matching files in the collection so remove it
+                        var fileNameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
+                        var episode = Episodes.FirstOrDefault(e => e.LocalFilename.ContainsIgnoreCase(fileNameWithoutExtension));
 
                         if (episode != null)
                         {
