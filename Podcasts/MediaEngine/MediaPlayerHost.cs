@@ -1,25 +1,20 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Runtime.InteropServices.WindowsRuntime;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Windows.Media;
-using Windows.Media.Playback;
+using Microsoft.Toolkit.Uwp.Connectivity;
 using Newtonsoft.Json;
-using Windows.Storage.Streams;
-using Windows.UI.Xaml.Controls;
+using Windows.Media;
 using Windows.Media.Casting;
-using Windows.Media.Core;
+using Windows.Media.Playback;
+using Windows.Networking.Connectivity;
+using Windows.Storage.Streams;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 namespace Podcasts
 {
-    using Microsoft.Toolkit.Uwp;
-    using System.Linq;
-    using Windows.Networking.Connectivity;
-    using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Input;
-
     public static class MediaPlayerHost
     {
         public static event Action OnVideoPlayerEngaged;

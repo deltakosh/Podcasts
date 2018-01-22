@@ -1,15 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using Microsoft.Toolkit.Uwp.UI.Extensions;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
-using System;
-using System.Collections;
-using System.ComponentModel;
-using Microsoft.Toolkit.Uwp.UI;
 
 namespace Podcasts
 {

@@ -1,22 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Xml;
-using Windows.Networking.BackgroundTransfer;
-using Windows.Storage;
+using Microsoft.Toolkit.Uwp.Connectivity;
 using Microsoft.WindowsAzure.MobileServices;
 using Newtonsoft.Json;
+using Windows.Networking.BackgroundTransfer;
+using Windows.Storage;
 using Windows.UI.Core;
-using System.Collections.Generic;
-using Windows.Data.Xml.Dom;
-using System.Diagnostics;
-using Newtonsoft.Json.Bson;
-using Microsoft.Toolkit.Uwp;
-using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Podcasts
 {

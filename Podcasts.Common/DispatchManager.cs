@@ -1,8 +1,4 @@
-﻿using Microsoft.Toolkit.Uwp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
 using System.Threading.Tasks;
 using Windows.UI.Core;
 
@@ -30,7 +26,7 @@ namespace Podcasts
                 return;
             }
 
-            await CoreTools.GlobalDispatcher.AwaitableRunAsync(() =>
+            await CoreTools.GlobalDispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
                 try
                 {
