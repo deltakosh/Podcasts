@@ -5,12 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
-using System.Xml;
-using Windows.Data.Xml.Dom;
+using Microsoft.Toolkit.Uwp.Connectivity;
 using Newtonsoft.Json;
-using Windows.UI.Core;
-using Microsoft.Toolkit.Uwp;
-using System.Diagnostics;
 
 namespace Podcasts
 {

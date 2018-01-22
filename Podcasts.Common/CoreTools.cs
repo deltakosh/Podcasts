@@ -413,10 +413,13 @@ namespace Podcasts
             using (var httpClient = new HttpClient(filter))
             {
                 httpClient.DefaultRequestHeaders.AcceptEncoding.ParseAdd("");
-                httpClient.DefaultRequestHeaders.Add("If-Modified-Since", "Sat, 01 Jan 2000 00:00:01 GMT");
+                httpClient.DefaultRequestHeaders.Add("If-Modified-Since", "Sat, 01 Jan 1901 00:00:01 GMT");
                 httpClient.DefaultRequestHeaders.Add("user-agent", "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.94 Safari/537.36");
                 using (var response = await httpClient.GetAsync(new Uri(url)))
                 {
+                    if (!response.IsSuccessStatusCode)
+                        throw new InvalidOperationException($"Feed stream download for '{url}' returned http code {response.StatusCode}");
+
                     using (var content = response.Content)
                     {
                         var stringContent = await content.ReadAsStringAsync();

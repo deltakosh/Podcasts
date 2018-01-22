@@ -12,9 +12,12 @@ namespace Podcasts
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
+            if (value == null) // Podcast does not have feed url.
+                return Visibility.Collapsed;
+
             var feedUrl = value.ToString();
 
-            return Library.ContainsFeedUrl(feedUrl) ? Visibility.Visible :Visibility.Collapsed;
+            return Library.ContainsFeedUrl(feedUrl) ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

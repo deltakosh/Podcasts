@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace Podcasts
@@ -13,7 +15,8 @@ namespace Podcasts
 
             var response = JsonConvert.DeserializeObject<SearchResponse>(responseString);
 
-            return response.results;
+            // Remove podcasts without feed url from search results.
+            return response.results.Where(r => ! String.IsNullOrEmpty(r.feedUrl)).ToArray();
         }
     }
 }

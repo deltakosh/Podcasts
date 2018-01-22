@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
-using Windows.System;
+using Microsoft.Toolkit.Uwp.UI.Extensions;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
-using Microsoft.Toolkit.Uwp.UI;
-using Newtonsoft.Json;
 
 namespace Podcasts
 {

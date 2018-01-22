@@ -114,8 +114,8 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <None Include="project.json" />
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.6" />
+    <PackageReference Include="Microsoft.Toolkit.Uwp" Version="2.1.1" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RefreshTask.cs" />
